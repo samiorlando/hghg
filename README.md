@@ -23,18 +23,13 @@
     --accent-yellow: #ffcc00;
     --accent-red: #ff3344;
     --accent-orange: #ff8800;
-    --led-green: #00ff44;
-    --led-yellow: #ffdd00;
-    --led-red: #ff2244;
-    --knob-bg: #2a2a35;
-    --slider-track: #333344;
+    --slider-track: #2a2a35;
     --slider-fill: #00aaff;
     --glow-blue: 0 0 10px rgba(0,170,255,0.3);
     --glow-green: 0 0 10px rgba(0,255,68,0.3);
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
-
   body {
     background: var(--bg-darkest);
     color: var(--text-primary);
@@ -53,7 +48,6 @@
     align-items: center;
     padding: 0 12px;
     border-bottom: 1px solid #444;
-    -webkit-app-region: drag;
     z-index: 1000;
   }
   .title-bar .logo-text {
@@ -75,7 +69,6 @@
     margin-left: auto;
     display: flex;
     gap: 6px;
-    -webkit-app-region: no-drag;
   }
   .title-bar .controls button {
     width: 28px; height: 20px;
@@ -99,7 +92,7 @@
     width: 100vw;
   }
 
-  /* === LEFT PANEL - PRESETS === */
+  /* === LEFT PANEL === */
   .left-panel {
     width: 220px;
     min-width: 220px;
@@ -108,7 +101,6 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    position: relative;
   }
   .left-panel.collapsed { width: 0; min-width: 0; overflow: hidden; }
   .left-panel-header {
@@ -144,17 +136,9 @@
     align-items: center;
     gap: 6px;
   }
-  .tree-category:hover { color: var(--text-primary); }
-  .tree-category .arrow {
-    font-size: 8px;
-    transition: transform 0.2s;
-  }
+  .tree-category .arrow { font-size: 8px; transition: transform 0.2s; }
   .tree-category.open .arrow { transform: rotate(90deg); }
-
-  .tree-items {
-    display: none;
-    padding-left: 8px;
-  }
+  .tree-items { display: none; padding-left: 8px; }
   .tree-items.visible { display: block; }
 
   .tree-item {
@@ -165,10 +149,7 @@
     transition: all 0.15s;
     border-left: 2px solid transparent;
   }
-  .tree-item:hover {
-    background: rgba(0,170,255,0.05);
-    color: var(--text-primary);
-  }
+  .tree-item:hover { background: rgba(0,170,255,0.05); color: var(--text-primary); }
   .tree-item.active {
     background: rgba(0,170,255,0.1);
     color: var(--accent-blue);
@@ -188,11 +169,9 @@
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 9px;
-    font-family: 'Roboto Condensed', sans-serif;
     cursor: pointer;
     border-radius: 3px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     transition: all 0.2s;
   }
   .preset-actions button:hover {
@@ -210,7 +189,7 @@
     background: var(--bg-darkest);
   }
 
-  /* === TOP METERS === */
+  /* === METERS === */
   .meters-section {
     background: var(--bg-panel);
     border-bottom: 1px solid var(--border-color);
@@ -221,7 +200,6 @@
     min-height: 160px;
     overflow-x: auto;
   }
-
   .meter-group {
     display: flex;
     flex-direction: column;
@@ -237,22 +215,9 @@
     margin-bottom: 6px;
     text-transform: uppercase;
   }
-  .meter-container {
-    display: flex;
-    gap: 4px;
-    align-items: flex-end;
-  }
-  .meter-bar-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-  .meter-bar-label {
-    font-size: 8px;
-    color: var(--text-dim);
-    font-family: 'Share Tech Mono', monospace;
-  }
+  .meter-container { display: flex; gap: 4px; align-items: flex-end; }
+  .meter-bar-wrapper { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .meter-bar-label { font-size: 8px; color: var(--text-dim); font-family: 'Share Tech Mono', monospace; }
   .meter-bar {
     width: 18px;
     height: 120px;
@@ -268,14 +233,6 @@
     left: 0;
     right: 0;
     transition: height 0.05s ease-out;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .meter-led-segment {
-    height: 2px;
-    width: 100%;
-    margin-bottom: 1px;
-    border-radius: 1px;
   }
   .meter-db {
     font-size: 9px;
@@ -284,10 +241,7 @@
     min-width: 36px;
     text-align: center;
   }
-  .meter-db-value {
-    color: var(--accent-green);
-    font-weight: 700;
-  }
+  .meter-db-value { color: var(--accent-green); font-weight: 700; }
 
   /* === PROCESSING CHAIN === */
   .processing-chain {
@@ -302,11 +256,7 @@
   .processing-chain::-webkit-scrollbar-track { background: var(--bg-darkest); }
   .processing-chain::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
 
-  .module-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
+  .module-row { display: flex; gap: 8px; flex-wrap: wrap; }
 
   .module {
     background: var(--bg-module);
@@ -314,7 +264,7 @@
     border-radius: 6px;
     overflow: hidden;
     flex: 1;
-    min-width: 280px;
+    min-width: 300px;
     transition: border-color 0.3s;
   }
   .module:hover { border-color: var(--border-light); }
@@ -354,16 +304,6 @@
     background: var(--accent-green);
     box-shadow: 0 0 6px var(--accent-green);
   }
-  .status-led.warning {
-    background: var(--accent-yellow);
-    box-shadow: 0 0 6px var(--accent-yellow);
-  }
-  .status-led.error {
-    background: var(--accent-red);
-    box-shadow: 0 0 6px var(--accent-red);
-  }
-
-  /* Power button */
   .power-btn {
     width: 20px;
     height: 20px;
@@ -383,8 +323,7 @@
   }
   .power-btn.on::after {
     content: '';
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--accent-green);
     box-shadow: 0 0 4px var(--accent-green);
@@ -401,105 +340,181 @@
     padding: 12px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
     align-items: flex-start;
   }
 
-  /* === KNOB CONTROL === */
-  .knob-control {
+  /* === FADER CONTROL (REEMPLAZA KNOB) === */
+  .fader-control {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
     cursor: pointer;
-  }
-  .knob {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #3a3a48, #1a1a25);
-    border: 2px solid #444;
+    width: 52px;
     position: relative;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255,255,255,0.05);
-    transition: border-color 0.2s;
   }
-  .knob:hover { border-color: #666; }
-  .knob-indicator {
-    position: absolute;
-    width: 3px;
-    height: 14px;
-    background: var(--accent-blue);
-    top: 4px;
-    left: 50%;
-    margin-left: -1.5px;
-    border-radius: 1px;
-    box-shadow: 0 0 4px var(--accent-blue);
-    transform-origin: bottom center;
-    transition: transform 0.05s;
-  }
-  .knob-value {
+  .fader-value-display {
     font-family: 'Share Tech Mono', monospace;
     font-size: 10px;
     color: var(--accent-blue);
     text-align: center;
+    padding: 2px 6px;
+    background: #0a0a10;
+    border-radius: 3px;
+    min-width: 48px;
+    border: 1px solid #333;
   }
-  .knob-label {
+  .fader-container {
+    width: 40px;
+    height: 120px;
+    background: linear-gradient(180deg, #1a1a25, #111);
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid #333;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+  }
+  .fader-track {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    transform: translateX(-50%);
+    background: var(--slider-track);
+    border-radius: 2px;
+  }
+  .fader-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, #00aaff, #0066cc);
+    border-radius: 2px;
+    transition: height 0.05s;
+  }
+  .fader-groove {
+    position: absolute;
+    left: 0; right: 0;
+    top: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  .fader-groove-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+  .fader-thumb {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 28px;
+    height: 14px;
+    background: linear-gradient(180deg, #ddd 0%, #999 50%, #888 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.3);
+    cursor: grab;
+    z-index: 5;
+    transition: background 0.1s;
+  }
+  .fader-thumb:hover {
+    background: linear-gradient(180deg, #eee 0%, #aaa 50%, #999 100%);
+  }
+  .fader-thumb:active { cursor: grabbing; }
+  .fader-thumb-line {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    right: 4px;
+    height: 1px;
+    background: #666;
+    transform: translateY(-50%);
+  }
+  .fader-label {
     font-size: 8px;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-align: center;
   }
+  .fader-scale {
+    position: absolute;
+    right: -16px;
+    top: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  .fader-scale-mark {
+    font-size: 6px;
+    color: var(--text-dim);
+    font-family: 'Share Tech Mono', monospace;
+  }
 
-  /* === SLIDER CONTROL === */
-  .slider-control {
+  /* Fader horizontal para ecualizador */
+  .fader-h {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    width: 40px;
+    width: 48px;
   }
-  .slider-track-vertical {
-    width: 6px;
+  .fader-h-container {
+    width: 8px;
     height: 80px;
-    background: var(--slider-track);
-    border-radius: 3px;
+    background: linear-gradient(180deg, #1a1a25, #111);
+    border-radius: 4px;
     position: relative;
-    cursor: pointer;
+    border: 1px solid #333;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
   }
-  .slider-fill-vertical {
+  .fader-h-track {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    transform: translateX(-50%);
+    background: var(--slider-track);
+    border-radius: 1px;
+  }
+  .fader-h-fill {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(0deg, var(--accent-blue), #0066cc);
-    border-radius: 3px;
+    background: linear-gradient(0deg, #00aaff, #0066cc);
+    border-radius: 1px;
     transition: height 0.05s;
   }
-  .slider-thumb {
+  .fader-h-thumb {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 50%);
-    width: 18px;
-    height: 8px;
+    width: 24px;
+    height: 12px;
     background: linear-gradient(180deg, #ddd, #999);
     border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     cursor: grab;
+    z-index: 5;
   }
-  .slider-thumb:active { cursor: grabbing; }
-  .slider-value {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 9px;
-    color: var(--accent-blue);
-    text-align: center;
-  }
-  .slider-label {
-    font-size: 8px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    text-align: center;
+  .fader-h-thumb:active { cursor: grabbing; }
+  .fader-h-thumb::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    right: 3px;
+    height: 1px;
+    background: #666;
   }
 
   /* === TOGGLE BUTTON === */
@@ -509,7 +524,6 @@
     border: 1px solid var(--border-color);
     color: var(--text-dim);
     font-size: 9px;
-    font-family: 'Roboto Condensed', sans-serif;
     cursor: pointer;
     border-radius: 3px;
     text-transform: uppercase;
@@ -532,21 +546,7 @@
     position: relative;
     overflow: hidden;
   }
-  .eq-canvas {
-    width: 100%;
-    height: 100%;
-  }
-  .eq-bands {
-    display: flex;
-    justify-content: space-around;
-    padding: 4px 0;
-  }
-  .eq-band-label {
-    font-size: 7px;
-    color: var(--text-dim);
-    text-align: center;
-    font-family: 'Share Tech Mono', monospace;
-  }
+  .eq-canvas { width: 100%; height: 100%; }
 
   /* === RIGHT PANEL === */
   .right-panel {
@@ -587,9 +587,7 @@
     flex: 1;
     overflow-y: auto;
   }
-  .info-group {
-    margin-bottom: 12px;
-  }
+  .info-group { margin-bottom: 12px; }
   .info-group-title {
     font-size: 8px;
     color: var(--text-dim);
@@ -599,12 +597,7 @@
     border-bottom: 1px solid #222;
     padding-bottom: 4px;
   }
-  .info-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 3px 0;
-    font-size: 10px;
-  }
+  .info-row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 10px; }
   .info-key { color: var(--text-secondary); }
   .info-val {
     color: var(--accent-blue);
@@ -646,13 +639,6 @@
     z-index: 10;
   }
   .resize-handle:hover { background: var(--accent-blue); }
-  .resize-handle-h {
-    height: 4px;
-    cursor: row-resize;
-    background: transparent;
-    transition: background 0.2s;
-  }
-  .resize-handle-h:hover { background: var(--accent-blue); }
 
   /* === BOTTOM BAR === */
   .bottom-bar {
@@ -667,19 +653,13 @@
     color: var(--text-dim);
     font-family: 'Share Tech Mono', monospace;
   }
-  .bottom-bar .status-item {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+  .bottom-bar .status-item { display: flex; align-items: center; gap: 4px; }
   .bottom-bar .dot {
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--accent-green);
     box-shadow: 0 0 4px var(--accent-green);
   }
-  .bottom-bar .dot.warn { background: var(--accent-yellow); box-shadow: 0 0 4px var(--accent-yellow); }
   .bottom-bar .spacer { flex: 1; }
 
   /* === TOOLBAR === */
@@ -699,7 +679,6 @@
     border: 1px solid transparent;
     color: var(--text-secondary);
     font-size: 10px;
-    font-family: 'Roboto Condensed', sans-serif;
     cursor: pointer;
     border-radius: 3px;
     transition: all 0.2s;
@@ -709,17 +688,12 @@
   }
   .toolbar-btn:hover { background: rgba(0,170,255,0.1); color: var(--accent-blue); border-color: rgba(0,170,255,0.2); }
   .toolbar-btn.active { background: rgba(0,170,255,0.15); color: var(--accent-blue); border-color: var(--accent-blue); }
-  .toolbar-sep {
-    width: 1px;
-    height: 20px;
-    background: var(--border-color);
-    margin: 0 4px;
-  }
+  .toolbar-sep { width: 1px; height: 20px; background: var(--border-color); margin: 0 4px; }
 
   /* === COMPRESSOR BAND DISPLAY === */
   .band-display {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
@@ -728,11 +702,11 @@
     background: #151520;
     border: 1px solid #2a2a35;
     border-radius: 4px;
-    padding: 8px;
+    padding: 10px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     min-width: 70px;
     transition: border-color 0.2s;
   }
@@ -750,52 +724,66 @@
   }
   .band-card-controls {
     display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
+    gap: 8px;
     justify-content: center;
   }
-  .mini-slider {
+  .band-fader {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2px;
   }
-  .mini-slider input[type="range"] {
-    writing-mode: vertical-lr;
-    direction: rtl;
-    height: 40px;
-    width: 6px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: var(--slider-track);
-    border-radius: 3px;
-    outline: none;
-  }
-  .mini-slider input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 14px;
-    height: 8px;
-    background: linear-gradient(180deg, #ddd, #999);
-    border-radius: 2px;
-    cursor: pointer;
-  }
-  .mini-slider-label {
-    font-size: 7px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-  }
-  .mini-slider-value {
+  .band-fader-value {
     font-size: 8px;
     color: var(--accent-blue);
     font-family: 'Share Tech Mono', monospace;
   }
-
-  /* Band Solo/Mute */
-  .band-actions {
-    display: flex;
-    gap: 4px;
-    margin-top: 4px;
+  .band-fader-container {
+    width: 8px;
+    height: 60px;
+    background: linear-gradient(180deg, #1a1a25, #111);
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid #333;
   }
+  .band-fader-track {
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    transform: translateX(-50%);
+    background: var(--slider-track);
+    border-radius: 1px;
+  }
+  .band-fader-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, #00aaff, #0066cc);
+    border-radius: 1px;
+  }
+  .band-fader-thumb {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 20px;
+    height: 8px;
+    background: linear-gradient(180deg, #ddd, #999);
+    border-radius: 1px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    cursor: grab;
+    z-index: 5;
+  }
+  .band-fader-thumb:active { cursor: grabbing; }
+  .band-fader-label {
+    font-size: 7px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .band-actions { display: flex; gap: 4px; margin-top: 4px; }
   .band-action-btn {
     width: 20px; height: 16px;
     border: 1px solid var(--border-color);
@@ -814,13 +802,7 @@
   .band-action-btn.mute.active { background: rgba(255,51,68,0.2); }
 
   /* === LIMITER DISPLAY === */
-  .limiter-row {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .limiter-row { display: flex; gap: 10px; width: 100%; justify-content: center; flex-wrap: wrap; }
   .limiter-card {
     background: #151520;
     border: 1px solid #2a2a35;
@@ -857,207 +839,7 @@
     transition: height 0.05s;
   }
 
-  /* === AGC DISPLAY === */
-  .agc-display {
-    display: flex;
-    gap: 12px;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .agc-param {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-  .agc-param-label {
-    font-size: 8px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .agc-param-value {
-    font-size: 11px;
-    color: var(--accent-blue);
-    font-family: 'Share Tech Mono', monospace;
-    font-weight: 700;
-  }
-
-  /* === DRAGGABLE WINDOWS === */
-  .draggable-panel {
-    position: absolute;
-    background: var(--bg-panel);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-    z-index: 100;
-    min-width: 200px;
-    min-height: 150px;
-    display: none;
-  }
-  .draggable-panel.visible { display: block; }
-  .draggable-panel .panel-titlebar {
-    height: 28px;
-    background: linear-gradient(180deg, #2a2a35, #1e1e28);
-    border-bottom: 1px solid var(--border-color);
-    border-radius: 6px 6px 0 0;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    cursor: move;
-    user-select: none;
-  }
-  .draggable-panel .panel-titlebar span {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 9px;
-    letter-spacing: 1px;
-    color: var(--accent-blue);
-  }
-  .draggable-panel .panel-close {
-    margin-left: auto;
-    width: 20px;
-    height: 20px;
-    border: none;
-    background: transparent;
-    color: #888;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-  }
-  .draggable-panel .panel-close:hover { background: #e44; color: #fff; }
-  .draggable-panel .panel-body {
-    padding: 12px;
-  }
-
-  /* === RESPONSIVE === */
-  @media (max-width: 1400px) {
-    .module { min-width: 240px; }
-  }
-  @media (max-width: 1200px) {
-    .left-panel { width: 180px; min-width: 180px; }
-    .right-panel { width: 160px; min-width: 160px; }
-    .module { min-width: 200px; }
-  }
-  @media (max-width: 900px) {
-    .left-panel { display: none; }
-    .right-panel { display: none; }
-    .module { min-width: 100%; }
-  }
-
-  /* === ANIMATIONS === */
-  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
-  @keyframes glow { 0%,100% { box-shadow: 0 0 5px var(--accent-blue); } 50% { box-shadow: 0 0 15px var(--accent-blue); } }
-  .processing .module.active-module { animation: glow 2s infinite; }
-
-  /* === CONTEXT MENU === */
-  .context-menu {
-    position: fixed;
-    background: var(--bg-panel);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-    z-index: 10000;
-    display: none;
-    min-width: 160px;
-  }
-  .context-menu.visible { display: block; }
-  .context-menu-item {
-    padding: 6px 12px;
-    font-size: 11px;
-    color: var(--text-primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background 0.1s;
-  }
-  .context-menu-item:hover { background: rgba(0,170,255,0.15); }
-  .context-menu-sep { height: 1px; background: var(--border-color); margin: 2px 0; }
-
-  /* === MODAL === */
-  .modal-overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 5000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-  }
-  .modal-overlay.visible { display: flex; }
-  .modal {
-    background: var(--bg-panel);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 24px;
-    min-width: 300px;
-    max-width: 500px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-  }
-  .modal-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
-    color: var(--accent-blue);
-    letter-spacing: 2px;
-    margin-bottom: 16px;
-  }
-  .modal-actions {
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
-    margin-top: 16px;
-  }
-  .modal-btn {
-    padding: 6px 16px;
-    border: 1px solid var(--border-color);
-    background: var(--bg-panel-light);
-    color: var(--text-primary);
-    font-size: 11px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s;
-  }
-  .modal-btn.primary {
-    background: var(--accent-blue);
-    border-color: var(--accent-blue);
-    color: #fff;
-  }
-  .modal-btn:hover { opacity: 0.8; }
-
-  /* === SELECT STYLING === */
-  select {
-    background: var(--bg-panel-light);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 4px 8px;
-    font-size: 10px;
-    border-radius: 3px;
-    font-family: 'Roboto Condensed', sans-serif;
-    cursor: pointer;
-  }
-  select:focus { outline: none; border-color: var(--accent-blue); }
-
-  /* === TOOLTIP === */
-  .tooltip {
-    position: fixed;
-    background: #1a1a22;
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 4px 8px;
-    font-size: 10px;
-    border-radius: 3px;
-    z-index: 10001;
-    pointer-events: none;
-    display: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-  }
-  .tooltip.visible { display: block; }
-
-  /* === SPECTRUM DISPLAY === */
+  /* === SPECTRUM & PHASE === */
   .spectrum-container {
     width: 100%;
     height: 60px;
@@ -1066,12 +848,7 @@
     border-radius: 4px;
     overflow: hidden;
   }
-  .spectrum-canvas {
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Phase meter */
+  .spectrum-canvas { width: 100%; height: 100%; }
   .phase-meter {
     width: 60px;
     height: 60px;
@@ -1081,14 +858,9 @@
     position: relative;
     overflow: hidden;
   }
-  .phase-meter canvas {
-    width: 100%;
-    height: 100%;
-  }
+  .phase-meter canvas { width: 100%; height: 100%; }
 
   /* === ADVANCED MODULES === */
-  
-  /* LUFS Meter */
   .lufs-display {
     display: flex;
     align-items: center;
@@ -1124,12 +896,6 @@
     transition: width 0.1s;
     width: 50%;
   }
-  .lufs-markers {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    display: flex;
-    pointer-events: none;
-  }
   .lufs-marker {
     position: absolute;
     width: 2px;
@@ -1146,11 +912,10 @@
     font-family: 'Share Tech Mono', monospace;
   }
 
-  /* Stereo Imager */
   .imager-controls {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 12px;
     width: 100%;
   }
   .imager-band {
@@ -1166,17 +931,12 @@
     margin-bottom: 6px;
     text-transform: uppercase;
   }
-  .imager-knob {
-    width: 40px; height: 40px;
-    margin: 0 auto 4px;
-  }
   .imager-value {
     font-size: 9px;
     color: var(--accent-blue);
     font-family: 'Share Tech Mono', monospace;
   }
 
-  /* De-esser */
   .deesser-display {
     display: flex;
     gap: 16px;
@@ -1210,7 +970,6 @@
     cursor: ew-resize;
   }
 
-  /* A/B Comparison */
   .ab-compare {
     display: flex;
     gap: 8px;
@@ -1254,45 +1013,6 @@
     letter-spacing: 0.5px;
   }
 
-  /* Voice Ducking */
-  .ducking-controls {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    width: 100%;
-  }
-  .ducking-param {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-  .ducking-slider {
-    width: 100%;
-    height: 4px;
-    background: var(--slider-track);
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
-  }
-  .ducking-fill {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    background: var(--accent-blue);
-    border-radius: 2px;
-  }
-  .ducking-thumb {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 14px; height: 14px;
-    background: #ddd;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    cursor: grab;
-  }
-
-  /* Macro Recorder */
   .macro-panel {
     background: #151520;
     border: 1px solid var(--border-color);
@@ -1314,11 +1034,7 @@
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 1px;
   }
-  .macro-controls {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-  }
+  .macro-controls { display: flex; gap: 4px; flex-wrap: wrap; }
   .macro-btn {
     padding: 4px 8px;
     border: 1px solid var(--border-color);
@@ -1332,10 +1048,7 @@
     gap: 4px;
   }
   .macro-btn.record { border-color: var(--accent-red); color: var(--accent-red); }
-  .macro-btn.record.active { 
-    background: rgba(255,51,68,0.15); 
-    animation: pulse 1s infinite;
-  }
+  .macro-btn.record.active { background: rgba(255,51,68,0.15); animation: pulse 1s infinite; }
   .macro-btn.play { border-color: var(--accent-green); color: var(--accent-green); }
   .macro-timeline {
     height: 30px;
@@ -1355,7 +1068,6 @@
     transform: translateX(-50%);
   }
 
-  /* Network Sync */
   .network-status {
     display: flex;
     align-items: center;
@@ -1371,16 +1083,8 @@
     background: var(--text-dim);
     transition: all 0.3s;
   }
-  .network-dot.connected { 
-    background: var(--accent-green); 
-    box-shadow: 0 0 6px var(--accent-green); 
-  }
-  .network-dot.syncing { 
-    background: var(--accent-yellow); 
-    animation: pulse 0.5s infinite;
-  }
+  .network-dot.connected { background: var(--accent-green); box-shadow: 0 0 6px var(--accent-green); }
 
-  /* Dynamic EQ */
   .dyn-eq-band {
     display: flex;
     align-items: center;
@@ -1412,7 +1116,6 @@
   }
   .dyn-eq-info.active { color: var(--accent-green); }
 
-  /* True Peak Indicator */
   .truepeak-badge {
     display: inline-flex;
     align-items: center;
@@ -1432,7 +1135,6 @@
     color: var(--accent-green);
   }
 
-  /* Keyboard Shortcuts Panel */
   .shortcuts-panel {
     position: fixed;
     bottom: 24px;
@@ -1480,7 +1182,6 @@
     color: var(--accent-blue);
   }
 
-  /* Floating Analyzer */
   .floating-analyzer {
     position: fixed;
     top: 50%;
@@ -1529,6 +1230,95 @@
     background: #0a0a10;
     border-radius: 4px;
   }
+
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+
+  .context-menu {
+    position: fixed;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    z-index: 10000;
+    display: none;
+    min-width: 160px;
+  }
+  .context-menu.visible { display: block; }
+  .context-menu-item {
+    padding: 6px 12px;
+    font-size: 11px;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.1s;
+  }
+  .context-menu-item:hover { background: rgba(0,170,255,0.15); }
+  .context-menu-sep { height: 1px; background: var(--border-color); margin: 2px 0; }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.visible { display: flex; }
+  .modal {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  }
+  .modal-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: var(--accent-blue);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
+  .modal-btn {
+    padding: 6px 16px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-panel-light);
+    color: var(--text-primary);
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .modal-btn.primary { background: var(--accent-blue); border-color: var(--accent-blue); color: #fff; }
+  .modal-btn:hover { opacity: 0.8; }
+
+  select {
+    background: var(--bg-panel-light);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 4px 8px;
+    font-size: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  select:focus { outline: none; border-color: var(--accent-blue); }
+
+  @media (max-width: 1400px) { .module { min-width: 260px; } }
+  @media (max-width: 1200px) {
+    .left-panel { width: 180px; min-width: 180px; }
+    .right-panel { width: 160px; min-width: 160px; }
+    .module { min-width: 220px; }
+  }
+  @media (max-width: 900px) {
+    .left-panel { display: none; }
+    .right-panel { display: none; }
+    .module { min-width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -1548,7 +1338,7 @@
 <!-- MAIN LAYOUT -->
 <div class="main-container">
 
-  <!-- LEFT PANEL - PRESETS -->
+  <!-- LEFT PANEL -->
   <div class="left-panel" id="leftPanel">
     <div class="left-panel-header">
       <span>PRESETS</span>
@@ -1631,148 +1421,105 @@
       </div>
     </div>
 
-    <!-- METERS SECTION -->
+    <!-- METERS -->
     <div class="meters-section" id="metersSection">
-      <!-- INPUT METER -->
       <div class="meter-group">
         <div class="meter-label">INPUT</div>
         <div class="meter-container">
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterInputL">
-              <div class="meter-led" id="meterInputLFill"></div>
-            </div>
+            <div class="meter-bar" id="meterInputL"><div class="meter-led" id="meterInputLFill"></div></div>
             <div class="meter-bar-label">L</div>
             <div class="meter-db" id="meterInputLVal">-∞ dB</div>
           </div>
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterInputR">
-              <div class="meter-led" id="meterInputRFill"></div>
-            </div>
+            <div class="meter-bar" id="meterInputR"><div class="meter-led" id="meterInputRFill"></div></div>
             <div class="meter-bar-label">R</div>
             <div class="meter-db" id="meterInputRVal">-∞ dB</div>
           </div>
         </div>
       </div>
-
-      <!-- AGC METER -->
       <div class="meter-group">
         <div class="meter-label">AGC</div>
         <div class="meter-container">
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterAGCL">
-              <div class="meter-led" id="meterAGCLFill"></div>
-            </div>
+            <div class="meter-bar" id="meterAGCL"><div class="meter-led" id="meterAGCLFill"></div></div>
             <div class="meter-bar-label">L</div>
             <div class="meter-db" id="meterAGCLVal">-∞ dB</div>
           </div>
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterAGCR">
-              <div class="meter-led" id="meterAGCRFill"></div>
-            </div>
+            <div class="meter-bar" id="meterAGCR"><div class="meter-led" id="meterAGCRFill"></div></div>
             <div class="meter-bar-label">R</div>
             <div class="meter-db" id="meterAGCRVal">-∞ dB</div>
           </div>
         </div>
       </div>
-
-      <!-- COMPRESSOR METER -->
       <div class="meter-group">
         <div class="meter-label">COMPRESSOR</div>
         <div class="meter-container">
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterCompL">
-              <div class="meter-led" id="meterCompLFill"></div>
-            </div>
+            <div class="meter-bar" id="meterCompL"><div class="meter-led" id="meterCompLFill"></div></div>
             <div class="meter-bar-label">L</div>
             <div class="meter-db" id="meterCompLVal">-∞ dB</div>
           </div>
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterCompR">
-              <div class="meter-led" id="meterCompRFill"></div>
-            </div>
+            <div class="meter-bar" id="meterCompR"><div class="meter-led" id="meterCompRFill"></div></div>
             <div class="meter-bar-label">R</div>
             <div class="meter-db" id="meterCompRVal">-∞ dB</div>
           </div>
         </div>
       </div>
-
-      <!-- EQ METER -->
       <div class="meter-group">
         <div class="meter-label">EQ</div>
         <div class="meter-container">
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterEQL">
-              <div class="meter-led" id="meterEQLFill"></div>
-            </div>
+            <div class="meter-bar" id="meterEQL"><div class="meter-led" id="meterEQLFill"></div></div>
             <div class="meter-bar-label">L</div>
             <div class="meter-db" id="meterEQLVal">-∞ dB</div>
           </div>
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterEQR">
-              <div class="meter-led" id="meterEQRFill"></div>
-            </div>
+            <div class="meter-bar" id="meterEQR"><div class="meter-led" id="meterEQRFill"></div></div>
             <div class="meter-bar-label">R</div>
             <div class="meter-db" id="meterEQRVal">-∞ dB</div>
           </div>
         </div>
       </div>
-
-      <!-- LIMITER METER -->
       <div class="meter-group">
         <div class="meter-label">LIMITER</div>
         <div class="meter-container">
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterLimL">
-              <div class="meter-led" id="meterLimLFill"></div>
-            </div>
+            <div class="meter-bar" id="meterLimL"><div class="meter-led" id="meterLimLFill"></div></div>
             <div class="meter-bar-label">L</div>
             <div class="meter-db" id="meterLimLVal">-∞ dB</div>
           </div>
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterLimR">
-              <div class="meter-led" id="meterLimRFill"></div>
-            </div>
+            <div class="meter-bar" id="meterLimR"><div class="meter-led" id="meterLimRFill"></div></div>
             <div class="meter-bar-label">R</div>
             <div class="meter-db" id="meterLimRVal">-∞ dB</div>
           </div>
         </div>
       </div>
-
-      <!-- OUTPUT METER -->
       <div class="meter-group">
         <div class="meter-label">OUTPUT</div>
         <div class="meter-container">
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterOutL">
-              <div class="meter-led" id="meterOutLFill"></div>
-            </div>
+            <div class="meter-bar" id="meterOutL"><div class="meter-led" id="meterOutLFill"></div></div>
             <div class="meter-bar-label">L</div>
             <div class="meter-db" id="meterOutLVal">-∞ dB</div>
           </div>
           <div class="meter-bar-wrapper">
-            <div class="meter-bar" id="meterOutR">
-              <div class="meter-led" id="meterOutRFill"></div>
-            </div>
+            <div class="meter-bar" id="meterOutR"><div class="meter-led" id="meterOutRFill"></div></div>
             <div class="meter-bar-label">R</div>
             <div class="meter-db" id="meterOutRVal">-∞ dB</div>
           </div>
         </div>
       </div>
-
-      <!-- PHASE METER -->
       <div class="meter-group">
         <div class="meter-label">PHASE</div>
-        <div class="phase-meter">
-          <canvas id="phaseCanvas" width="60" height="60"></canvas>
-        </div>
+        <div class="phase-meter"><canvas id="phaseCanvas" width="60" height="60"></canvas></div>
       </div>
-
-      <!-- SPECTRUM -->
       <div class="meter-group" style="flex:2; min-width: 150px;">
         <div class="meter-label">SPECTRUM</div>
-        <div class="spectrum-container">
-          <canvas id="spectrumCanvas" class="spectrum-canvas"></canvas>
-        </div>
+        <div class="spectrum-container"><canvas id="spectrumCanvas" class="spectrum-canvas"></canvas></div>
       </div>
     </div>
 
@@ -1791,28 +1538,55 @@
             </div>
           </div>
           <div class="module-body">
-            <div class="knob-control" onmousedown="startKnob(event,'inputGain')">
-              <div class="knob" id="knobInputGain">
-                <div class="knob-indicator" id="knobInputGainInd"></div>
+            <!-- Fader Gain -->
+            <div class="fader-control" data-fader="inputGain">
+              <div class="fader-value-display" id="valInputGain">0.0 dB</div>
+              <div class="fader-container" id="faderInputGain">
+                <div class="fader-track"><div class="fader-fill" id="faderInputGainFill" style="height:50%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderInputGainThumb" style="bottom: 50%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">+24</div>
+                  <div class="fader-scale-mark">0</div>
+                  <div class="fader-scale-mark">-24</div>
+                </div>
               </div>
-              <div class="knob-value" id="valInputGain">0.0 dB</div>
-              <div class="knob-label">Gain</div>
+              <div class="fader-label">Gain</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'inputTrim')">
-              <div class="knob" id="knobInputTrim">
-                <div class="knob-indicator" id="knobInputTrimInd"></div>
+            
+            <!-- Fader Trim -->
+            <div class="fader-control" data-fader="inputTrim">
+              <div class="fader-value-display" id="valInputTrim">0.0 dB</div>
+              <div class="fader-container" id="faderInputTrim">
+                <div class="fader-track"><div class="fader-fill" id="faderInputTrimFill" style="height:50%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderInputTrimThumb" style="bottom: 50%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">+12</div>
+                  <div class="fader-scale-mark">0</div>
+                  <div class="fader-scale-mark">-12</div>
+                </div>
               </div>
-              <div class="knob-value" id="valInputTrim">0.0 dB</div>
-              <div class="knob-label">Trim</div>
+              <div class="fader-label">Trim</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'inputPhase')">
-              <div class="knob" id="knobInputPhase">
-                <div class="knob-indicator" id="knobInputPhaseInd"></div>
-              </div>
-              <div class="knob-value" id="valInputPhase">0°</div>
-              <div class="knob-label">Phase</div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
+            
+            <div style="display:flex;flex-direction:column;gap:4px;align-items:center; justify-content: center;">
               <div class="toggle-btn on" id="btnInputMono" onclick="toggleMono()">MONO</div>
               <div class="toggle-btn" id="btnInputMute" onclick="toggleMute()">MUTE</div>
               <div class="toggle-btn" id="btnInputPhaseInv" onclick="togglePhaseInv()">PHASE ∅</div>
@@ -1830,42 +1604,122 @@
             </div>
           </div>
           <div class="module-body">
-            <div class="knob-control" onmousedown="startKnob(event,'agcTarget')">
-              <div class="knob" id="knobAgcTarget">
-                <div class="knob-indicator" id="knobAgcTargetInd"></div>
+            <div class="fader-control" data-fader="agcTarget">
+              <div class="fader-value-display" id="valAgcTarget">-20 dB</div>
+              <div class="fader-container" id="faderAgcTarget">
+                <div class="fader-track"><div class="fader-fill" id="faderAgcTargetFill" style="height:50%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderAgcTargetThumb" style="bottom: 50%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">-10</div>
+                  <div class="fader-scale-mark">-30</div>
+                  <div class="fader-scale-mark">-50</div>
+                </div>
               </div>
-              <div class="knob-value" id="valAgcTarget">-20 dB</div>
-              <div class="knob-label">Target</div>
+              <div class="fader-label">Target</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'agcSpeed')">
-              <div class="knob" id="knobAgcSpeed">
-                <div class="knob-indicator" id="knobAgcSpeedInd"></div>
+            
+            <div class="fader-control" data-fader="agcSpeed">
+              <div class="fader-value-display" id="valAgcSpeed">Med</div>
+              <div class="fader-container" id="faderAgcSpeed">
+                <div class="fader-track"><div class="fader-fill" id="faderAgcSpeedFill" style="height:50%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderAgcSpeedThumb" style="bottom: 50%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">Fast</div>
+                  <div class="fader-scale-mark">Med</div>
+                  <div class="fader-scale-mark">Slow</div>
+                </div>
               </div>
-              <div class="knob-value" id="valAgcSpeed">Med</div>
-              <div class="knob-label">Speed</div>
+              <div class="fader-label">Speed</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'agcRange')">
-              <div class="knob" id="knobAgcRange">
-                <div class="knob-indicator" id="knobAgcRangeInd"></div>
+            
+            <div class="fader-control" data-fader="agcRange">
+              <div class="fader-value-display" id="valAgcRange">30 dB</div>
+              <div class="fader-container" id="faderAgcRange">
+                <div class="fader-track"><div class="fader-fill" id="faderAgcRangeFill" style="height:60%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderAgcRangeThumb" style="bottom: 60%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">60</div>
+                  <div class="fader-scale-mark">30</div>
+                  <div class="fader-scale-mark">0</div>
+                </div>
               </div>
-              <div class="knob-value" id="valAgcRange">30 dB</div>
-              <div class="knob-label">Range</div>
+              <div class="fader-label">Range</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'agcAttack')">
-              <div class="knob" id="knobAgcAttack">
-                <div class="knob-indicator" id="knobAgcAttackInd"></div>
+            
+            <div class="fader-control" data-fader="agcAttack">
+              <div class="fader-value-display" id="valAgcAttack">50 ms</div>
+              <div class="fader-container" id="faderAgcAttack">
+                <div class="fader-track"><div class="fader-fill" id="faderAgcAttackFill" style="height:50%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderAgcAttackThumb" style="bottom: 50%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">200</div>
+                  <div class="fader-scale-mark">100</div>
+                  <div class="fader-scale-mark">0</div>
+                </div>
               </div>
-              <div class="knob-value" id="valAgcAttack">50 ms</div>
-              <div class="knob-label">Attack</div>
+              <div class="fader-label">Attack</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'agcRelease')">
-              <div class="knob" id="knobAgcRelease">
-                <div class="knob-indicator" id="knobAgcReleaseInd"></div>
+            
+            <div class="fader-control" data-fader="agcRelease">
+              <div class="fader-value-display" id="valAgcRelease">200 ms</div>
+              <div class="fader-container" id="faderAgcRelease">
+                <div class="fader-track"><div class="fader-fill" id="faderAgcReleaseFill" style="height:40%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderAgcReleaseThumb" style="bottom: 40%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">500</div>
+                  <div class="fader-scale-mark">250</div>
+                  <div class="fader-scale-mark">0</div>
+                </div>
               </div>
-              <div class="knob-value" id="valAgcRelease">200 ms</div>
-              <div class="knob-label">Release</div>
+              <div class="fader-label">Release</div>
             </div>
-            <div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
+            
+            <div style="display:flex;flex-direction:column;gap:4px;align-items:center; justify-content: center;">
               <div class="toggle-btn on" id="btnAgcOn" onclick="toggleAgc()">AGC ON</div>
               <div class="toggle-btn" id="btnAgcAuto" onclick="toggleAgcAuto()">AUTO</div>
             </div>
@@ -1884,36 +1738,51 @@
           </div>
         </div>
         <div class="module-body">
-          <div class="band-display" id="compBands">
+          <div class="band-display" id="compBandsDisplay">
             <!-- B1 -->
             <div class="band-card active" id="band1">
               <div class="band-card-title">B1</div>
               <div class="band-card-freq">32-120 Hz</div>
               <div class="band-card-controls">
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b1Thresh">-24</div>
-                  <input type="range" min="-60" max="0" value="-24" id="sliderB1Thresh" oninput="updateBandParam(1,'threshold',this.value)">
-                  <div class="mini-slider-label">Thresh</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b1Thresh">-24</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b1ThreshFill" style="height:40%"></div></div>
+                    <div class="band-fader-thumb" id="b1ThreshThumb" style="bottom: 40%"></div>
+                  </div>
+                  <div class="band-fader-label">Thresh</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b1Ratio">4:1</div>
-                  <input type="range" min="1" max="20" value="4" id="sliderB1Ratio" oninput="updateBandParam(1,'ratio',this.value)">
-                  <div class="mini-slider-label">Ratio</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b1Ratio">4:1</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b1RatioFill" style="height:20%"></div></div>
+                    <div class="band-fader-thumb" id="b1RatioThumb" style="bottom: 20%"></div>
+                  </div>
+                  <div class="band-fader-label">Ratio</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b1Attack">10</div>
-                  <input type="range" min="1" max="100" value="10" id="sliderB1Attack" oninput="updateBandParam(1,'attack',this.value)">
-                  <div class="mini-slider-label">Atk</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b1Attack">10</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b1AttackFill" style="height:10%"></div></div>
+                    <div class="band-fader-thumb" id="b1AttackThumb" style="bottom: 10%"></div>
+                  </div>
+                  <div class="band-fader-label">Atk</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b1Release">100</div>
-                  <input type="range" min="10" max="1000" value="100" id="sliderB1Release" oninput="updateBandParam(1,'release',this.value)">
-                  <div class="mini-slider-label">Rel</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b1Release">100</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b1ReleaseFill" style="height:10%"></div></div>
+                    <div class="band-fader-thumb" id="b1ReleaseThumb" style="bottom: 10%"></div>
+                  </div>
+                  <div class="band-fader-label">Rel</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b1Makeup">6</div>
-                  <input type="range" min="0" max="24" value="6" id="sliderB1Makeup" oninput="updateBandParam(1,'makeup',this.value)">
-                  <div class="mini-slider-label">Makeup</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b1Makeup">6</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b1MakeupFill" style="height:25%"></div></div>
+                    <div class="band-fader-thumb" id="b1MakeupThumb" style="bottom: 25%"></div>
+                  </div>
+                  <div class="band-fader-label">Mkup</div>
                 </div>
               </div>
               <div class="band-actions">
@@ -1926,30 +1795,45 @@
               <div class="band-card-title">B2</div>
               <div class="band-card-freq">120-400 Hz</div>
               <div class="band-card-controls">
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b2Thresh">-20</div>
-                  <input type="range" min="-60" max="0" value="-20" id="sliderB2Thresh" oninput="updateBandParam(2,'threshold',this.value)">
-                  <div class="mini-slider-label">Thresh</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b2Thresh">-20</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b2ThreshFill" style="height:50%"></div></div>
+                    <div class="band-fader-thumb" id="b2ThreshThumb" style="bottom: 50%"></div>
+                  </div>
+                  <div class="band-fader-label">Thresh</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b2Ratio">3:1</div>
-                  <input type="range" min="1" max="20" value="3" id="sliderB2Ratio" oninput="updateBandParam(2,'ratio',this.value)">
-                  <div class="mini-slider-label">Ratio</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b2Ratio">3:1</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b2RatioFill" style="height:15%"></div></div>
+                    <div class="band-fader-thumb" id="b2RatioThumb" style="bottom: 15%"></div>
+                  </div>
+                  <div class="band-fader-label">Ratio</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b2Attack">8</div>
-                  <input type="range" min="1" max="100" value="8" id="sliderB2Attack" oninput="updateBandParam(2,'attack',this.value)">
-                  <div class="mini-slider-label">Atk</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b2Attack">8</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b2AttackFill" style="height:8%"></div></div>
+                    <div class="band-fader-thumb" id="b2AttackThumb" style="bottom: 8%"></div>
+                  </div>
+                  <div class="band-fader-label">Atk</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b2Release">120</div>
-                  <input type="range" min="10" max="1000" value="120" id="sliderB2Release" oninput="updateBandParam(2,'release',this.value)">
-                  <div class="mini-slider-label">Rel</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b2Release">120</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b2ReleaseFill" style="height:12%"></div></div>
+                    <div class="band-fader-thumb" id="b2ReleaseThumb" style="bottom: 12%"></div>
+                  </div>
+                  <div class="band-fader-label">Rel</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b2Makeup">4</div>
-                  <input type="range" min="0" max="24" value="4" id="sliderB2Makeup" oninput="updateBandParam(2,'makeup',this.value)">
-                  <div class="mini-slider-label">Makeup</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b2Makeup">4</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b2MakeupFill" style="height:17%"></div></div>
+                    <div class="band-fader-thumb" id="b2MakeupThumb" style="bottom: 17%"></div>
+                  </div>
+                  <div class="band-fader-label">Mkup</div>
                 </div>
               </div>
               <div class="band-actions">
@@ -1960,32 +1844,47 @@
             <!-- B3 -->
             <div class="band-card active" id="band3">
               <div class="band-card-title">B3</div>
-              <div class="band-card-freq">400-1.5k Hz</div>
+              <div class="band-card-freq">400-1.5k</div>
               <div class="band-card-controls">
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b3Thresh">-18</div>
-                  <input type="range" min="-60" max="0" value="-18" id="sliderB3Thresh" oninput="updateBandParam(3,'threshold',this.value)">
-                  <div class="mini-slider-label">Thresh</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b3Thresh">-18</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b3ThreshFill" style="height:55%"></div></div>
+                    <div class="band-fader-thumb" id="b3ThreshThumb" style="bottom: 55%"></div>
+                  </div>
+                  <div class="band-fader-label">Thresh</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b3Ratio">3.5:1</div>
-                  <input type="range" min="1" max="20" value="3.5" step="0.5" id="sliderB3Ratio" oninput="updateBandParam(3,'ratio',this.value)">
-                  <div class="mini-slider-label">Ratio</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b3Ratio">3.5:1</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b3RatioFill" style="height:17%"></div></div>
+                    <div class="band-fader-thumb" id="b3RatioThumb" style="bottom: 17%"></div>
+                  </div>
+                  <div class="band-fader-label">Ratio</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b3Attack">5</div>
-                  <input type="range" min="1" max="100" value="5" id="sliderB3Attack" oninput="updateBandParam(3,'attack',this.value)">
-                  <div class="mini-slider-label">Atk</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b3Attack">5</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b3AttackFill" style="height:5%"></div></div>
+                    <div class="band-fader-thumb" id="b3AttackThumb" style="bottom: 5%"></div>
+                  </div>
+                  <div class="band-fader-label">Atk</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b3Release">150</div>
-                  <input type="range" min="10" max="1000" value="150" id="sliderB3Release" oninput="updateBandParam(3,'release',this.value)">
-                  <div class="mini-slider-label">Rel</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b3Release">150</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b3ReleaseFill" style="height:15%"></div></div>
+                    <div class="band-fader-thumb" id="b3ReleaseThumb" style="bottom: 15%"></div>
+                  </div>
+                  <div class="band-fader-label">Rel</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b3Makeup">5</div>
-                  <input type="range" min="0" max="24" value="5" id="sliderB3Makeup" oninput="updateBandParam(3,'makeup',this.value)">
-                  <div class="mini-slider-label">Makeup</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b3Makeup">5</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b3MakeupFill" style="height:21%"></div></div>
+                    <div class="band-fader-thumb" id="b3MakeupThumb" style="bottom: 21%"></div>
+                  </div>
+                  <div class="band-fader-label">Mkup</div>
                 </div>
               </div>
               <div class="band-actions">
@@ -1996,32 +1895,47 @@
             <!-- B4 -->
             <div class="band-card active" id="band4">
               <div class="band-card-title">B4</div>
-              <div class="band-card-freq">1.5k-5k Hz</div>
+              <div class="band-card-freq">1.5k-5k</div>
               <div class="band-card-controls">
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b4Thresh">-16</div>
-                  <input type="range" min="-60" max="0" value="-16" id="sliderB4Thresh" oninput="updateBandParam(4,'threshold',this.value)">
-                  <div class="mini-slider-label">Thresh</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b4Thresh">-16</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b4ThreshFill" style="height:60%"></div></div>
+                    <div class="band-fader-thumb" id="b4ThreshThumb" style="bottom: 60%"></div>
+                  </div>
+                  <div class="band-fader-label">Thresh</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b4Ratio">3:1</div>
-                  <input type="range" min="1" max="20" value="3" id="sliderB4Ratio" oninput="updateBandParam(4,'ratio',this.value)">
-                  <div class="mini-slider-label">Ratio</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b4Ratio">3:1</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b4RatioFill" style="height:15%"></div></div>
+                    <div class="band-fader-thumb" id="b4RatioThumb" style="bottom: 15%"></div>
+                  </div>
+                  <div class="band-fader-label">Ratio</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b4Attack">3</div>
-                  <input type="range" min="1" max="100" value="3" id="sliderB4Attack" oninput="updateBandParam(4,'attack',this.value)">
-                  <div class="mini-slider-label">Atk</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b4Attack">3</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b4AttackFill" style="height:3%"></div></div>
+                    <div class="band-fader-thumb" id="b4AttackThumb" style="bottom: 3%"></div>
+                  </div>
+                  <div class="band-fader-label">Atk</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b4Release">180</div>
-                  <input type="range" min="10" max="1000" value="180" id="sliderB4Release" oninput="updateBandParam(4,'release',this.value)">
-                  <div class="mini-slider-label">Rel</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b4Release">180</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b4ReleaseFill" style="height:18%"></div></div>
+                    <div class="band-fader-thumb" id="b4ReleaseThumb" style="bottom: 18%"></div>
+                  </div>
+                  <div class="band-fader-label">Rel</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b4Makeup">4</div>
-                  <input type="range" min="0" max="24" value="4" id="sliderB4Makeup" oninput="updateBandParam(4,'makeup',this.value)">
-                  <div class="mini-slider-label">Makeup</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b4Makeup">4</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b4MakeupFill" style="height:17%"></div></div>
+                    <div class="band-fader-thumb" id="b4MakeupThumb" style="bottom: 17%"></div>
+                  </div>
+                  <div class="band-fader-label">Mkup</div>
                 </div>
               </div>
               <div class="band-actions">
@@ -2032,32 +1946,47 @@
             <!-- B5 -->
             <div class="band-card active" id="band5">
               <div class="band-card-title">B5</div>
-              <div class="band-card-freq">5k-16k Hz</div>
+              <div class="band-card-freq">5k-16k</div>
               <div class="band-card-controls">
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b5Thresh">-14</div>
-                  <input type="range" min="-60" max="0" value="-14" id="sliderB5Thresh" oninput="updateBandParam(5,'threshold',this.value)">
-                  <div class="mini-slider-label">Thresh</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b5Thresh">-14</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b5ThreshFill" style="height:65%"></div></div>
+                    <div class="band-fader-thumb" id="b5ThreshThumb" style="bottom: 65%"></div>
+                  </div>
+                  <div class="band-fader-label">Thresh</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b5Ratio">2.5:1</div>
-                  <input type="range" min="1" max="20" value="2.5" step="0.5" id="sliderB5Ratio" oninput="updateBandParam(5,'ratio',this.value)">
-                  <div class="mini-slider-label">Ratio</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b5Ratio">2.5:1</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b5RatioFill" style="height:12%"></div></div>
+                    <div class="band-fader-thumb" id="b5RatioThumb" style="bottom: 12%"></div>
+                  </div>
+                  <div class="band-fader-label">Ratio</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b5Attack">2</div>
-                  <input type="range" min="1" max="100" value="2" id="sliderB5Attack" oninput="updateBandParam(5,'attack',this.value)">
-                  <div class="mini-slider-label">Atk</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b5Attack">2</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b5AttackFill" style="height:2%"></div></div>
+                    <div class="band-fader-thumb" id="b5AttackThumb" style="bottom: 2%"></div>
+                  </div>
+                  <div class="band-fader-label">Atk</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b5Release">200</div>
-                  <input type="range" min="10" max="1000" value="200" id="sliderB5Release" oninput="updateBandParam(5,'release',this.value)">
-                  <div class="mini-slider-label">Rel</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b5Release">200</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b5ReleaseFill" style="height:20%"></div></div>
+                    <div class="band-fader-thumb" id="b5ReleaseThumb" style="bottom: 20%"></div>
+                  </div>
+                  <div class="band-fader-label">Rel</div>
                 </div>
-                <div class="mini-slider">
-                  <div class="mini-slider-value" id="b5Makeup">3</div>
-                  <input type="range" min="0" max="24" value="3" id="sliderB5Makeup" oninput="updateBandParam(5,'makeup',this.value)">
-                  <div class="mini-slider-label">Makeup</div>
+                <div class="band-fader">
+                  <div class="band-fader-value" id="b5Makeup">3</div>
+                  <div class="band-fader-container">
+                    <div class="band-fader-track"><div class="band-fader-fill" id="b5MakeupFill" style="height:12%"></div></div>
+                    <div class="band-fader-thumb" id="b5MakeupThumb" style="bottom: 12%"></div>
+                  </div>
+                  <div class="band-fader-label">Mkup</div>
                 </div>
               </div>
               <div class="band-actions">
@@ -2085,40 +2014,58 @@
             <div class="eq-display">
               <canvas id="eqCanvas" class="eq-canvas"></canvas>
             </div>
-            <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
-              <div class="knob-control" onmousedown="startKnob(event,'eq1')">
-                <div class="knob" id="knobEQ1"><div class="knob-indicator" id="knobEQ1Ind"></div></div>
-                <div class="knob-value" id="valEQ1">0 dB</div>
-                <div class="knob-label">32 Hz</div>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+              <div class="fader-h" data-fader="eq1">
+                <div class="fader-value-display" id="valEQ1" style="font-size:8px; min-width: auto; padding: 1px 4px;">0 dB</div>
+                <div class="fader-h-container" id="faderEQ1">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderEQ1Fill" style="height:50%"></div></div>
+                  <div class="fader-h-thumb" id="faderEQ1Thumb" style="bottom: 50%"></div>
+                </div>
+                <div class="fader-label" style="font-size:7px;">32 Hz</div>
               </div>
-              <div class="knob-control" onmousedown="startKnob(event,'eq2')">
-                <div class="knob" id="knobEQ2"><div class="knob-indicator" id="knobEQ2Ind"></div></div>
-                <div class="knob-value" id="valEQ2">0 dB</div>
-                <div class="knob-label">100 Hz</div>
+              <div class="fader-h" data-fader="eq2">
+                <div class="fader-value-display" id="valEQ2" style="font-size:8px; min-width: auto; padding: 1px 4px;">0 dB</div>
+                <div class="fader-h-container" id="faderEQ2">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderEQ2Fill" style="height:50%"></div></div>
+                  <div class="fader-h-thumb" id="faderEQ2Thumb" style="bottom: 50%"></div>
+                </div>
+                <div class="fader-label" style="font-size:7px;">100 Hz</div>
               </div>
-              <div class="knob-control" onmousedown="startKnob(event,'eq3')">
-                <div class="knob" id="knobEQ3"><div class="knob-indicator" id="knobEQ3Ind"></div></div>
-                <div class="knob-value" id="valEQ3">0 dB</div>
-                <div class="knob-label">400 Hz</div>
+              <div class="fader-h" data-fader="eq3">
+                <div class="fader-value-display" id="valEQ3" style="font-size:8px; min-width: auto; padding: 1px 4px;">0 dB</div>
+                <div class="fader-h-container" id="faderEQ3">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderEQ3Fill" style="height:50%"></div></div>
+                  <div class="fader-h-thumb" id="faderEQ3Thumb" style="bottom: 50%"></div>
+                </div>
+                <div class="fader-label" style="font-size:7px;">400 Hz</div>
               </div>
-              <div class="knob-control" onmousedown="startKnob(event,'eq4')">
-                <div class="knob" id="knobEQ4"><div class="knob-indicator" id="knobEQ4Ind"></div></div>
-                <div class="knob-value" id="valEQ4">0 dB</div>
-                <div class="knob-label">1.5 kHz</div>
+              <div class="fader-h" data-fader="eq4">
+                <div class="fader-value-display" id="valEQ4" style="font-size:8px; min-width: auto; padding: 1px 4px;">0 dB</div>
+                <div class="fader-h-container" id="faderEQ4">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderEQ4Fill" style="height:50%"></div></div>
+                  <div class="fader-h-thumb" id="faderEQ4Thumb" style="bottom: 50%"></div>
+                </div>
+                <div class="fader-label" style="font-size:7px;">1.5 kHz</div>
               </div>
-              <div class="knob-control" onmousedown="startKnob(event,'eq5')">
-                <div class="knob" id="knobEQ5"><div class="knob-indicator" id="knobEQ5Ind"></div></div>
-                <div class="knob-value" id="valEQ5">0 dB</div>
-                <div class="knob-label">5 kHz</div>
+              <div class="fader-h" data-fader="eq5">
+                <div class="fader-value-display" id="valEQ5" style="font-size:8px; min-width: auto; padding: 1px 4px;">0 dB</div>
+                <div class="fader-h-container" id="faderEQ5">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderEQ5Fill" style="height:50%"></div></div>
+                  <div class="fader-h-thumb" id="faderEQ5Thumb" style="bottom: 50%"></div>
+                </div>
+                <div class="fader-label" style="font-size:7px;">5 kHz</div>
               </div>
-              <div class="knob-control" onmousedown="startKnob(event,'eq6')">
-                <div class="knob" id="knobEQ6"><div class="knob-indicator" id="knobEQ6Ind"></div></div>
-                <div class="knob-value" id="valEQ6">0 dB</div>
-                <div class="knob-label">12 kHz</div>
+              <div class="fader-h" data-fader="eq6">
+                <div class="fader-value-display" id="valEQ6" style="font-size:8px; min-width: auto; padding: 1px 4px;">0 dB</div>
+                <div class="fader-h-container" id="faderEQ6">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderEQ6Fill" style="height:50%"></div></div>
+                  <div class="fader-h-thumb" id="faderEQ6Thumb" style="bottom: 50%"></div>
+                </div>
+                <div class="fader-label" style="font-size:7px;">12 kHz</div>
               </div>
             </div>
             
-            <!-- Dynamic EQ Section -->
+            <!-- Dynamic EQ -->
             <div style="margin-top: 8px; width: 100%;">
               <div style="font-size: 8px; color: var(--text-dim); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px;">Dynamic EQ Bands</div>
               <div id="dynEqBands">
@@ -2153,62 +2100,139 @@
           </div>
           <div class="module-body">
             <div class="limiter-row">
-              <!-- Peak Limiter -->
               <div class="limiter-card">
                 <div class="limiter-title">PEAK</div>
-                <div class="limiter-meter">
-                  <div class="limiter-meter-fill" id="peakMeterFill" style="height:0%"></div>
+                <div class="limiter-meter"><div class="limiter-meter-fill" id="peakMeterFill" style="height:0%"></div></div>
+                <div class="fader-control" data-fader="peakThresh" style="width: 48px;">
+                  <div class="fader-value-display" id="valPeakThresh" style="font-size:9px; min-width: auto; padding: 1px 4px;">-0.3 dB</div>
+                  <div class="fader-container" id="faderPeakThresh" style="height:80px;">
+                    <div class="fader-track"><div class="fader-fill" id="faderPeakThreshFill" style="height:90%"></div></div>
+                    <div class="fader-groove">
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                    </div>
+                    <div class="fader-thumb" id="faderPeakThreshThumb" style="bottom: 90%">
+                      <div class="fader-thumb-line"></div>
+                    </div>
+                  </div>
+                  <div class="fader-label" style="font-size:7px;">Threshold</div>
                 </div>
-                <div class="knob-control" onmousedown="startKnob(event,'peakThresh')">
-                  <div class="knob" id="knobPeakThresh"><div class="knob-indicator" id="knobPeakThreshInd"></div></div>
-                  <div class="knob-value" id="valPeakThresh">-0.3 dB</div>
-                  <div class="knob-label">Threshold</div>
+                <div class="fader-control" data-fader="peakAttack" style="width: 48px;">
+                  <div class="fader-value-display" id="valPeakAttack" style="font-size:9px; min-width: auto; padding: 1px 4px;">1 ms</div>
+                  <div class="fader-container" id="faderPeakAttack" style="height:80px;">
+                    <div class="fader-track"><div class="fader-fill" id="faderPeakAttackFill" style="height:20%"></div></div>
+                    <div class="fader-groove">
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                    </div>
+                    <div class="fader-thumb" id="faderPeakAttackThumb" style="bottom: 20%">
+                      <div class="fader-thumb-line"></div>
+                    </div>
+                  </div>
+                  <div class="fader-label" style="font-size:7px;">Attack</div>
                 </div>
-                <div class="knob-control" onmousedown="startKnob(event,'peakAttack')">
-                  <div class="knob" id="knobPeakAttack"><div class="knob-indicator" id="knobPeakAttackInd"></div></div>
-                  <div class="knob-value" id="valPeakAttack">1 ms</div>
-                  <div class="knob-label">Attack</div>
-                </div>
-                <div class="knob-control" onmousedown="startKnob(event,'peakRelease')">
-                  <div class="knob" id="knobPeakRelease"><div class="knob-indicator" id="knobPeakReleaseInd"></div></div>
-                  <div class="knob-value" id="valPeakRelease">50 ms</div>
-                  <div class="knob-label">Release</div>
+                <div class="fader-control" data-fader="peakRelease" style="width: 48px;">
+                  <div class="fader-value-display" id="valPeakRelease" style="font-size:9px; min-width: auto; padding: 1px 4px;">50 ms</div>
+                  <div class="fader-container" id="faderPeakRelease" style="height:80px;">
+                    <div class="fader-track"><div class="fader-fill" id="faderPeakReleaseFill" style="height:50%"></div></div>
+                    <div class="fader-groove">
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                    </div>
+                    <div class="fader-thumb" id="faderPeakReleaseThumb" style="bottom: 50%">
+                      <div class="fader-thumb-line"></div>
+                    </div>
+                  </div>
+                  <div class="fader-label" style="font-size:7px;">Release</div>
                 </div>
                 <div class="toggle-btn on" id="btnPeakOn" onclick="toggleLimiter('peak')">ON</div>
               </div>
-              <!-- Bass Limiter -->
+              
               <div class="limiter-card">
                 <div class="limiter-title">BASS</div>
-                <div class="limiter-meter">
-                  <div class="limiter-meter-fill" id="bassMeterFill" style="height:0%"></div>
+                <div class="limiter-meter"><div class="limiter-meter-fill" id="bassMeterFill" style="height:0%"></div></div>
+                <div class="fader-control" data-fader="bassThresh" style="width: 48px;">
+                  <div class="fader-value-display" id="valBassThresh" style="font-size:9px; min-width: auto; padding: 1px 4px;">-3 dB</div>
+                  <div class="fader-container" id="faderBassThresh" style="height:80px;">
+                    <div class="fader-track"><div class="fader-fill" id="faderBassThreshFill" style="height:80%"></div></div>
+                    <div class="fader-groove">
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                    </div>
+                    <div class="fader-thumb" id="faderBassThreshThumb" style="bottom: 80%">
+                      <div class="fader-thumb-line"></div>
+                    </div>
+                  </div>
+                  <div class="fader-label" style="font-size:7px;">Threshold</div>
                 </div>
-                <div class="knob-control" onmousedown="startKnob(event,'bassThresh')">
-                  <div class="knob" id="knobBassThresh"><div class="knob-indicator" id="knobBassThreshInd"></div></div>
-                  <div class="knob-value" id="valBassThresh">-3 dB</div>
-                  <div class="knob-label">Threshold</div>
-                </div>
-                <div class="knob-control" onmousedown="startKnob(event,'bassFreq')">
-                  <div class="knob" id="knobBassFreq"><div class="knob-indicator" id="knobBassFreqInd"></div></div>
-                  <div class="knob-value" id="valBassFreq">80 Hz</div>
-                  <div class="knob-label">Crossover</div>
+                <div class="fader-control" data-fader="bassFreq" style="width: 48px;">
+                  <div class="fader-value-display" id="valBassFreq" style="font-size:9px; min-width: auto; padding: 1px 4px;">80 Hz</div>
+                  <div class="fader-container" id="faderBassFreq" style="height:80px;">
+                    <div class="fader-track"><div class="fader-fill" id="faderBassFreqFill" style="height:40%"></div></div>
+                    <div class="fader-groove">
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                    </div>
+                    <div class="fader-thumb" id="faderBassFreqThumb" style="bottom: 40%">
+                      <div class="fader-thumb-line"></div>
+                    </div>
+                  </div>
+                  <div class="fader-label" style="font-size:7px;">Crossover</div>
                 </div>
                 <div class="toggle-btn on" id="btnBassOn" onclick="toggleLimiter('bass')">ON</div>
               </div>
-              <!-- Loudness Limiter -->
+              
               <div class="limiter-card">
                 <div class="limiter-title">LOUDNESS</div>
-                <div class="limiter-meter">
-                  <div class="limiter-meter-fill" id="loudMeterFill" style="height:0%"></div>
+                <div class="limiter-meter"><div class="limiter-meter-fill" id="loudMeterFill" style="height:0%"></div></div>
+                <div class="fader-control" data-fader="loudTarget" style="width: 48px;">
+                  <div class="fader-value-display" id="valLoudTarget" style="font-size:9px; min-width: auto; padding: 1px 4px;">-16 LUFS</div>
+                  <div class="fader-container" id="faderLoudTarget" style="height:80px;">
+                    <div class="fader-track"><div class="fader-fill" id="faderLoudTargetFill" style="height:60%"></div></div>
+                    <div class="fader-groove">
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                    </div>
+                    <div class="fader-thumb" id="faderLoudTargetThumb" style="bottom: 60%">
+                      <div class="fader-thumb-line"></div>
+                    </div>
+                  </div>
+                  <div class="fader-label" style="font-size:7px;">Target</div>
                 </div>
-                <div class="knob-control" onmousedown="startKnob(event,'loudTarget')">
-                  <div class="knob" id="knobLoudTarget"><div class="knob-indicator" id="knobLoudTargetInd"></div></div>
-                  <div class="knob-value" id="valLoudTarget">-16 LUFS</div>
-                  <div class="knob-label">Target</div>
-                </div>
-                <div class="knob-control" onmousedown="startKnob(event,'loudCeiling')">
-                  <div class="knob" id="knobLoudCeiling"><div class="knob-indicator" id="knobLoudCeilingInd"></div></div>
-                  <div class="knob-value" id="valLoudCeiling">-1 dBTP</div>
-                  <div class="knob-label">Ceiling</div>
+                <div class="fader-control" data-fader="loudCeiling" style="width: 48px;">
+                  <div class="fader-value-display" id="valLoudCeiling" style="font-size:9px; min-width: auto; padding: 1px 4px;">-1 dBTP</div>
+                  <div class="fader-container" id="faderLoudCeiling" style="height:80px;">
+                    <div class="fader-track"><div class="fader-fill" id="faderLoudCeilingFill" style="height:85%"></div></div>
+                    <div class="fader-groove">
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                      <div class="fader-groove-line"></div>
+                    </div>
+                    <div class="fader-thumb" id="faderLoudCeilingThumb" style="bottom: 85%">
+                      <div class="fader-thumb-line"></div>
+                    </div>
+                  </div>
+                  <div class="fader-label" style="font-size:7px;">Ceiling</div>
                 </div>
                 <div class="toggle-btn on" id="btnLoudOn" onclick="toggleLimiter('loud')">ON</div>
               </div>
@@ -2217,7 +2241,7 @@
         </div>
       </div>
 
-      <!-- ROW 4: LOUDNESS METER (Advanced) -->
+      <!-- ROW 4: LOUDNESS METER -->
       <div class="module module-advanced" id="modLoudness">
         <div class="module-header">
           <div class="power-btn on" id="pwrLoudness" onclick="togglePower('Loudness')"></div>
@@ -2232,9 +2256,7 @@
             <div class="lufs-value" id="lufsValue">-23.0</div>
             <div class="lufs-bar">
               <div class="lufs-fill" id="lufsFill"></div>
-              <div class="lufs-markers">
-                <div class="lufs-marker target" style="left: 50%"></div>
-              </div>
+              <div class="lufs-marker target" style="left: 50%"></div>
             </div>
             <div style="text-align: right; font-size: 9px;">
               <div style="color: var(--text-secondary);">Integrated</div>
@@ -2246,7 +2268,6 @@
             <span>-23 LUFS</span>
             <span>0 LUFS</span>
           </div>
-          
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px;">
             <div style="text-align: center;">
               <div style="font-size: 8px; color: var(--text-dim);">Short-term</div>
@@ -2268,7 +2289,7 @@
         </div>
       </div>
 
-      <!-- ROW 5: STEREO IMAGER (Advanced) -->
+      <!-- ROW 5: STEREO IMAGER -->
       <div class="module module-advanced" id="modImager">
         <div class="module-header">
           <div class="power-btn on" id="pwrImager" onclick="togglePower('Imager')"></div>
@@ -2282,33 +2303,35 @@
           <div class="imager-controls">
             <div class="imager-band">
               <div class="imager-band-title">Low (&lt;200Hz)</div>
-              <div class="knob-control" onmousedown="startKnob(event,'imagerLow')">
-                <div class="knob imager-knob" id="knobImagerLow">
-                  <div class="knob-indicator" id="knobImagerLowInd"></div>
+              <div class="fader-h" data-fader="imagerLow" style="width: 40px;">
+                <div class="imager-value" id="valImagerLow" style="font-size:10px;">100%</div>
+                <div class="fader-h-container" id="faderImagerLow" style="height:70px;">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderImagerLowFill" style="height:100%"></div></div>
+                  <div class="fader-h-thumb" id="faderImagerLowThumb" style="bottom: 100%"></div>
                 </div>
-                <div class="imager-value" id="valImagerLow">100%</div>
               </div>
             </div>
             <div class="imager-band">
               <div class="imager-band-title">Mid (200-2k)</div>
-              <div class="knob-control" onmousedown="startKnob(event,'imagerMid')">
-                <div class="knob imager-knob" id="knobImagerMid">
-                  <div class="knob-indicator" id="knobImagerMidInd"></div>
+              <div class="fader-h" data-fader="imagerMid" style="width: 40px;">
+                <div class="imager-value" id="valImagerMid" style="font-size:10px;">100%</div>
+                <div class="fader-h-container" id="faderImagerMid" style="height:70px;">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderImagerMidFill" style="height:100%"></div></div>
+                  <div class="fader-h-thumb" id="faderImagerMidThumb" style="bottom: 100%"></div>
                 </div>
-                <div class="imager-value" id="valImagerMid">100%</div>
               </div>
             </div>
             <div class="imager-band">
               <div class="imager-band-title">High (&gt;2k)</div>
-              <div class="knob-control" onmousedown="startKnob(event,'imagerHigh')">
-                <div class="knob imager-knob" id="knobImagerHigh">
-                  <div class="knob-indicator" id="knobImagerHighInd"></div>
+              <div class="fader-h" data-fader="imagerHigh" style="width: 40px;">
+                <div class="imager-value" id="valImagerHigh" style="font-size:10px;">100%</div>
+                <div class="fader-h-container" id="faderImagerHigh" style="height:70px;">
+                  <div class="fader-h-track"><div class="fader-h-fill" id="faderImagerHighFill" style="height:100%"></div></div>
+                  <div class="fader-h-thumb" id="faderImagerHighThumb" style="bottom: 100%"></div>
                 </div>
-                <div class="imager-value" id="valImagerHigh">100%</div>
               </div>
             </div>
           </div>
-          
           <div style="display: flex; gap: 12px; margin-top: 12px; justify-content: center; flex-wrap: wrap;">
             <div style="text-align: center;">
               <div style="font-size: 8px; color: var(--text-dim); margin-bottom: 4px;">Correlation</div>
@@ -2325,7 +2348,7 @@
         </div>
       </div>
 
-      <!-- ROW 6: DE-ESSER (Advanced) -->
+      <!-- ROW 6: DE-ESSER -->
       <div class="module module-advanced" id="modDeesser">
         <div class="module-header">
           <div class="power-btn on" id="pwrDeesser" onclick="togglePower('Deesser')"></div>
@@ -2342,31 +2365,60 @@
               <div class="deesser-threshold" id="deesserThreshold" style="top: 30%"></div>
               <div class="deesser-freq-marker" id="deesserFreq" style="left: 60%"></div>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px; min-width: 120px;">
-              <div class="knob-control" onmousedown="startKnob(event,'deesserFreq')">
-                <div class="knob" id="knobDeesserFreq">
-                  <div class="knob-indicator" id="knobDeesserFreqInd"></div>
+            <div style="display: flex; gap: 12px;">
+              <div class="fader-control" data-fader="deesserFreq" style="width: 48px;">
+                <div class="fader-value-display" id="valDeesserFreq" style="font-size:9px; min-width: auto; padding: 1px 4px;">5.5 kHz</div>
+                <div class="fader-container" id="faderDeesserFreq" style="height:80px;">
+                  <div class="fader-track"><div class="fader-fill" id="faderDeesserFreqFill" style="height:55%"></div></div>
+                  <div class="fader-groove">
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                  </div>
+                  <div class="fader-thumb" id="faderDeesserFreqThumb" style="bottom: 55%">
+                    <div class="fader-thumb-line"></div>
+                  </div>
                 </div>
-                <div class="knob-value" id="valDeesserFreq">5.5 kHz</div>
-                <div class="knob-label">Frequency</div>
+                <div class="fader-label" style="font-size:7px;">Frequency</div>
               </div>
-              <div class="knob-control" onmousedown="startKnob(event,'deesserThresh')">
-                <div class="knob" id="knobDeesserThresh">
-                  <div class="knob-indicator" id="knobDeesserThreshInd"></div>
+              <div class="fader-control" data-fader="deesserThresh" style="width: 48px;">
+                <div class="fader-value-display" id="valDeesserThresh" style="font-size:9px; min-width: auto; padding: 1px 4px;">-24 dB</div>
+                <div class="fader-container" id="faderDeesserThresh" style="height:80px;">
+                  <div class="fader-track"><div class="fader-fill" id="faderDeesserThreshFill" style="height:36%"></div></div>
+                  <div class="fader-groove">
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                  </div>
+                  <div class="fader-thumb" id="faderDeesserThreshThumb" style="bottom: 36%">
+                    <div class="fader-thumb-line"></div>
+                  </div>
                 </div>
-                <div class="knob-value" id="valDeesserThresh">-24 dB</div>
-                <div class="knob-label">Threshold</div>
+                <div class="fader-label" style="font-size:7px;">Threshold</div>
               </div>
-              <div class="knob-control" onmousedown="startKnob(event,'deesserRatio')">
-                <div class="knob" id="knobDeesserRatio">
-                  <div class="knob-indicator" id="knobDeesserRatioInd"></div>
+              <div class="fader-control" data-fader="deesserRatio" style="width: 48px;">
+                <div class="fader-value-display" id="valDeesserRatio" style="font-size:9px; min-width: auto; padding: 1px 4px;">4:1</div>
+                <div class="fader-container" id="faderDeesserRatio" style="height:80px;">
+                  <div class="fader-track"><div class="fader-fill" id="faderDeesserRatioFill" style="height:40%"></div></div>
+                  <div class="fader-groove">
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                    <div class="fader-groove-line"></div>
+                  </div>
+                  <div class="fader-thumb" id="faderDeesserRatioThumb" style="bottom: 40%">
+                    <div class="fader-thumb-line"></div>
+                  </div>
                 </div>
-                <div class="knob-value" id="valDeesserRatio">4:1</div>
-                <div class="knob-label">Ratio</div>
+                <div class="fader-label" style="font-size:7px;">Ratio</div>
               </div>
             </div>
           </div>
-          
           <div style="display: flex; gap: 8px; margin-top: 8px; justify-content: center; flex-wrap: wrap;">
             <button class="toggle-btn on" id="btnDeesserWide" onclick="toggleDeesserMode('wide')">Wide Band</button>
             <button class="toggle-btn" id="btnDeesserSplit" onclick="toggleDeesserMode('split')">Split Band</button>
@@ -2386,35 +2438,99 @@
             </div>
           </div>
           <div class="module-body">
-            <div class="knob-control" onmousedown="startKnob(event,'outputGain')">
-              <div class="knob" id="knobOutputGain">
-                <div class="knob-indicator" id="knobOutputGainInd"></div>
+            <div class="fader-control" data-fader="outputGain">
+              <div class="fader-value-display" id="valOutputGain">0.0 dB</div>
+              <div class="fader-container" id="faderOutputGain">
+                <div class="fader-track"><div class="fader-fill" id="faderOutputGainFill" style="height:50%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderOutputGainThumb" style="bottom: 50%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">+24</div>
+                  <div class="fader-scale-mark">0</div>
+                  <div class="fader-scale-mark">-24</div>
+                </div>
               </div>
-              <div class="knob-value" id="valOutputGain">0.0 dB</div>
-              <div class="knob-label">Output Gain</div>
+              <div class="fader-label">Output Gain</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'outputCeiling')">
-              <div class="knob" id="knobOutputCeiling">
-                <div class="knob-indicator" id="knobOutputCeilingInd"></div>
+            
+            <div class="fader-control" data-fader="outputCeiling">
+              <div class="fader-value-display" id="valOutputCeiling">-0.1 dB</div>
+              <div class="fader-container" id="faderOutputCeiling">
+                <div class="fader-track"><div class="fader-fill" id="faderOutputCeilingFill" style="height:95%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderOutputCeilingThumb" style="bottom: 95%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">0.0</div>
+                  <div class="fader-scale-mark">-1.0</div>
+                  <div class="fader-scale-mark">-3.0</div>
+                </div>
               </div>
-              <div class="knob-value" id="valOutputCeiling">-0.1 dB</div>
-              <div class="knob-label">Ceiling</div>
+              <div class="fader-label">Ceiling</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'outputStereo')">
-              <div class="knob" id="knobOutputStereo">
-                <div class="knob-indicator" id="knobOutputStereoInd"></div>
+            
+            <div class="fader-control" data-fader="outputStereo">
+              <div class="fader-value-display" id="valOutputStereo">100%</div>
+              <div class="fader-container" id="faderOutputStereo">
+                <div class="fader-track"><div class="fader-fill" id="faderOutputStereoFill" style="height:100%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderOutputStereoThumb" style="bottom: 100%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">100</div>
+                  <div class="fader-scale-mark">50</div>
+                  <div class="fader-scale-mark">0</div>
+                </div>
               </div>
-              <div class="knob-value" id="valOutputStereo">100%</div>
-              <div class="knob-label">Stereo</div>
+              <div class="fader-label">Stereo</div>
             </div>
-            <div class="knob-control" onmousedown="startKnob(event,'outputClipper')">
-              <div class="knob" id="knobOutputClipper">
-                <div class="knob-indicator" id="knobOutputClipperInd"></div>
+            
+            <div class="fader-control" data-fader="outputClipper">
+              <div class="fader-value-display" id="valOutputClipper">OFF</div>
+              <div class="fader-container" id="faderOutputClipper">
+                <div class="fader-track"><div class="fader-fill" id="faderOutputClipperFill" style="height:0%"></div></div>
+                <div class="fader-groove">
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                  <div class="fader-groove-line"></div>
+                </div>
+                <div class="fader-thumb" id="faderOutputClipperThumb" style="bottom: 0%">
+                  <div class="fader-thumb-line"></div>
+                </div>
+                <div class="fader-scale">
+                  <div class="fader-scale-mark">ON</div>
+                  <div class="fader-scale-mark"></div>
+                  <div class="fader-scale-mark">OFF</div>
+                </div>
               </div>
-              <div class="knob-value" id="valOutputClipper">OFF</div>
-              <div class="knob-label">Clipper</div>
+              <div class="fader-label">Clipper</div>
             </div>
-            <div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
+            
+            <div style="display:flex;flex-direction:column;gap:4px;align-items:center; justify-content: center;">
               <div class="toggle-btn on" id="btnOutDither" onclick="toggleDither()">DITHER</div>
               <div class="toggle-btn" id="btnOutClip" onclick="toggleOutputClip()">CLIP</div>
             </div>
@@ -2429,22 +2545,12 @@
         <div class="dot"></div>
         <span>AUDIO ENGINE ACTIVE</span>
       </div>
-      <div class="status-item">
-        <span>SAMPLE RATE: 48000 Hz</span>
-      </div>
-      <div class="status-item">
-        <span>BUFFER: 256 samples</span>
-      </div>
-      <div class="status-item">
-        <span>LATENCY: 5.3 ms</span>
-      </div>
-      <div class="status-item">
-        <span>CPU: <span id="cpuUsage">12%</span></span>
-      </div>
+      <div class="status-item"><span>SAMPLE RATE: 48000 Hz</span></div>
+      <div class="status-item"><span>BUFFER: 256 samples</span></div>
+      <div class="status-item"><span>LATENCY: 5.3 ms</span></div>
+      <div class="status-item"><span>CPU: <span id="cpuUsage">12%</span></span></div>
       <div class="spacer"></div>
-      <div class="status-item">
-        <span id="clockDisplay">00:00:00</span>
-      </div>
+      <div class="status-item"><span id="clockDisplay">00:00:00</span></div>
     </div>
   </div>
 
@@ -2459,71 +2565,29 @@
     <div class="info-section">
       <div class="info-group">
         <div class="info-group-title">System Status</div>
-        <div class="info-row">
-          <span class="info-key">Engine</span>
-          <span class="info-val" id="infoEngine">Running</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">Input</span>
-          <span class="info-val" id="infoInput">Microphone</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">Output</span>
-          <span class="info-val" id="infoOutput">Default</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">Sample Rate</span>
-          <span class="info-val" id="infoSampleRate">48 kHz</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">Latency</span>
-          <span class="info-val" id="infoLatency">5.3 ms</span>
-        </div>
+        <div class="info-row"><span class="info-key">Engine</span><span class="info-val" id="infoEngine">Running</span></div>
+        <div class="info-row"><span class="info-key">Input</span><span class="info-val" id="infoInput">Microphone</span></div>
+        <div class="info-row"><span class="info-key">Output</span><span class="info-val" id="infoOutput">Default</span></div>
+        <div class="info-row"><span class="info-key">Sample Rate</span><span class="info-val" id="infoSampleRate">48 kHz</span></div>
+        <div class="info-row"><span class="info-key">Latency</span><span class="info-val" id="infoLatency">5.3 ms</span></div>
       </div>
       <div class="info-group">
         <div class="info-group-title">Processing</div>
-        <div class="info-row">
-          <span class="info-key">AGC</span>
-          <span class="info-val" id="infoAGC">ON</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">Comp Bands</span>
-          <span class="info-val">5 Active</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">EQ Bands</span>
-          <span class="info-val">6 Active</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">Limiters</span>
-          <span class="info-val">3 Active</span>
-        </div>
+        <div class="info-row"><span class="info-key">AGC</span><span class="info-val" id="infoAGC">ON</span></div>
+        <div class="info-row"><span class="info-key">Comp Bands</span><span class="info-val">5 Active</span></div>
+        <div class="info-row"><span class="info-key">EQ Bands</span><span class="info-val">6 Active</span></div>
+        <div class="info-row"><span class="info-key">Limiters</span><span class="info-val">3 Active</span></div>
       </div>
       <div class="info-group">
         <div class="info-group-title">Metering</div>
-        <div class="info-row">
-          <span class="info-key">Peak L</span>
-          <span class="info-val" id="infoPeakL">-∞</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">Peak R</span>
-          <span class="info-val" id="infoPeakR">-∞</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">RMS L</span>
-          <span class="info-val" id="infoRMSL">-∞</span>
-        </div>
-        <div class="info-row">
-          <span class="info-key">RMS R</span>
-          <span class="info-val" id="infoRMSR">-∞</span>
-        </div>
+        <div class="info-row"><span class="info-key">Peak L</span><span class="info-val" id="infoPeakL">-∞</span></div>
+        <div class="info-row"><span class="info-key">Peak R</span><span class="info-val" id="infoPeakR">-∞</span></div>
+        <div class="info-row"><span class="info-key">RMS L</span><span class="info-val" id="infoRMSL">-∞</span></div>
+        <div class="info-row"><span class="info-key">RMS R</span><span class="info-val" id="infoRMSR">-∞</span></div>
       </div>
       <div class="info-group">
         <div class="info-group-title">Current Preset</div>
-        <div class="info-row">
-          <span class="info-key">Name</span>
-          <span class="info-val" id="infoPresetName">FM Loud</span>
-        </div>
+        <div class="info-row"><span class="info-key">Name</span><span class="info-val" id="infoPresetName">FM Loud</span></div>
       </div>
     </div>
     <div class="output-meter">
@@ -2555,9 +2619,7 @@
       <button class="macro-btn" onclick="exportMacro()">💾 Export</button>
     </div>
   </div>
-  <div class="macro-timeline" id="macroTimeline">
-    <!-- Keyframes rendered here -->
-  </div>
+  <div class="macro-timeline" id="macroTimeline"></div>
   <div style="display: flex; justify-content: space-between; margin-top: 4px; font-size: 8px; color: var(--text-dim);">
     <span id="macroTime">00:00</span>
     <span id="macroParams">0 parameters</span>
@@ -2601,9 +2663,6 @@
   <div class="context-menu-item" onclick="pasteSettings()">📄 Paste Settings</div>
 </div>
 
-<!-- TOOLTIP -->
-<div class="tooltip" id="tooltip"></div>
-
 <!-- SETTINGS MODAL -->
 <div class="modal-overlay" id="settingsModal">
   <div class="modal">
@@ -2627,23 +2686,6 @@
         </select>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:11px;color:var(--text-secondary);">Meter Decay</span>
-        <select id="settingMeterDecay">
-          <option value="fast">Fast</option>
-          <option value="medium" selected>Medium</option>
-          <option value="slow">Slow</option>
-        </select>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:11px;color:var(--text-secondary);">Peak Hold</span>
-        <select id="settingPeakHold">
-          <option value="off">Off</option>
-          <option value="short">Short</option>
-          <option value="medium" selected>Medium</option>
-          <option value="long">Long</option>
-        </select>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;">
         <span style="font-size:11px;color:var(--text-secondary);">Theme</span>
         <select id="settingTheme">
           <option value="dark" selected>Dark</option>
@@ -2660,10 +2702,9 @@
 
 <script>
 // ============================================
-// OmniaPro Broadcast Processor v11.2 - Advanced
+// OmniaPro Broadcast Processor v11.2 - Faders
 // ============================================
 
-// ===== KNOB STATE =====
 const knobState = {
   inputGain: 50, inputTrim: 50, inputPhase: 50,
   agcTarget: 50, agcSpeed: 50, agcRange: 60, agcAttack: 50, agcRelease: 40,
@@ -2676,13 +2717,11 @@ const knobState = {
   deesserFreq: 55, deesserThresh: 36, deesserRatio: 40
 };
 
-// ===== MODULE STATES =====
 const modules = {
   Input: true, AGC: true, Comp: true, EQ: true, Limiter: true, Output: true,
   Loudness: true, Imager: true, Deesser: true
 };
 
-// ===== AUDIO ENGINE =====
 let audioCtx = null;
 let inputSource = null;
 let inputGainNode = null;
@@ -2707,1503 +2746,155 @@ let oscillatorNode = null;
 let noiseNode = null;
 let noiseGain = null;
 let duckingGain = null;
-let midSideNode = null;
 
-// Meter values
-const meterValues = {
-  inputL: 0, inputR: 0,
-  agcL: 0, agcR: 0,
-  compL: 0, compR: 0,
-  eqL: 0, eqR: 0,
-  limL: 0, limR: 0,
-  outL: 0, outR: 0
-};
-
-// LUFS Meter State
 const lufsMeter = {
-  integrated: -23.0,
-  shortTerm: -23.0,
-  momentary: -Infinity,
-  lra: 0,
-  truePeak: -Infinity,
-  history: [],
-  target: -23
+  integrated: -23.0, shortTerm: -23.0, momentary: -Infinity,
+  lra: 0, truePeak: -Infinity, history: [], target: -23
 };
 
-// Stereo Imager State
-const imagerState = {
-  low: 100, mid: 100, high: 100,
-  msMode: false,
-  monoCheck: false
-};
+const imagerState = { low: 100, mid: 100, high: 100, msMode: false, monoCheck: false };
+const deesserState = { freq: 5500, threshold: -24, ratio: 4, mode: 'wide', auto: false, active: false };
+const abState = { active: false, current: 'A', presetA: null, presetB: null };
+const duckingState = { enabled: false, threshold: -35, attack: 10, release: 200, reduction: -12 };
+const macroState = { recording: false, playing: false, startTime: 0, keyframes: [], parameters: ['inputGain', 'agcTarget', 'eq3', 'outputGain'] };
+const networkState = { connected: false, ws: null, roomId: null };
+const dynEqState = { bands: { 1: { freq: 32, threshold: -30, active: false }, 3: { freq: 400, threshold: -24, active: false }, 5: { freq: 5000, threshold: -20, active: false } } };
+const bandState = { solo: null, muted: [] };
 
-// De-esser State
-const deesserState = {
-  freq: 5500,
-  threshold: -24,
-  ratio: 4,
-  mode: 'wide',
-  auto: false,
-  active: false
-};
-
-// A/B Compare State
-const abState = {
-  active: false,
-  current: 'A',
-  presetA: null,
-  presetB: null
-};
-
-// Voice Ducking State
-const duckingState = {
-  enabled: false,
-  threshold: -35,
-  attack: 10,
-  release: 200,
-  reduction: -12,
-  sidechainSource: 'mic'
-};
-
-// Macro Recorder State
-const macroState = {
-  recording: false,
-  playing: false,
-  startTime: 0,
-  keyframes: [],
-  parameters: ['inputGain', 'agcTarget', 'eq3', 'outputGain']
-};
-
-// Network Sync State
-const networkState = {
-  connected: false,
-  ws: null,
-  roomId: null
-};
-
-// Dynamic EQ State
-const dynEqState = {
-  bands: {
-    1: { freq: 32, threshold: -30, active: false },
-    3: { freq: 400, threshold: -24, active: false },
-    5: { freq: 5000, threshold: -20, active: false }
-  }
-};
-
-// Band solo/mute state
-const bandState = {
-  solo: null,
-  muted: []
-};
-
-// Presets
 const presets = {
-  'fm-loud': {
-    name: 'FM Loud',
-    inputGain: 50, agcTarget: 50, agcSpeed: 50,
-    eq: [2, 0, -1, 1, 2, 0],
-    comp: [
-      {thresh:-24,ratio:4,atk:10,rel:100,makeup:6},
-      {thresh:-20,ratio:3,atk:8,rel:120,makeup:4},
-      {thresh:-18,ratio:3.5,atk:5,rel:150,makeup:5},
-      {thresh:-16,ratio:3,atk:3,rel:180,makeup:4},
-      {thresh:-14,ratio:2.5,atk:2,rel:200,makeup:3}
-    ],
-    peakThresh: 90, bassThresh: 80, loudTarget: 60,
-    outputGain: 50
-  },
-  'fm-clean': {
-    name: 'FM Clean',
-    inputGain: 50, agcTarget: 60, agcSpeed: 40,
-    eq: [0, 0, 0, 0, 0, 0],
-    comp: [
-      {thresh:-30,ratio:2,atk:15,rel:150,makeup:3},
-      {thresh:-25,ratio:2,atk:12,rel:180,makeup:2},
-      {thresh:-22,ratio:2,atk:10,rel:200,makeup:2},
-      {thresh:-20,ratio:1.5,atk:8,rel:220,makeup:1},
-      {thresh:-18,ratio:1.5,atk:5,rel:250,makeup:1}
-    ],
-    peakThresh: 85, bassThresh: 70, loudTarget: 52,
-    outputGain: 50
-  },
-  'fm-hot': {
-    name: 'FM Hot',
-    inputGain: 53, agcTarget: 30, agcSpeed: 70,
-    eq: [3, 1, -2, 2, 4, 1],
-    comp: [
-      {thresh:-18,ratio:6,atk:5,rel:80,makeup:10},
-      {thresh:-15,ratio:5,atk:4,rel:100,makeup:8},
-      {thresh:-12,ratio:5,atk:3,rel:120,makeup:8},
-      {thresh:-10,ratio:4,atk:2,rel:140,makeup:6},
-      {thresh:-8,ratio:3,atk:1,rel:160,makeup:5}
-    ],
-    peakThresh: 97, bassThresh: 95, loudTarget: 80,
-    outputGain: 52
-  },
-  'fm-classic': {
-    name: 'FM Classic',
-    inputGain: 50, agcTarget: 55, agcSpeed: 45,
-    eq: [1, 0, 0, 0, -1, -2],
-    comp: [
-      {thresh:-28,ratio:3,atk:12,rel:130,makeup:4},
-      {thresh:-24,ratio:2.5,atk:10,rel:150,makeup:3},
-      {thresh:-20,ratio:2.5,atk:8,rel:180,makeup:3},
-      {thresh:-18,ratio:2,atk:6,rel:200,makeup:2},
-      {thresh:-16,ratio:1.5,atk:5,rel:220,makeup:1}
-    ],
-    peakThresh: 90, bassThresh: 75, loudTarget: 55,
-    outputGain: 50
-  },
-  'fm-news': {
-    name: 'FM News/Talk',
-    inputGain: 52, agcTarget: 45, agcSpeed: 60,
-    eq: [-1, 1, 3, 2, 1, -1],
-    comp: [
-      {thresh:-26,ratio:3,atk:8,rel:120,makeup:5},
-      {thresh:-22,ratio:3,atk:6,rel:140,makeup:4},
-      {thresh:-18,ratio:4,atk:4,rel:160,makeup:6},
-      {thresh:-15,ratio:3.5,atk:3,rel:180,makeup:4},
-      {thresh:-12,ratio:2,atk:2,rel:200,makeup:2}
-    ],
-    peakThresh: 90, bassThresh: 70, loudTarget: 70,
-    outputGain: 51
-  },
-  'stream-clean': {
-    name: 'Streaming Clean',
-    inputGain: 50, agcTarget: 55, agcSpeed: 35,
-    eq: [0, 0, 0, 0, 0, 0],
-    comp: [
-      {thresh:-32,ratio:2,atk:20,rel:200,makeup:2},
-      {thresh:-28,ratio:1.5,atk:15,rel:220,makeup:1},
-      {thresh:-24,ratio:1.5,atk:12,rel:250,makeup:1},
-      {thresh:-20,ratio:1.5,atk:10,rel:280,makeup:1},
-      {thresh:-16,ratio:1.2,atk:8,rel:300,makeup:0.5}
-    ],
-    peakThresh: 80, bassThresh: 60, loudTarget: 60,
-    outputGain: 49
-  },
-  'stream-loud': {
-    name: 'Streaming Loud',
-    inputGain: 52, agcTarget: 35, agcSpeed: 55,
-    eq: [1, 0, 0, 0, 1, 0],
-    comp: [
-      {thresh:-22,ratio:4,atk:5,rel:100,makeup:8},
-      {thresh:-18,ratio:3.5,atk:4,rel:120,makeup:6},
-      {thresh:-15,ratio:3.5,atk:3,rel:140,makeup:6},
-      {thresh:-12,ratio:3,atk:2,rel:160,makeup:5},
-      {thresh:-10,ratio:2.5,atk:1,rel:180,makeup:4}
-    ],
-    peakThresh: 90, bassThresh: 90, loudTarget: 70,
-    outputGain: 51
-  },
-  'stream-podcast': {
-    name: 'Podcast',
-    inputGain: 53, agcTarget: 40, agcSpeed: 50,
-    eq: [-2, 1, 3, 2, 0, -2],
-    comp: [
-      {thresh:-24,ratio:4,atk:8,rel:120,makeup:6},
-      {thresh:-20,ratio:3,atk:6,rel:140,makeup:4},
-      {thresh:-16,ratio:4,atk:4,rel:160,makeup:6},
-      {thresh:-14,ratio:3,atk:3,rel:180,makeup:4},
-      {thresh:-12,ratio:2,atk:2,rel:200,makeup:2}
-    ],
-    peakThresh: 85, bassThresh: 70, loudTarget: 60,
-    outputGain: 50
-  },
-  'bass-boost': {
-    name: 'Bass Boost',
-    inputGain: 50, agcTarget: 50, agcSpeed: 50,
-    eq: [6, 4, 2, 0, -1, 0],
-    comp: [
-      {thresh:-20,ratio:5,atk:8,rel:100,makeup:8},
-      {thresh:-18,ratio:4,atk:6,rel:120,makeup:6},
-      {thresh:-16,ratio:3,atk:5,rel:150,makeup:4},
-      {thresh:-14,ratio:2.5,atk:3,rel:180,makeup:3},
-      {thresh:-12,ratio:2,atk:2,rel:200,makeup:2}
-    ],
-    peakThresh: 90, bassThresh: 90, loudTarget: 70,
-    outputGain: 50
-  },
-  'bright': {
-    name: 'Bright & Airy',
-    inputGain: 50, agcTarget: 50, agcSpeed: 50,
-    eq: [-2, -1, 0, 1, 3, 5],
-    comp: [
-      {thresh:-28,ratio:2.5,atk:12,rel:150,makeup:3},
-      {thresh:-24,ratio:2.5,atk:10,rel:170,makeup:3},
-      {thresh:-20,ratio:2.5,atk:8,rel:190,makeup:3},
-      {thresh:-18,ratio:2.5,atk:6,rel:210,makeup:3},
-      {thresh:-16,ratio:2,atk:4,rel:230,makeup:2}
-    ],
-    peakThresh: 85, bassThresh: 70, loudTarget: 55,
-    outputGain: 50
-  },
-  'warm': {
-    name: 'Warm Analog',
-    inputGain: 49, agcTarget: 55, agcSpeed: 45,
-    eq: [2, 1, 0, -1, -2, -3],
-    comp: [
-      {thresh:-26,ratio:2,atk:15,rel:180,makeup:3},
-      {thresh:-22,ratio:2,atk:12,rel:200,makeup:2},
-      {thresh:-20,ratio:1.8,atk:10,rel:220,makeup:2},
-      {thresh:-18,ratio:1.5,atk:8,rel:240,makeup:1},
-      {thresh:-16,ratio:1.2,atk:6,rel:260,makeup:0.5}
-    ],
-    peakThresh: 85, bassThresh: 70, loudTarget: 52,
-    outputGain: 49
-  },
-  'rock': {
-    name: 'Rock/Pop',
-    inputGain: 51, agcTarget: 45, agcSpeed: 55,
-    eq: [3, 2, 1, 2, 3, 2],
-    comp: [
-      {thresh:-22,ratio:4,atk:6,rel:100,makeup:7},
-      {thresh:-18,ratio:3.5,atk:5,rel:120,makeup:5},
-      {thresh:-15,ratio:3.5,atk:4,rel:140,makeup:5},
-      {thresh:-12,ratio:3,atk:3,rel:160,makeup:4},
-      {thresh:-10,ratio:2.5,atk:2,rel:180,makeup:3}
-    ],
-    peakThresh: 95, bassThresh: 90, loudTarget: 75,
-    outputGain: 51
-  },
+  'fm-loud': { name: 'FM Loud', inputGain: 50, agcTarget: 50, agcSpeed: 50, eq: [2, 0, -1, 1, 2, 0], comp: [{thresh:-24,ratio:4,atk:10,rel:100,makeup:6},{thresh:-20,ratio:3,atk:8,rel:120,makeup:4},{thresh:-18,ratio:3.5,atk:5,rel:150,makeup:5},{thresh:-16,ratio:3,atk:3,rel:180,makeup:4},{thresh:-14,ratio:2.5,atk:2,rel:200,makeup:3}], peakThresh: 90, bassThresh: 80, loudTarget: 60, outputGain: 50 },
+  'fm-clean': { name: 'FM Clean', inputGain: 50, agcTarget: 60, agcSpeed: 40, eq: [0, 0, 0, 0, 0, 0], comp: [{thresh:-30,ratio:2,atk:15,rel:150,makeup:3},{thresh:-25,ratio:2,atk:12,rel:180,makeup:2},{thresh:-22,ratio:2,atk:10,rel:200,makeup:2},{thresh:-20,ratio:1.5,atk:8,rel:220,makeup:1},{thresh:-18,ratio:1.5,atk:5,rel:250,makeup:1}], peakThresh: 85, bassThresh: 70, loudTarget: 52, outputGain: 50 },
+  'fm-hot': { name: 'FM Hot', inputGain: 53, agcTarget: 30, agcSpeed: 70, eq: [3, 1, -2, 2, 4, 1], comp: [{thresh:-18,ratio:6,atk:5,rel:80,makeup:10},{thresh:-15,ratio:5,atk:4,rel:100,makeup:8},{thresh:-12,ratio:5,atk:3,rel:120,makeup:8},{thresh:-10,ratio:4,atk:2,rel:140,makeup:6},{thresh:-8,ratio:3,atk:1,rel:160,makeup:5}], peakThresh: 97, bassThresh: 95, loudTarget: 80, outputGain: 52 },
+  'fm-classic': { name: 'FM Classic', inputGain: 50, agcTarget: 55, agcSpeed: 45, eq: [1, 0, 0, 0, -1, -2], comp: [{thresh:-28,ratio:3,atk:12,rel:130,makeup:4},{thresh:-24,ratio:2.5,atk:10,rel:150,makeup:3},{thresh:-20,ratio:2.5,atk:8,rel:180,makeup:3},{thresh:-18,ratio:2,atk:6,rel:200,makeup:2},{thresh:-16,ratio:1.5,atk:5,rel:220,makeup:1}], peakThresh: 90, bassThresh: 75, loudTarget: 55, outputGain: 50 },
+  'fm-news': { name: 'FM News/Talk', inputGain: 52, agcTarget: 45, agcSpeed: 60, eq: [-1, 1, 3, 2, 1, -1], comp: [{thresh:-26,ratio:3,atk:8,rel:120,makeup:5},{thresh:-22,ratio:3,atk:6,rel:140,makeup:4},{thresh:-18,ratio:4,atk:4,rel:160,makeup:6},{thresh:-15,ratio:3.5,atk:3,rel:180,makeup:4},{thresh:-12,ratio:2,atk:2,rel:200,makeup:2}], peakThresh: 90, bassThresh: 70, loudTarget: 70, outputGain: 51 },
+  'stream-clean': { name: 'Streaming Clean', inputGain: 50, agcTarget: 55, agcSpeed: 35, eq: [0, 0, 0, 0, 0, 0], comp: [{thresh:-32,ratio:2,atk:20,rel:200,makeup:2},{thresh:-28,ratio:1.5,atk:15,rel:220,makeup:1},{thresh:-24,ratio:1.5,atk:12,rel:250,makeup:1},{thresh:-20,ratio:1.5,atk:10,rel:280,makeup:1},{thresh:-16,ratio:1.2,atk:8,rel:300,makeup:0.5}], peakThresh: 80, bassThresh: 60, loudTarget: 60, outputGain: 49 },
+  'stream-loud': { name: 'Streaming Loud', inputGain: 52, agcTarget: 35, agcSpeed: 55, eq: [1, 0, 0, 0, 1, 0], comp: [{thresh:-22,ratio:4,atk:5,rel:100,makeup:8},{thresh:-18,ratio:3.5,atk:4,rel:120,makeup:6},{thresh:-15,ratio:3.5,atk:3,rel:140,makeup:6},{thresh:-12,ratio:3,atk:2,rel:160,makeup:5},{thresh:-10,ratio:2.5,atk:1,rel:180,makeup:4}], peakThresh: 90, bassThresh: 90, loudTarget: 70, outputGain: 51 },
+  'stream-podcast': { name: 'Podcast', inputGain: 53, agcTarget: 40, agcSpeed: 50, eq: [-2, 1, 3, 2, 0, -2], comp: [{thresh:-24,ratio:4,atk:8,rel:120,makeup:6},{thresh:-20,ratio:3,atk:6,rel:140,makeup:4},{thresh:-16,ratio:4,atk:4,rel:160,makeup:6},{thresh:-14,ratio:3,atk:3,rel:180,makeup:4},{thresh:-12,ratio:2,atk:2,rel:200,makeup:2}], peakThresh: 85, bassThresh: 70, loudTarget: 60, outputGain: 50 },
+  'bass-boost': { name: 'Bass Boost', inputGain: 50, agcTarget: 50, agcSpeed: 50, eq: [6, 4, 2, 0, -1, 0], comp: [{thresh:-20,ratio:5,atk:8,rel:100,makeup:8},{thresh:-18,ratio:4,atk:6,rel:120,makeup:6},{thresh:-16,ratio:3,atk:5,rel:150,makeup:4},{thresh:-14,ratio:2.5,atk:3,rel:180,makeup:3},{thresh:-12,ratio:2,atk:2,rel:200,makeup:2}], peakThresh: 90, bassThresh: 90, loudTarget: 70, outputGain: 50 },
+  'bright': { name: 'Bright & Airy', inputGain: 50, agcTarget: 50, agcSpeed: 50, eq: [-2, -1, 0, 1, 3, 5], comp: [{thresh:-28,ratio:2.5,atk:12,rel:150,makeup:3},{thresh:-24,ratio:2.5,atk:10,rel:170,makeup:3},{thresh:-20,ratio:2.5,atk:8,rel:190,makeup:3},{thresh:-18,ratio:2.5,atk:6,rel:210,makeup:3},{thresh:-16,ratio:2,atk:4,rel:230,makeup:2}], peakThresh: 85, bassThresh: 70, loudTarget: 55, outputGain: 50 },
+  'warm': { name: 'Warm Analog', inputGain: 49, agcTarget: 55, agcSpeed: 45, eq: [2, 1, 0, -1, -2, -3], comp: [{thresh:-26,ratio:2,atk:15,rel:180,makeup:3},{thresh:-22,ratio:2,atk:12,rel:200,makeup:2},{thresh:-20,ratio:1.8,atk:10,rel:220,makeup:2},{thresh:-18,ratio:1.5,atk:8,rel:240,makeup:1},{thresh:-16,ratio:1.2,atk:6,rel:260,makeup:0.5}], peakThresh: 85, bassThresh: 70, loudTarget: 52, outputGain: 49 },
+  'rock': { name: 'Rock/Pop', inputGain: 51, agcTarget: 45, agcSpeed: 55, eq: [3, 2, 1, 2, 3, 2], comp: [{thresh:-22,ratio:4,atk:6,rel:100,makeup:7},{thresh:-18,ratio:3.5,atk:5,rel:120,makeup:5},{thresh:-15,ratio:3.5,atk:4,rel:140,makeup:5},{thresh:-12,ratio:3,atk:3,rel:160,makeup:4},{thresh:-10,ratio:2.5,atk:2,rel:180,makeup:3}], peakThresh: 95, bassThresh: 90, loudTarget: 75, outputGain: 51 },
   'custom1': { name: 'User Preset 1', inputGain:50, agcTarget:50, agcSpeed:50, eq:[0,0,0,0,0,0], comp:[{thresh:-24,ratio:4,atk:10,rel:100,makeup:6},{thresh:-20,ratio:3,atk:8,rel:120,makeup:4},{thresh:-18,ratio:3.5,atk:5,rel:150,makeup:5},{thresh:-16,ratio:3,atk:3,rel:180,makeup:4},{thresh:-14,ratio:2.5,atk:2,rel:200,makeup:3}], peakThresh:90, bassThresh:80, loudTarget:60, outputGain:50 },
   'custom2': { name: 'User Preset 2', inputGain:50, agcTarget:50, agcSpeed:50, eq:[0,0,0,0,0,0], comp:[{thresh:-24,ratio:4,atk:10,rel:100,makeup:6},{thresh:-20,ratio:3,atk:8,rel:120,makeup:4},{thresh:-18,ratio:3.5,atk:5,rel:150,makeup:5},{thresh:-16,ratio:3,atk:3,rel:180,makeup:4},{thresh:-14,ratio:2.5,atk:2,rel:200,makeup:3}], peakThresh:90, bassThresh:80, loudTarget:60, outputGain:50 }
 };
 
-// ===== INIT AUDIO ENGINE =====
-async function initAudio() {
-  if (isAudioStarted) return;
-  
-  try {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 48000 });
-    
-    // Create gain nodes
-    inputGainNode = audioCtx.createGain();
-    agcGainNode = audioCtx.createGain();
-    outputGainNode = audioCtx.createGain();
-    
-    // Create analyzers
-    inputAnalyser = audioCtx.createAnalyser();
-    inputAnalyser.fftSize = 2048;
-    agcAnalyser = audioCtx.createAnalyser();
-    agcAnalyser.fftSize = 2048;
-    compAnalyser = audioCtx.createAnalyser();
-    compAnalyser.fftSize = 2048;
-    eqAnalyser = audioCtx.createAnalyser();
-    eqAnalyser.fftSize = 2048;
-    limiterAnalyser = audioCtx.createAnalyser();
-    limiterAnalyser.fftSize = 2048;
-    outputAnalyser = audioCtx.createAnalyser();
-    outputAnalyser.fftSize = 2048;
-    masterAnalyser = audioCtx.createAnalyser();
-    masterAnalyser.fftSize = 4096;
-    
-    // Create EQ filters (6 bands)
-    const eqFreqs = [32, 100, 400, 1500, 5000, 12000];
-    eqFilters = eqFreqs.map((freq, i) => {
-      const filter = audioCtx.createBiquadFilter();
-      filter.type = i === 0 ? 'lowshelf' : (i === eqFreqs.length - 1 ? 'highshelf' : 'peaking');
-      filter.frequency.value = freq;
-      filter.gain.value = 0;
-      filter.Q.value = 1.4;
-      return filter;
-    });
-    
-    // Create compressor bands (5 bands with crossover filters)
-    const compFreqs = [120, 400, 1500, 5000];
-    compBands = [];
-    compFilters = [];
-    
-    for (let i = 0; i < 5; i++) {
-      const compressor = audioCtx.createDynamicsCompressor();
-      compressor.threshold.value = presets['fm-loud'].comp[i].thresh;
-      compressor.ratio.value = presets['fm-loud'].comp[i].ratio;
-      compressor.attack.value = presets['fm-loud'].comp[i].atk / 1000;
-      compressor.release.value = presets['fm-loud'].comp[i].rel / 1000;
-      compressor.knee.value = 6;
-      compBands.push(compressor);
-    }
-    
-    // Crossover filters for multiband compressor
-    compFilters = [];
-    for (let i = 0; i < 4; i++) {
-      const lp = audioCtx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = compFreqs[i];
-      lp.Q.value = 0.7;
-      
-      const hp = audioCtx.createBiquadFilter();
-      hp.type = 'highpass';
-      hp.frequency.value = compFreqs[i];
-      hp.Q.value = 0.7;
-      
-      compFilters.push({ lp, hp });
-    }
-    
-    // Limiters
-    peakLimiter = audioCtx.createDynamicsCompressor();
-    peakLimiter.threshold.value = -0.3;
-    peakLimiter.ratio.value = 20;
-    peakLimiter.attack.value = 0.001;
-    peakLimiter.release.value = 0.05;
-    peakLimiter.knee.value = 0;
-    
-    bassLimiter = audioCtx.createDynamicsCompressor();
-    bassLimiter.threshold.value = -3;
-    bassLimiter.ratio.value = 20;
-    bassLimiter.attack.value = 0.005;
-    bassLimiter.release.value = 0.1;
-    bassLimiter.knee.value = 0;
-    
-    loudnessLimiter = audioCtx.createDynamicsCompressor();
-    loudnessLimiter.threshold.value = -16;
-    loudnessLimiter.ratio.value = 20;
-    loudnessLimiter.attack.value = 0.01;
-    loudnessLimiter.release.value = 0.1;
-    loudnessLimiter.knee.value = 0;
-    
-    // Initialize advanced modules
-    initMidSideProcessing();
-    initDucking();
-    
-    // Connect input source
-    await setupInputSource('mic');
-    
-    isAudioStarted = true;
-    document.getElementById('infoEngine').textContent = 'Running';
-    document.getElementById('infoSampleRate').textContent = (audioCtx.sampleRate / 1000) + ' kHz';
-    
-    startMetering();
-    startAdvancedLoop();
-    updateClock();
-    
-  } catch (e) {
-    console.error('Audio init error:', e);
-    alert('Error initializing audio: ' + e.message);
-  }
-}
+// ===== FADER INTERACTION =====
+let activeFader = null;
+let faderStartY = 0;
+let faderStartValue = 0;
 
-async function setupInputSource(type) {
-  if (inputSource) {
-    try { inputSource.disconnect(); } catch(e) {}
-  }
-  if (oscillatorNode) {
-    try { oscillatorNode.stop(); } catch(e) {}
-    oscillatorNode = null;
-  }
-  if (noiseNode) {
-    try { noiseNode.stop(); } catch(e) {}
-    noiseNode = null;
-  }
-  
-  currentInputType = type;
-  
-  switch(type) {
-    case 'mic':
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        inputSource = audioCtx.createMediaStreamSource(stream);
-        document.getElementById('infoInput').textContent = 'Microphone';
-      } catch(e) {
-        console.warn('Mic access denied, using test signal');
-        createTestSignal();
-      }
-      break;
-    case 'sine':
-      createTestSignal();
-      document.getElementById('infoInput').textContent = 'Sine Test';
-      break;
-    case 'noise':
-      createNoiseSignal();
-      document.getElementById('infoInput').textContent = 'Noise Test';
-      break;
-    case 'file':
-      document.getElementById('infoInput').textContent = 'File (select a file)';
-      const input = document.createElement('input');
-      input.type = 'file';
-      input.accept = 'audio/*';
-      input.onchange = (e) => {
-        const file = e.target.files[0];
-        if (file && audioCtx) {
-          const reader = new FileReader();
-          reader.onload = (ev) => {
-            audioCtx.decodeAudioData(ev.target.result, (buffer) => {
-              if (inputSource) try { inputSource.disconnect(); } catch(e) {}
-              if (oscillatorNode) try { oscillatorNode.stop(); } catch(e) {}
-              if (noiseNode) try { noiseNode.stop(); } catch(e) {}
-              
-              const source = audioCtx.createBufferSource();
-              source.buffer = buffer;
-              source.loop = true;
-              inputSource = source;
-              source.start();
-              buildAudioChain();
-              document.getElementById('infoInput').textContent = file.name;
-            });
-          };
-          reader.readAsArrayBuffer(file);
-        }
-      };
-      input.click();
-      return;
-  }
-  
-  buildAudioChain();
-}
-
-function createTestSignal() {
-  oscillatorNode = audioCtx.createOscillator();
-  oscillatorNode.type = 'sine';
-  oscillatorNode.frequency.value = 1000;
-  const oscGain = audioCtx.createGain();
-  oscGain.gain.value = 0.3;
-  oscillatorNode.connect(oscGain);
-  inputSource = oscGain;
-  oscillatorNode.start();
-}
-
-function createNoiseSignal() {
-  const bufferSize = audioCtx.sampleRate * 2;
-  const buffer = audioCtx.createBuffer(2, bufferSize, audioCtx.sampleRate);
-  for (let ch = 0; ch < 2; ch++) {
-    const data = buffer.getChannelData(ch);
-    for (let i = 0; i < bufferSize; i++) {
-      data[i] = (Math.random() * 2 - 1) * 0.15;
-    }
-  }
-  noiseNode = audioCtx.createBufferSource();
-  noiseNode.buffer = buffer;
-  noiseNode.loop = true;
-  noiseGain = audioCtx.createGain();
-  noiseGain.gain.value = 0.3;
-  noiseNode.connect(noiseGain);
-  inputSource = noiseGain;
-  noiseNode.start();
-}
-
-function buildAudioChain() {
-  try {
-    if (inputSource) inputSource.disconnect();
-    
-    const chainStart = inputSource;
-    chainStart.connect(inputGainNode);
-    inputGainNode.connect(inputAnalyser);
-    
-    inputAnalyser.connect(agcGainNode);
-    agcGainNode.connect(agcAnalyser);
-    
-    const compInput = audioCtx.createGain();
-    agcAnalyser.connect(compInput);
-    
-    const compOutputs = [];
-    for (let i = 0; i < 5; i++) {
-      const bandOutput = audioCtx.createGain();
-      
-      if (i === 0) {
-        const lp = compFilters[0].lp;
-        compInput.connect(lp);
-        lp.connect(compBands[i]);
-        compBands[i].connect(bandOutput);
-      } else if (i === 4) {
-        const hp = compFilters[3].hp;
-        compInput.connect(hp);
-        hp.connect(compBands[i]);
-        compBands[i].connect(bandOutput);
-      } else {
-        const lp = compFilters[i].lp;
-        const hp = compFilters[i-1].hp;
-        compInput.connect(hp);
-        hp.connect(lp);
-        lp.connect(compBands[i]);
-        compBands[i].connect(bandOutput);
-      }
-      
-      bandOutput.connect(compAnalyser);
-      compOutputs.push(bandOutput);
-    }
-    
-    const compSum = audioCtx.createGain();
-    compOutputs.forEach(o => {
-      try { o.disconnect(); } catch(e) {}
-      o.connect(compSum);
-    });
-    
-    let eqChain = compSum;
-    eqChain.connect(eqAnalyser);
-    
-    eqFilters.forEach((filter, i) => {
-      if (i === 0) {
-        eqAnalyser.connect(filter);
-      } else {
-        eqFilters[i-1].connect(filter);
-      }
-    });
-    
-    const lastEQ = eqFilters[eqFilters.length - 1];
-    lastEQ.connect(limiterAnalyser);
-    limiterAnalyser.connect(peakLimiter);
-    peakLimiter.connect(bassLimiter);
-    bassLimiter.connect(loudnessLimiter);
-    loudnessLimiter.connect(outputAnalyser);
-    
-    outputAnalyser.connect(outputGainNode);
-    outputGainNode.connect(masterAnalyser);
-    masterAnalyser.connect(audioCtx.destination);
-    
-    document.getElementById('infoEngine').textContent = 'Running';
-  } catch(e) {
-    console.error('Chain build error:', e);
-  }
-}
-
-// ===== ADVANCED MODULE INITIALIZATION =====
-function initMidSideProcessing() {
-  if (!audioCtx) return;
-  midSideNode = audioCtx.createChannelSplitter(2);
-}
-
-function initDucking() {
-  if (!audioCtx) return;
-  duckingGain = audioCtx.createGain();
-  duckingGain.gain.value = 1;
-}
-
-// ===== METERING =====
-function startMetering() {
-  setInterval(updateMeters, 50);
-}
-
-function updateMeters() {
-  if (!isAudioStarted || !inputAnalyser) return;
-  
-  const inputTime = new Float32Array(inputAnalyser.fftSize);
-  inputAnalyser.getFloatTimeDomainData(inputTime);
-  
-  const agcTime = new Float32Array(agcAnalyser.fftSize);
-  agcAnalyser.getFloatTimeDomainData(agcTime);
-  
-  const compTime = new Float32Array(compAnalyser.fftSize);
-  compAnalyser.getFloatTimeDomainData(compTime);
-  
-  const eqTime = new Float32Array(eqAnalyser.fftSize);
-  eqAnalyser.getFloatTimeDomainData(eqTime);
-  
-  const limTime = new Float32Array(limiterAnalyser.fftSize);
-  limiterAnalyser.getFloatTimeDomainData(limTime);
-  
-  const outTime = new Float32Array(outputAnalyser.fftSize);
-  outputAnalyser.getFloatTimeDomainData(outTime);
-  
-  const levels = {
-    input: calcRMS(inputTime),
-    agc: calcRMS(agcTime),
-    comp: calcRMS(compTime),
-    eq: calcRMS(eqTime),
-    lim: calcRMS(limTime),
-    out: calcRMS(outTime)
-  };
-  
-  const dbLevels = {};
-  for (const [key, val] of Object.entries(levels)) {
-    dbLevels[key] = val > 0 ? 20 * Math.log10(val) : -Infinity;
-  }
-  
-  updateMeterPair('Input', dbLevels.input, dbLevels.input);
-  updateMeterPair('AGC', dbLevels.agc, dbLevels.agc);
-  updateMeterPair('Comp', dbLevels.comp, dbLevels.comp);
-  updateMeterPair('EQ', dbLevels.eq, dbLevels.eq);
-  updateMeterPair('Lim', dbLevels.lim, dbLevels.lim);
-  updateMeterPair('Out', dbLevels.out, dbLevels.out);
-  
-  document.getElementById('infoPeakL').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
-  document.getElementById('infoPeakR').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
-  document.getElementById('infoRMSL').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
-  document.getElementById('infoRMSR').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
-  
-  const outPct = Math.max(0, Math.min(100, (dbLevels.out + 60) / 60 * 100));
-  document.getElementById('outputLevelFill').style.width = outPct + '%';
-  
-  const cpu = 8 + Math.random() * 15;
-  document.getElementById('cpuUsage').textContent = cpu.toFixed(0) + '%';
-}
-
-function calcRMS(data) {
-  let sum = 0;
-  for (let i = 0; i < data.length; i++) {
-    sum += data[i] * data[i];
-  }
-  return Math.sqrt(sum / data.length);
-}
-
-function updateMeterPair(name, lDb, rDb) {
-  const lPct = dbToPercent(lDb);
-  const rPct = dbToPercent(rDb);
-  
-  const lFill = document.getElementById('meter' + name + 'LFill');
-  if (lFill) {
-    lFill.style.height = lPct + '%';
-    lFill.style.background = getMeterGradient(lPct);
-  }
-  
-  const rFill = document.getElementById('meter' + name + 'RFill');
-  if (rFill) {
-    rFill.style.height = rPct + '%';
-    rFill.style.background = getMeterGradient(rPct);
-  }
-  
-  const lVal = document.getElementById('meter' + name + 'LVal');
-  if (lVal) lVal.innerHTML = lDb > -100 ? '<span class="meter-db-value">' + lDb.toFixed(1) + ' dB</span>' : '-∞ dB';
-  
-  const rVal = document.getElementById('meter' + name + 'RVal');
-  if (rVal) rVal.innerHTML = rDb > -100 ? '<span class="meter-db-value">' + rDb.toFixed(1) + ' dB</span>' : '-∞ dB';
-}
-
-function dbToPercent(db) {
-  if (db <= -60) return 0;
-  if (db >= 0) return 100;
-  return ((db + 60) / 60) * 100;
-}
-
-function getMeterGradient(pct) {
-  if (pct < 60) return '#00cc44';
-  if (pct < 80) return '#88cc00';
-  if (pct < 90) return '#ffcc00';
-  if (pct < 95) return '#ff8800';
-  return '#ff3344';
-}
-
-// ===== LUFS METERING =====
-function updateLUFSMeter() {
-  if (!isAudioStarted || !masterAnalyser) return;
-  
-  const timeData = new Float32Array(masterAnalyser.fftSize);
-  masterAnalyser.getFloatTimeDomainData(timeData);
-  
-  let sum = 0;
-  for (let i = 0; i < timeData.length; i++) {
-    const weighted = timeData[i] * (1 + Math.sin(i * 0.001) * 0.1);
-    sum += weighted * weighted;
-  }
-  const rms = Math.sqrt(sum / timeData.length);
-  const lufs = rms > 0 ? 20 * Math.log10(rms) + 0.691 : -Infinity;
-  
-  lufsMeter.momentary = lufsMeter.momentary * 0.9 + lufs * 0.1;
-  lufsMeter.shortTerm = lufsMeter.shortTerm * 0.95 + lufs * 0.05;
-  lufsMeter.history.push(lufs);
-  if (lufsMeter.history.length > 600) lufsMeter.history.shift();
-  lufsMeter.integrated = lufsMeter.history.reduce((a,b) => a+b, 0) / lufsMeter.history.length;
-  
-  const maxSample = Math.max(...timeData.map(Math.abs));
-  const tp = 20 * Math.log10(maxSample * 1.05);
-  lufsMeter.truePeak = Math.max(lufsMeter.truePeak * 0.99, tp);
-  
-  const sorted = [...lufsMeter.history].sort((a,b) => a-b);
-  const p10 = sorted[Math.floor(sorted.length * 0.1)] || -70;
-  const p95 = sorted[Math.floor(sorted.length * 0.95)] || 0;
-  lufsMeter.lra = Math.max(0, p95 - p10);
-  
-  document.getElementById('lufsValue').textContent = lufsMeter.integrated.toFixed(1);
-  document.getElementById('lufsValue').className = 'lufs-value' + 
-    (Math.abs(lufsMeter.integrated - lufsMeter.target) > 2 ? ' warning' : '');
-  
-  const fillPct = Math.max(0, Math.min(100, (lufsMeter.integrated + 70) / 70 * 100));
-  document.getElementById('lufsFill').style.width = fillPct + '%';
-  
-  document.getElementById('lufsMomentary').textContent = lufsMeter.momentary.toFixed(1) + ' LUFS';
-  document.getElementById('lufsShort').textContent = lufsMeter.shortTerm.toFixed(1);
-  document.getElementById('lufsLRA').textContent = lufsMeter.lra.toFixed(1);
-  document.getElementById('truePeakVal').textContent = lufsMeter.truePeak.toFixed(1) + ' dBTP';
-  
-  const tpBadge = document.getElementById('truePeakBadge');
-  if (lufsMeter.truePeak > -1.0) {
-    tpBadge.textContent = 'TP: CLIP!';
-    tpBadge.className = 'truepeak-badge';
-  } else {
-    tpBadge.textContent = 'TP: OK';
-    tpBadge.className = 'truepeak-badge ok';
-  }
-}
-
-// ===== STEREO IMAGER =====
-function updateImager() {
-  document.getElementById('valImagerLow').textContent = imagerState.low + '%';
-  document.getElementById('valImagerMid').textContent = imagerState.mid + '%';
-  document.getElementById('valImagerHigh').textContent = imagerState.high + '%';
-}
-
-function toggleMSMode() {
-  imagerState.msMode = !imagerState.msMode;
-  document.getElementById('btnMS').classList.toggle('on', imagerState.msMode);
-}
-
-function toggleMonoCompat() {
-  imagerState.monoCheck = !imagerState.monoCheck;
-  document.getElementById('btnMonoCheck').classList.toggle('on', imagerState.monoCheck);
-}
-
-// ===== CORRELATION METER =====
-function drawCorrelationMeter() {
-  const canvas = document.getElementById('correlationCanvas');
-  if (!canvas || !masterAnalyser) return;
-  const ctx = canvas.getContext('2d');
-  const w = canvas.width, h = canvas.height;
-  
-  ctx.fillStyle = '#0a0a10';
-  ctx.fillRect(0, 0, w, h);
-  
-  const timeL = new Float32Array(masterAnalyser.fftSize);
-  const timeR = new Float32Array(masterAnalyser.fftSize);
-  masterAnalyser.getFloatTimeDomainData(timeL);
-  for(let i=0; i<timeR.length; i++) timeR[i] = timeL[i] * (0.9 + Math.random()*0.2);
-  
-  let sumLL = 0, sumRR = 0, sumLR = 0;
-  for(let i = 0; i < 1024; i++) {
-    sumLL += timeL[i] * timeL[i];
-    sumRR += timeR[i] * timeR[i];
-    sumLR += timeL[i] * timeR[i];
-  }
-  const corr = sumLR / Math.sqrt(sumLL * sumRR + 0.0001);
-  
-  const angle = (corr + 1) / 2 * Math.PI - Math.PI/2;
-  const radius = 25;
-  ctx.strokeStyle = corr > 0 ? '#00cc44' : '#ff4444';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(w/2, h/2);
-  ctx.lineTo(w/2 + Math.cos(angle) * radius, h/2 + Math.sin(angle) * radius);
-  ctx.stroke();
-  
-  ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-  ctx.beginPath();
-  ctx.arc(w/2, h/2, radius, 0, Math.PI*2);
-  ctx.stroke();
-  
-  document.getElementById('corrValue').textContent = corr.toFixed(2);
-  document.getElementById('corrValue').style.color = corr > 0.7 ? '#00cc44' : corr > 0 ? '#ffcc00' : '#ff4444';
-}
-
-// ===== DE-ESSER =====
-function drawDeesserSpectrum() {
-  const canvas = document.getElementById('deesserCanvas');
-  if (!canvas || !masterAnalyser) return;
-  const ctx = canvas.getContext('2d');
-  const w = canvas.parentElement.clientWidth;
-  const h = canvas.parentElement.clientHeight;
-  
-  if (canvas.width !== w) canvas.width = w;
-  if (canvas.height !== h) canvas.height = h;
-  
-  const bufferLength = masterAnalyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-  masterAnalyser.getByteFrequencyData(dataArray);
-  
-  ctx.fillStyle = '#0a0a10';
-  ctx.fillRect(0, 0, w, h);
-  
-  const barWidth = w / bufferLength * 3;
-  for (let i = 0; i < bufferLength; i++) {
-    const freq = i * audioCtx.sampleRate / (bufferLength * 2);
-    if (freq > 10000) break;
-    
-    const barHeight = (dataArray[i] / 255) * h;
-    const x = (Math.log10(freq) - Math.log10(20)) / (Math.log10(10000) - Math.log10(20)) * w;
-    
-    const inBand = freq > deesserState.freq * 0.7 && freq < deesserState.freq * 1.4;
-    ctx.fillStyle = inBand && deesserState.active ? '#ff4444' : '#00aaff';
-    ctx.fillRect(x, h - barHeight, barWidth - 1, barHeight);
-  }
-  
-  const threshY = h - ((deesserState.threshold + 60) / 60 * h);
-  ctx.strokeStyle = 'rgba(255,68,68,0.5)';
-  ctx.setLineDash([4, 2]);
-  ctx.beginPath();
-  ctx.moveTo(0, threshY);
-  ctx.lineTo(w, threshY);
-  ctx.stroke();
-  ctx.setLineDash([]);
-}
-
-function detectSibilance() {
-  if (!masterAnalyser) return false;
-  
-  const freqData = new Uint8Array(masterAnalyser.frequencyBinCount);
-  masterAnalyser.getByteFrequencyData(freqData);
-  
-  const startIdx = Math.floor(4000 / (audioCtx.sampleRate/2) * freqData.length);
-  const endIdx = Math.floor(8000 / (audioCtx.sampleRate/2) * freqData.length);
-  
-  let sum = 0;
-  for (let i = startIdx; i < endIdx; i++) sum += freqData[i];
-  const avg = sum / (endIdx - startIdx);
-  
-  const detected = avg > (128 + deesserState.threshold + 60);
-  deesserState.active = detected;
-  
-  return detected;
-}
-
-// ===== A/B COMPARISON =====
-function toggleABCompare() {
-  const panel = document.getElementById('abCompare');
-  abState.active = !abState.active;
-  panel.style.display = abState.active ? 'flex' : 'none';
-  
-  if (abState.active && !abState.presetA) {
-    abState.presetA = JSON.parse(JSON.stringify(knobState));
-  }
-}
-
-function selectAB(side) {
-  abState.current = side;
-  document.querySelectorAll('.ab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelector(`.ab-btn.${side.toLowerCase()}`).classList.add('active');
-  
-  const preset = side === 'A' ? abState.presetA : abState.presetB;
-  if (preset) {
-    Object.assign(knobState, preset);
-    initAllKnobDisplays();
-    applyAllKnobValues();
-  }
-}
-
-function toggleAB() {
-  abState.current = abState.current === 'A' ? 'B' : 'A';
-  selectAB(abState.current);
-}
-
-function copyAToB() {
-  abState.presetB = JSON.parse(JSON.stringify(abState.presetA));
-  alert('Preset A copied to B');
-}
-
-function closeABCompare() {
-  abState.active = false;
-  document.getElementById('abCompare').style.display = 'none';
-}
-
-// ===== VOICE DUCKING =====
-function detectVoice() {
-  if (!inputAnalyser) return false;
-  
-  const data = new Float32Array(inputAnalyser.fftSize);
-  inputAnalyser.getFloatTimeDomainData(data);
-  
-  let sum = 0, count = 0;
-  for (let i = 0; i < data.length; i++) {
-    const freq = i * audioCtx.sampleRate / data.length;
-    if (freq >= 300 && freq <= 3000) {
-      sum += data[i] * data[i];
-      count++;
-    }
-  }
-  const rms = count > 0 ? Math.sqrt(sum / count) : 0;
-  const db = rms > 0 ? 20 * Math.log10(rms) : -Infinity;
-  
-  return db > duckingState.threshold;
-}
-
-function updateDucking() {
-  if (!duckingState.enabled || !duckingGain) return;
-  
-  const voiceDetected = detectVoice();
-  const targetGain = voiceDetected ? 
-    dbToGain(duckingState.reduction) : 1;
-  
-  const current = duckingGain.gain.value;
-  const coeff = voiceDetected ? 
-    Math.exp(-1 / (duckingState.attack * audioCtx.sampleRate / 1000)) :
-    Math.exp(-1 / (duckingState.release * audioCtx.sampleRate / 1000));
-  
-  duckingGain.gain.value = current + (targetGain - current) * (1 - coeff);
-}
-
-function toggleDucking() {
-  duckingState.enabled = !duckingState.enabled;
-  document.getElementById('btnDuck').classList.toggle('active', duckingState.enabled);
-  if (duckingState.enabled && !duckingGain) initDucking();
-}
-
-// ===== MACRO RECORDER =====
-function toggleMacroRecord() {
-  macroState.recording = !macroState.recording;
-  const btn = document.getElementById('macroRecordBtn');
-  btn.classList.toggle('active', macroState.recording);
-  
-  if (macroState.recording) {
-    macroState.startTime = Date.now();
-    macroState.keyframes = [];
-    captureKeyframe();
-  }
-}
-
-function captureKeyframe() {
-  if (!macroState.recording) return;
-  
-  const timestamp = (Date.now() - macroState.startTime) / 1000;
-  const values = {};
-  
-  macroState.parameters.forEach(param => {
-    values[param] = knobState[param];
-  });
-  
-  macroState.keyframes.push({ timestamp, values });
-  renderMacroTimeline();
-}
-
-function renderMacroTimeline() {
-  const timeline = document.getElementById('macroTimeline');
-  timeline.innerHTML = '';
-  
-  const duration = macroState.keyframes.length > 0 ? 
-    macroState.keyframes[macroState.keyframes.length-1].timestamp : 0;
-  
-  macroState.keyframes.forEach(kf => {
-    const pos = (kf.timestamp / Math.max(duration, 1)) * 100;
-    const marker = document.createElement('div');
-    marker.className = 'macro-keyframe';
-    marker.style.left = pos + '%';
-    marker.title = `${kf.timestamp.toFixed(1)}s • ${Object.keys(kf.values).length} params`;
-    timeline.appendChild(marker);
-  });
-  
-  document.getElementById('macroParams').textContent = 
-    `${macroState.parameters.length} parameters`;
-}
-
-function toggleMacroPlay() {
-  macroState.playing = !macroState.playing;
-  document.getElementById('macroPlayBtn').classList.toggle('active', macroState.playing);
-  
-  if (macroState.playing) {
-    playMacro();
-  }
-}
-
-function playMacro() {
-  if (!macroState.playing || macroState.keyframes.length < 2) return;
-  
-  const startTime = Date.now();
-  const duration = macroState.keyframes[macroState.keyframes.length-1].timestamp * 1000;
-  
-  function animate() {
-    if (!macroState.playing) return;
-    
-    const elapsed = (Date.now() - startTime) / 1000;
-    if (elapsed >= duration) {
-      macroState.playing = false;
-      document.getElementById('macroPlayBtn').classList.remove('active');
-      return;
-    }
-    
-    for (let i = 0; i < macroState.keyframes.length - 1; i++) {
-      const kf1 = macroState.keyframes[i];
-      const kf2 = macroState.keyframes[i+1];
-      
-      if (elapsed >= kf1.timestamp && elapsed < kf2.timestamp) {
-        const t = (elapsed - kf1.timestamp) / (kf2.timestamp - kf1.timestamp);
-        
-        macroState.parameters.forEach(param => {
-          const v1 = kf1.values[param];
-          const v2 = kf2.values[param];
-          knobState[param] = v1 + (v2 - v1) * t;
-          updateKnobDisplay(param);
-          applyKnobValue(param, knobState[param]);
-        });
-        break;
-      }
-    }
-    
-    document.getElementById('macroTime').textContent = 
-      `${Math.floor(elapsed/60)}:${String(Math.floor(elapsed%60)).padStart(2,'0')}`;
-    
-    requestAnimationFrame(animate);
-  }
-  animate();
-}
-
-function clearMacro() {
-  macroState.keyframes = [];
-  renderMacroTimeline();
-}
-
-function exportMacro() {
-  const data = JSON.stringify(macroState, null, 2);
-  const blob = new Blob([data], {type: 'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'macro.json';
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-function toggleMacroPanel() {
-  const panel = document.getElementById('macroPanel');
-  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-}
-
-// ===== NETWORK SYNC =====
-function connectNetwork(roomId) {
-  if (!window.WebSocket) {
-    document.getElementById('networkStatus').textContent = 'WS unsupported';
-    return;
-  }
-  
-  networkState.ws = new WebSocket(`wss://sync.omniapro.local/room/${roomId}`);
-  
-  networkState.ws.onopen = () => {
-    networkState.connected = true;
-    updateNetworkUI();
-  };
-  
-  networkState.ws.onmessage = (event) => {
-    const data = JSON.parse(event.data);
-    if (data.type === 'preset-update') {
-      Object.assign(knobState, data.values);
-      initAllKnobDisplays();
-    }
-  };
-  
-  networkState.ws.onclose = () => {
-    networkState.connected = false;
-    updateNetworkUI();
-  };
-}
-
-function updateNetworkUI() {
-  const dot = document.getElementById('networkDot');
-  const status = document.getElementById('networkStatus');
-  
-  dot.className = 'network-dot' + (networkState.connected ? ' connected' : '');
-  status.textContent = networkState.connected ? 'Synced' : 'Offline';
-}
-
-setInterval(() => {
-  if (Math.random() > 0.95) {
-    networkState.connected = !networkState.connected;
-    updateNetworkUI();
-  }
-}, 5000);
-
-// ===== DYNAMIC EQ =====
-function updateDynamicEQ() {
-  if (!masterAnalyser) return;
-  
-  const freqData = new Uint8Array(masterAnalyser.frequencyBinCount);
-  masterAnalyser.getByteFrequencyData(freqData);
-  
-  Object.entries(dynEqState.bands).forEach(([bandId, config]) => {
-    if (!config.active) return;
-    
-    const idx = Math.floor(config.freq / (audioCtx.sampleRate/2) * freqData.length);
-    const level = freqData[idx] ? (freqData[idx] / 255) * 60 - 60 : -60;
-    
-    const isActive = level > config.threshold;
-    const indicator = document.getElementById(`dynEq${bandId}Active`);
-    const info = document.getElementById(`dynEq${bandId}Info`);
-    
-    if (indicator) {
-      indicator.style.height = isActive ? '100%' : '0%';
-      indicator.style.background = isActive ? 'var(--accent-green)' : '#333';
-    }
-    if (info) {
-      info.className = 'dyn-eq-info' + (isActive ? ' active' : '');
-    }
-    
-    if (isActive && eqFilters[parseInt(bandId)-1]) {
-      const boost = (level - config.threshold) * 0.3;
-      eqFilters[parseInt(bandId)-1].gain.value = 
-        (knobState['eq'+bandId] - 50) / 50 * 12 + boost;
-    }
+function initFaderListeners() {
+  document.querySelectorAll('.fader-container, .fader-h-container, .band-fader-container').forEach(fader => {
+    fader.addEventListener('mousedown', startFader);
+    fader.addEventListener('touchstart', startFaderTouch, { passive: false });
   });
 }
 
-function toggleDynEq(bandId) {
-  dynEqState.bands[bandId].active = !dynEqState.bands[bandId].active;
+function startFader(e) {
+  e.preventDefault();
+  const faderEl = e.target.closest('.fader-control, .fader-h, .band-card .band-fader');
+  if (!faderEl) return;
+  
+  const dataFader = faderEl.getAttribute('data-fader');
+  if (!dataFader) return;
+  
+  activeFader = dataFader;
+  faderStartY = e.clientY;
+  faderStartValue = knobState[dataFader] !== undefined ? knobState[dataFader] : parseFloat(e.target.closest('.fader-value-display')?.textContent) || 0;
+  
+  document.addEventListener('mousemove', onFaderMove);
+  document.addEventListener('mouseup', onFaderUp);
 }
 
-// ===== FLOATING ANALYZER =====
-function toggleFloatingAnalyzer() {
-  const panel = document.getElementById('floatingAnalyzer');
-  panel.classList.toggle('visible');
+function startFaderTouch(e) {
+  e.preventDefault();
+  const faderEl = e.target.closest('.fader-control, .fader-h, .band-card .band-fader');
+  if (!faderEl) return;
   
-  if (panel.classList.contains('visible')) {
-    startAdvancedAnalyzer();
-  }
+  const dataFader = faderEl.getAttribute('data-fader');
+  if (!dataFader) return;
+  
+  activeFader = dataFader;
+  faderStartY = e.touches[0].clientY;
+  faderStartValue = knobState[dataFader] || 0;
+  
+  document.addEventListener('touchmove', onFaderMoveTouch, { passive: false });
+  document.addEventListener('touchend', onFaderUpTouch);
 }
 
-function startAdvancedAnalyzer() {
-  const canvas = document.getElementById('analyzerCanvas');
-  if (!canvas || !masterAnalyser) return;
-  const ctx = canvas.getContext('2d');
+function onFaderMove(e) {
+  if (!activeFader) return;
   
-  function draw() {
-    if (!document.getElementById('floatingAnalyzer').classList.contains('visible')) return;
-    
-    const w = canvas.width = canvas.parentElement.clientWidth;
-    const h = canvas.height = canvas.parentElement.clientHeight;
-    
-    const bufferLength = masterAnalyser.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
-    masterAnalyser.getByteFrequencyData(dataArray);
-    
-    const gradient = ctx.createLinearGradient(0, 0, 0, h);
-    gradient.addColorStop(0, '#0a0a10');
-    gradient.addColorStop(1, '#1a1a25');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, w, h);
-    
-    const barWidth = w / 128;
-    for (let i = 0; i < 128; i++) {
-      const value = dataArray[i * 4] / 255;
-      const barHeight = value * h * 0.9;
-      
-      const hue = 200 - (i / 128) * 180 + value * 40;
-      const lightness = 40 + value * 30;
-      ctx.fillStyle = `hsl(${hue}, 80%, ${lightness}%)`;
-      
-      ctx.fillRect(i * barWidth, h - barHeight, barWidth - 2, barHeight);
-      
-      if (value > 0.7) {
-        ctx.fillStyle = `hsla(${hue}, 100%, 80%, ${value - 0.7})`;
-        ctx.fillRect(i * barWidth, h - barHeight - 10, barWidth - 2, 10);
-      }
-    }
-    
-    ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-    ctx.lineWidth = 1;
-    [20, 100, 1000, 10000, 20000].forEach(freq => {
-      const x = (Math.log10(freq) - Math.log10(20)) / 
-                (Math.log10(20000) - Math.log10(20)) * w;
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, h);
-      ctx.stroke();
-      
-      ctx.fillStyle = 'rgba(255,255,255,0.3)';
-      ctx.font = '8px Share Tech Mono';
-      ctx.fillText(freq >= 1000 ? `${freq/1000}k` : freq, x + 4, 12);
-    });
-    
-    requestAnimationFrame(draw);
-  }
-  draw();
-}
-
-// ===== KEYBOARD SHORTCUTS =====
-function toggleShortcuts() {
-  document.getElementById('shortcutsPanel').classList.toggle('visible');
-}
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Tab' && !e.ctrlKey && !e.metaKey) {
-    e.preventDefault();
-    toggleABCompare();
-  }
-  if (e.key === 'm' || e.key === 'M') {
-    e.preventDefault();
-    if (e.shiftKey) toggleMonoCompat();
-    else toggleMSMode();
-  }
-  if (e.key === '1') soloBand(1);
-  if (e.key === '2') soloBand(2);
-  if (e.key === '3') soloBand(3);
-  if (e.key === '4') soloBand(4);
-  if (e.key === '5') soloBand(5);
-  if (e.ctrlKey && e.key === 'n') {
-    e.preventDefault();
-    connectNetwork('room1');
-  }
-  if (e.ctrlKey && e.key === 's') {
-    e.preventDefault();
-    savePreset();
-  }
-  if (e.key === 'F5') {
-    e.preventDefault();
-    resetAll();
-  }
-  if (e.key === ' ') {
-    e.preventDefault();
-    bypassAll();
-  }
-  if (e.key === 'Escape') {
-    closeSettings();
-    document.getElementById('shortcutsPanel').classList.remove('visible');
-    closeABCompare();
-    toggleFloatingAnalyzer();
-  }
-});
-
-function soloBand(bandNum) {
-  bandState.solo = bandState.solo === bandNum ? null : bandNum;
-  document.querySelectorAll('.band-card').forEach((card, i) => {
-    const bandId = i + 1;
-    const isActive = bandState.solo === null || bandState.solo === bandId;
-    card.style.opacity = isActive ? '1' : '0.3';
-    card.classList.toggle('active', isActive);
-  });
-}
-
-function muteBand(bandNum) {
-  const idx = bandState.muted.indexOf(bandNum);
-  if (idx === -1) {
-    bandState.muted.push(bandNum);
-  } else {
-    bandState.muted.splice(idx, 1);
-  }
-  // Visual feedback would go here
-}
-
-// ===== SPECTRUM & PHASE DISPLAY =====
-function startAdvancedLoop() {
-  function animate() {
-    drawSpectrum();
-    drawPhase();
-    drawEQ();
-    drawCorrelationMeter();
-    drawDeesserSpectrum();
-    
-    updateLUFSMeter();
-    updateImager();
-    updateDucking();
-    updateDynamicEQ();
-    
-    if (macroState.recording && isAudioStarted) {
-      captureKeyframe();
-    }
-    
-    if (modules.Deesser) {
-      detectSibilance();
-    }
-    
-    requestAnimationFrame(animate);
-  }
-  animate();
-}
-
-function drawSpectrum() {
-  const canvas = document.getElementById('spectrumCanvas');
-  if (!canvas || !masterAnalyser) return;
-  
-  const ctx = canvas.getContext('2d');
-  const width = canvas.parentElement.clientWidth;
-  const height = canvas.parentElement.clientHeight;
-  
-  if (canvas.width !== width) canvas.width = width;
-  if (canvas.height !== height) canvas.height = height;
-  
-  const bufferLength = masterAnalyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-  masterAnalyser.getByteFrequencyData(dataArray);
-  
-  ctx.fillStyle = '#0a0a10';
-  ctx.fillRect(0, 0, width, height);
-  
-  const barWidth = (width / bufferLength) * 2.5;
-  let x = 0;
-  
-  for (let i = 0; i < bufferLength; i++) {
-    const barHeight = (dataArray[i] / 255) * height;
-    
-    const hue = 120 - (dataArray[i] / 255) * 120;
-    const saturation = 100;
-    const lightness = 40 + (dataArray[i] / 255) * 20;
-    
-    ctx.fillStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-    ctx.fillRect(x, height - barHeight, barWidth - 1, barHeight);
-    
-    x += barWidth;
-    if (x > width) break;
-  }
-  
-  ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-  ctx.lineWidth = 1;
-  for (let y = 0; y < height; y += 20) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(width, y);
-    ctx.stroke();
-  }
-}
-
-function drawPhase() {
-  const canvas = document.getElementById('phaseCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const w = canvas.width;
-  const h = canvas.height;
-  
-  ctx.fillStyle = '#0a0a10';
-  ctx.fillRect(0, 0, w, h);
-  
-  if (inputAnalyser && isAudioStarted) {
-    const timeL = new Float32Array(inputAnalyser.fftSize);
-    const timeR = new Float32Array(inputAnalyser.fftSize);
-    inputAnalyser.getFloatTimeDomainData(timeL);
-    
-    for (let i = 0; i < timeR.length; i++) {
-      timeR[i] = timeL[i] * (0.8 + Math.sin(i * 0.01) * 0.2);
-    }
-    
-    ctx.strokeStyle = '#00aaff';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    
-    const step = Math.floor(timeL.length / 200);
-    for (let i = 0; i < timeL.length; i += step) {
-      const x = ((timeL[i] + 1) / 2) * w;
-      const y = ((timeR[i] + 1) / 2) * h;
-      if (i === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    }
-    ctx.stroke();
-  }
-  
-  ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(w/2, 0); ctx.lineTo(w/2, h);
-  ctx.moveTo(0, h/2); ctx.lineTo(w, h/2);
-  ctx.stroke();
-}
-
-function drawEQ() {
-  const canvas = document.getElementById('eqCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const w = canvas.width;
-  const h = canvas.height;
-  
-  if (canvas.width !== canvas.parentElement.clientWidth) {
-    canvas.width = canvas.parentElement.clientWidth;
-    canvas.height = canvas.parentElement.clientHeight;
-  }
-  
-  ctx.fillStyle = '#0a0a10';
-  ctx.fillRect(0, 0, w, h);
-  
-  const eqValues = [
-    knobState.eq1, knobState.eq2, knobState.eq3,
-    knobState.eq4, knobState.eq5, knobState.eq6
-  ];
-  
-  ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-  ctx.lineWidth = 1;
-  for (let y = 0; y < h; y += h/6) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(w, y);
-    ctx.stroke();
-  }
-  for (let x = 0; x < w; x += w/6) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, h);
-    ctx.stroke();
-  }
-  
-  ctx.strokeStyle = 'rgba(255,255,255,0.15)';
-  ctx.beginPath();
-  ctx.moveTo(0, h/2);
-  ctx.lineTo(w, h/2);
-  ctx.stroke();
-  
-  ctx.strokeStyle = '#00aaff';
-  ctx.lineWidth = 2;
-  ctx.shadowColor = '#00aaff';
-  ctx.shadowBlur = 4;
-  ctx.beginPath();
-  
-  const freqs = [32, 100, 400, 1500, 5000, 12000];
-  
-  for (let x = 0; x < w; x++) {
-    const freq = 20 * Math.pow(1000, x / w);
-    let gain = 0;
-    
-    for (let i = 0; i < freqs.length; i++) {
-      const dbVal = (eqValues[i] - 50) / 50 * 12;
-      const distance = Math.abs(Math.log2(freq / freqs[i]));
-      const bandwidth = 2;
-      const contribution = dbVal * Math.exp(-distance * distance / (2 * bandwidth * bandwidth));
-      gain += contribution;
-    }
-    
-    const y = h/2 - (gain / 12) * (h/2);
-    if (x === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
-  }
-  ctx.stroke();
-  ctx.shadowBlur = 0;
-  
-  ctx.lineTo(w, h);
-  ctx.lineTo(0, h);
-  ctx.closePath();
-  const gradient = ctx.createLinearGradient(0, 0, 0, h);
-  gradient.addColorStop(0, 'rgba(0,170,255,0.1)');
-  gradient.addColorStop(0.5, 'rgba(0,170,255,0.02)');
-  gradient.addColorStop(1, 'rgba(0,170,255,0.05)');
-  ctx.fillStyle = gradient;
-  ctx.fill();
-}
-
-// ===== KNOB INTERACTION =====
-let activeKnob = null;
-let knobStartY = 0;
-let knobStartValue = 0;
-
-function startKnob(event, knobId) {
-  event.preventDefault();
-  activeKnob = knobId;
-  knobStartY = event.clientY;
-  knobStartValue = knobState[knobId];
-  
-  document.addEventListener('mousemove', onKnobMove);
-  document.addEventListener('mouseup', onKnobUp);
-}
-
-function onKnobMove(event) {
-  if (!activeKnob) return;
-  
-  const delta = (knobStartY - event.clientY) * 0.5;
-  let newValue = knobStartValue + delta;
+  const delta = (faderStartY - e.clientY) * 0.8;
+  let newValue = faderStartValue + delta;
   newValue = Math.max(0, Math.min(100, newValue));
-  knobState[activeKnob] = newValue;
+  knobState[activeFader] = newValue;
   
-  updateKnobDisplay(activeKnob);
-  applyKnobValue(activeKnob, newValue);
+  updateFaderDisplay(activeFader);
+  applyKnobValue(activeFader, newValue);
 }
 
-function onKnobUp() {
-  activeKnob = null;
-  document.removeEventListener('mousemove', onKnobMove);
-  document.removeEventListener('mouseup', onKnobUp);
+function onFaderMoveTouch(e) {
+  if (!activeFader || !e.touches.length) return;
+  e.preventDefault();
+  
+  const delta = (faderStartY - e.touches[0].clientY) * 0.8;
+  let newValue = faderStartValue + delta;
+  newValue = Math.max(0, Math.min(100, newValue));
+  knobState[activeFader] = newValue;
+  
+  updateFaderDisplay(activeFader);
+  applyKnobValue(activeFader, newValue);
 }
 
-function updateKnobDisplay(knobId) {
-  const value = knobState[knobId];
-  const angle = (value / 100) * 270 - 135;
+function onFaderUp() {
+  activeFader = null;
+  document.removeEventListener('mousemove', onFaderMove);
+  document.removeEventListener('mouseup', onFaderUp);
+}
+
+function onFaderUpTouch() {
+  activeFader = null;
+  document.removeEventListener('touchmove', onFaderMoveTouch);
+  document.removeEventListener('touchend', onFaderUpTouch);
+}
+
+function updateFaderDisplay(faderId) {
+  const value = knobState[faderId];
+  const pct = value;
   
-  const indicator = document.getElementById('knob' + capitalize(knobId) + 'Ind');
-  if (indicator) {
-    indicator.style.transform = `rotate(${angle}deg)`;
-    indicator.style.transformOrigin = 'center 20px';
-  }
+  // Update fill height
+  const fill = document.getElementById(`fader${capitalize(faderId)}Fill`);
+  if (fill) fill.style.height = pct + '%';
   
-  const valDisplay = document.getElementById('val' + capitalize(knobId));
+  // Update thumb position
+  const thumb = document.getElementById(`fader${capitalize(faderId)}Thumb`);
+  if (thumb) thumb.style.bottom = pct + '%';
+  
+  // Update value display
+  const valDisplay = document.getElementById(`val${capitalize(faderId)}`);
   if (valDisplay) {
-    valDisplay.textContent = getKnobDisplayText(knobId, value);
+    valDisplay.textContent = getFaderDisplayText(faderId, value);
   }
 }
 
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+function updateBandFaderDisplay(band, param, value) {
+  const fill = document.getElementById(`b${band}${capitalize(param)}Fill`);
+  if (fill) fill.style.height = value + '%';
+  
+  const thumb = document.getElementById(`b${band}${capitalize(param)}Thumb`);
+  if (thumb) thumb.style.bottom = value + '%';
+  
+  const valDisplay = document.getElementById(`b${band}${capitalize(param)}`);
+  if (valDisplay) {
+    valDisplay.textContent = getFaderDisplayText(`b${band}${capitalize(param)}`, value);
+  }
 }
 
-function getKnobDisplayText(knobId, value) {
-  switch(knobId) {
-    case 'inputGain': return (value - 50).toFixed(1) + ' dB';
+function getFaderDisplayText(faderId, value) {
+  switch(faderId) {
+    case 'inputGain': case 'outputGain': return (value - 50).toFixed(1) + ' dB';
     case 'inputTrim': return (value - 50).toFixed(1) + ' dB';
-    case 'inputPhase': return Math.round(value * 3.6) + '°';
     case 'agcTarget': return Math.round((value - 50) * 0.6 - 20) + ' dB';
     case 'agcSpeed': return ['Slow','Med-S','Med','Med-F','Fast'][Math.round(value/25)] || 'Med';
     case 'agcRange': return Math.round(value * 0.6) + ' dB';
@@ -4218,7 +2909,6 @@ function getKnobDisplayText(knobId, value) {
     case 'bassFreq': return Math.round(value * 2) + ' Hz';
     case 'loudTarget': return Math.round((value - 100) * 0.2) + ' LUFS';
     case 'loudCeiling': return ((value - 100) * 0.05).toFixed(1) + ' dBTP';
-    case 'outputGain': return (value - 50).toFixed(1) + ' dB';
     case 'outputCeiling': return ((value - 100) * 0.05).toFixed(1) + ' dB';
     case 'outputStereo': return Math.round(value) + '%';
     case 'outputClipper': return value > 50 ? 'ON' : 'OFF';
@@ -4227,15 +2917,19 @@ function getKnobDisplayText(knobId, value) {
     case 'deesserFreq': return (value * 100 + 2000) + ' Hz';
     case 'deesserThresh': return Math.round((value - 50) * 1.2 - 30) + ' dB';
     case 'deesserRatio': return (value / 10).toFixed(1) + ':1';
-    default: return value.toFixed(0);
+    default: return Math.round(value);
   }
 }
 
-function applyKnobValue(knobId, value) {
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function applyKnobValue(faderId, value) {
   if (!audioCtx) return;
   
   try {
-    switch(knobId) {
+    switch(faderId) {
       case 'inputGain':
         if (inputGainNode) inputGainNode.gain.value = dbToGain(value - 50);
         break;
@@ -4243,7 +2937,7 @@ function applyKnobValue(knobId, value) {
         if (agcGainNode) agcGainNode.gain.value = dbToGain((value - 50) * 0.6 - 20);
         break;
       case 'eq1': case 'eq2': case 'eq3': case 'eq4': case 'eq5': case 'eq6':
-        const eqIdx = parseInt(knobId.replace('eq', '')) - 1;
+        const eqIdx = parseInt(faderId.replace('eq', '')) - 1;
         if (eqFilters[eqIdx]) {
           eqFilters[eqIdx].gain.value = (value - 50) / 50 * 12;
         }
@@ -4269,24 +2963,9 @@ function applyKnobValue(knobId, value) {
       case 'loudCeiling':
         if (loudnessLimiter) loudnessLimiter.knee.value = Math.max(0, (value - 100) * 0.1);
         break;
-      case 'imagerLow': case 'imagerMid': case 'imagerHigh':
-        imagerState[knobId.replace('imager','').toLowerCase()] = value;
-        updateImager();
-        break;
-      case 'deesserFreq':
-        deesserState.freq = value * 100 + 2000;
-        document.getElementById('deesserFreq').style.left = ((deesserState.freq - 2000) / 8000 * 100) + '%';
-        break;
-      case 'deesserThresh':
-        deesserState.threshold = (value - 50) * 1.2 - 30;
-        document.getElementById('deesserThreshold').style.top = ((deesserState.threshold + 60) / 60 * 100) + '%';
-        break;
-      case 'deesserRatio':
-        deesserState.ratio = value / 10;
-        break;
     }
   } catch(e) {
-    console.error('Apply knob error:', e);
+    console.error('Apply fader error:', e);
   }
 }
 
@@ -4294,32 +2973,528 @@ function dbToGain(db) {
   return Math.pow(10, db / 20);
 }
 
-function initAllKnobDisplays() {
-  Object.keys(knobState).forEach(id => updateKnobDisplay(id));
+function initAllFaderDisplays() {
+  Object.keys(knobState).forEach(id => updateFaderDisplay(id));
 }
 
-// ===== POWER TOGGLES =====
+// ===== AUDIO ENGINE =====
+async function initAudio() {
+  if (isAudioStarted) return;
+  
+  try {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 48000 });
+    
+    inputGainNode = audioCtx.createGain();
+    agcGainNode = audioCtx.createGain();
+    outputGainNode = audioCtx.createGain();
+    
+    inputAnalyser = audioCtx.createAnalyser(); inputAnalyser.fftSize = 2048;
+    agcAnalyser = audioCtx.createAnalyser(); agcAnalyser.fftSize = 2048;
+    compAnalyser = audioCtx.createAnalyser(); compAnalyser.fftSize = 2048;
+    eqAnalyser = audioCtx.createAnalyser(); eqAnalyser.fftSize = 2048;
+    limiterAnalyser = audioCtx.createAnalyser(); limiterAnalyser.fftSize = 2048;
+    outputAnalyser = audioCtx.createAnalyser(); outputAnalyser.fftSize = 2048;
+    masterAnalyser = audioCtx.createAnalyser(); masterAnalyser.fftSize = 4096;
+    
+    const eqFreqs = [32, 100, 400, 1500, 5000, 12000];
+    eqFilters = eqFreqs.map((freq, i) => {
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = i === 0 ? 'lowshelf' : (i === eqFreqs.length - 1 ? 'highshelf' : 'peaking');
+      filter.frequency.value = freq;
+      filter.gain.value = 0;
+      filter.Q.value = 1.4;
+      return filter;
+    });
+    
+    const compFreqs = [120, 400, 1500, 5000];
+    compBands = [];
+    compFilters = [];
+    
+    for (let i = 0; i < 5; i++) {
+      const compressor = audioCtx.createDynamicsCompressor();
+      compressor.threshold.value = presets['fm-loud'].comp[i].thresh;
+      compressor.ratio.value = presets['fm-loud'].comp[i].ratio;
+      compressor.attack.value = presets['fm-loud'].comp[i].atk / 1000;
+      compressor.release.value = presets['fm-loud'].comp[i].rel / 1000;
+      compressor.knee.value = 6;
+      compBands.push(compressor);
+    }
+    
+    compFilters = [];
+    for (let i = 0; i < 4; i++) {
+      const lp = audioCtx.createBiquadFilter();
+      lp.type = 'lowpass'; lp.frequency.value = compFreqs[i]; lp.Q.value = 0.7;
+      const hp = audioCtx.createBiquadFilter();
+      hp.type = 'highpass'; hp.frequency.value = compFreqs[i]; hp.Q.value = 0.7;
+      compFilters.push({ lp, hp });
+    }
+    
+    peakLimiter = audioCtx.createDynamicsCompressor();
+    peakLimiter.threshold.value = -0.3; peakLimiter.ratio.value = 20;
+    peakLimiter.attack.value = 0.001; peakLimiter.release.value = 0.05; peakLimiter.knee.value = 0;
+    
+    bassLimiter = audioCtx.createDynamicsCompressor();
+    bassLimiter.threshold.value = -3; bassLimiter.ratio.value = 20;
+    bassLimiter.attack.value = 0.005; bassLimiter.release.value = 0.1; bassLimiter.knee.value = 0;
+    
+    loudnessLimiter = audioCtx.createDynamicsCompressor();
+    loudnessLimiter.threshold.value = -16; loudnessLimiter.ratio.value = 20;
+    loudnessLimiter.attack.value = 0.01; loudnessLimiter.release.value = 0.1; loudnessLimiter.knee.value = 0;
+    
+    initDucking();
+    await setupInputSource('mic');
+    
+    isAudioStarted = true;
+    document.getElementById('infoEngine').textContent = 'Running';
+    document.getElementById('infoSampleRate').textContent = (audioCtx.sampleRate / 1000) + ' kHz';
+    
+    startMetering();
+    startAdvancedLoop();
+    updateClock();
+    
+  } catch (e) {
+    console.error('Audio init error:', e);
+  }
+}
+
+async function setupInputSource(type) {
+  if (inputSource) { try { inputSource.disconnect(); } catch(e) {} }
+  if (oscillatorNode) { try { oscillatorNode.stop(); } catch(e) {} oscillatorNode = null; }
+  if (noiseNode) { try { noiseNode.stop(); } catch(e) {} noiseNode = null; }
+  
+  currentInputType = type;
+  
+  switch(type) {
+    case 'mic':
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        inputSource = audioCtx.createMediaStreamSource(stream);
+        document.getElementById('infoInput').textContent = 'Microphone';
+      } catch(e) {
+        createTestSignal();
+      }
+      break;
+    case 'sine':
+      createTestSignal();
+      document.getElementById('infoInput').textContent = 'Sine Test';
+      break;
+    case 'noise':
+      createNoiseSignal();
+      document.getElementById('infoInput').textContent = 'Noise Test';
+      break;
+    case 'file':
+      document.getElementById('infoInput').textContent = 'File (select a file)';
+      const input = document.createElement('input');
+      input.type = 'file'; input.accept = 'audio/*';
+      input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file && audioCtx) {
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            audioCtx.decodeAudioData(ev.target.result, (buffer) => {
+              if (inputSource) try { inputSource.disconnect(); } catch(e) {}
+              if (oscillatorNode) try { oscillatorNode.stop(); } catch(e) {}
+              if (noiseNode) try { noiseNode.stop(); } catch(e) {}
+              const source = audioCtx.createBufferSource();
+              source.buffer = buffer; source.loop = true;
+              inputSource = source; source.start();
+              buildAudioChain();
+              document.getElementById('infoInput').textContent = file.name;
+            });
+          };
+          reader.readAsArrayBuffer(file);
+        }
+      };
+      input.click();
+      return;
+  }
+  buildAudioChain();
+}
+
+function createTestSignal() {
+  oscillatorNode = audioCtx.createOscillator();
+  oscillatorNode.type = 'sine'; oscillatorNode.frequency.value = 1000;
+  const oscGain = audioCtx.createGain(); oscGain.gain.value = 0.3;
+  oscillatorNode.connect(oscGain); inputSource = oscGain;
+  oscillatorNode.start();
+}
+
+function createNoiseSignal() {
+  const bufferSize = audioCtx.sampleRate * 2;
+  const buffer = audioCtx.createBuffer(2, bufferSize, audioCtx.sampleRate);
+  for (let ch = 0; ch < 2; ch++) {
+    const data = buffer.getChannelData(ch);
+    for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * 0.15;
+  }
+  noiseNode = audioCtx.createBufferSource(); noiseNode.buffer = buffer; noiseNode.loop = true;
+  noiseGain = audioCtx.createGain(); noiseGain.gain.value = 0.3;
+  noiseNode.connect(noiseGain); inputSource = noiseGain;
+  noiseNode.start();
+}
+
+function buildAudioChain() {
+  try {
+    if (inputSource) inputSource.disconnect();
+    const chainStart = inputSource;
+    chainStart.connect(inputGainNode);
+    inputGainNode.connect(inputAnalyser);
+    inputAnalyser.connect(agcGainNode);
+    agcGainNode.connect(agcAnalyser);
+    
+    const compInput = audioCtx.createGain();
+    agcAnalyser.connect(compInput);
+    
+    const compOutputs = [];
+    for (let i = 0; i < 5; i++) {
+      const bandOutput = audioCtx.createGain();
+      if (i === 0) {
+        compInput.connect(compFilters[0].lp);
+        compFilters[0].lp.connect(compBands[i]);
+        compBands[i].connect(bandOutput);
+      } else if (i === 4) {
+        compInput.connect(compFilters[3].hp);
+        compFilters[3].hp.connect(compBands[i]);
+        compBands[i].connect(bandOutput);
+      } else {
+        compInput.connect(compFilters[i-1].hp);
+        compFilters[i-1].hp.connect(compFilters[i].lp);
+        compFilters[i].lp.connect(compBands[i]);
+        compBands[i].connect(bandOutput);
+      }
+      bandOutput.connect(compAnalyser);
+      compOutputs.push(bandOutput);
+    }
+    
+    const compSum = audioCtx.createGain();
+    compOutputs.forEach(o => { try { o.disconnect(); } catch(e) {} o.connect(compSum); });
+    
+    compSum.connect(eqAnalyser);
+    eqFilters.forEach((filter, i) => {
+      if (i === 0) eqAnalyser.connect(filter);
+      else eqFilters[i-1].connect(filter);
+    });
+    
+    const lastEQ = eqFilters[eqFilters.length - 1];
+    lastEQ.connect(limiterAnalyser);
+    limiterAnalyser.connect(peakLimiter);
+    peakLimiter.connect(bassLimiter);
+    bassLimiter.connect(loudnessLimiter);
+    loudnessLimiter.connect(outputAnalyser);
+    
+    outputAnalyser.connect(outputGainNode);
+    outputGainNode.connect(masterAnalyser);
+    masterAnalyser.connect(audioCtx.destination);
+    
+    document.getElementById('infoEngine').textContent = 'Running';
+  } catch(e) { console.error('Chain build error:', e); }
+}
+
+function initDucking() {
+  if (!audioCtx) return;
+  duckingGain = audioCtx.createGain();
+  duckingGain.gain.value = 1;
+}
+
+// ===== METERING =====
+function startMetering() { setInterval(updateMeters, 50); }
+
+function updateMeters() {
+  if (!isAudioStarted || !inputAnalyser) return;
+  
+  const inputTime = new Float32Array(inputAnalyser.fftSize); inputAnalyser.getFloatTimeDomainData(inputTime);
+  const agcTime = new Float32Array(agcAnalyser.fftSize); agcAnalyser.getFloatTimeDomainData(agcTime);
+  const compTime = new Float32Array(compAnalyser.fftSize); compAnalyser.getFloatTimeDomainData(compTime);
+  const eqTime = new Float32Array(eqAnalyser.fftSize); eqAnalyser.getFloatTimeDomainData(eqTime);
+  const limTime = new Float32Array(limiterAnalyser.fftSize); limiterAnalyser.getFloatTimeDomainData(limTime);
+  const outTime = new Float32Array(outputAnalyser.fftSize); outputAnalyser.getFloatTimeDomainData(outTime);
+  
+  const levels = { input: calcRMS(inputTime), agc: calcRMS(agcTime), comp: calcRMS(compTime), eq: calcRMS(eqTime), lim: calcRMS(limTime), out: calcRMS(outTime) };
+  const dbLevels = {};
+  for (const [key, val] of Object.entries(levels)) dbLevels[key] = val > 0 ? 20 * Math.log10(val) : -Infinity;
+  
+  updateMeterPair('Input', dbLevels.input, dbLevels.input);
+  updateMeterPair('AGC', dbLevels.agc, dbLevels.agc);
+  updateMeterPair('Comp', dbLevels.comp, dbLevels.comp);
+  updateMeterPair('EQ', dbLevels.eq, dbLevels.eq);
+  updateMeterPair('Lim', dbLevels.lim, dbLevels.lim);
+  updateMeterPair('Out', dbLevels.out, dbLevels.out);
+  
+  document.getElementById('infoPeakL').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
+  document.getElementById('infoPeakR').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
+  document.getElementById('infoRMSL').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
+  document.getElementById('infoRMSR').textContent = dbLevels.out > -100 ? dbLevels.out.toFixed(1) + ' dB' : '-∞';
+  
+  const outPct = Math.max(0, Math.min(100, (dbLevels.out + 60) / 60 * 100));
+  document.getElementById('outputLevelFill').style.width = outPct + '%';
+  document.getElementById('cpuUsage').textContent = (8 + Math.random() * 15).toFixed(0) + '%';
+}
+
+function calcRMS(data) { let sum = 0; for (let i = 0; i < data.length; i++) sum += data[i] * data[i]; return Math.sqrt(sum / data.length); }
+
+function updateMeterPair(name, lDb, rDb) {
+  const lPct = dbToPercent(lDb); const rPct = dbToPercent(rDb);
+  const lFill = document.getElementById('meter' + name + 'LFill');
+  if (lFill) { lFill.style.height = lPct + '%'; lFill.style.background = getMeterGradient(lPct); }
+  const rFill = document.getElementById('meter' + name + 'RFill');
+  if (rFill) { rFill.style.height = rPct + '%'; rFill.style.background = getMeterGradient(rPct); }
+  const lVal = document.getElementById('meter' + name + 'LVal');
+  if (lVal) lVal.innerHTML = lDb > -100 ? '<span class="meter-db-value">' + lDb.toFixed(1) + ' dB</span>' : '-∞ dB';
+  const rVal = document.getElementById('meter' + name + 'RVal');
+  if (rVal) rVal.innerHTML = rDb > -100 ? '<span class="meter-db-value">' + rDb.toFixed(1) + ' dB</span>' : '-∞ dB';
+}
+
+function dbToPercent(db) { if (db <= -60) return 0; if (db >= 0) return 100; return ((db + 60) / 60) * 100; }
+function getMeterGradient(pct) { if (pct < 60) return '#00cc44'; if (pct < 80) return '#88cc00'; if (pct < 90) return '#ffcc00'; if (pct < 95) return '#ff8800'; return '#ff3344'; }
+
+// ===== LUFS METERING =====
+function updateLUFSMeter() {
+  if (!isAudioStarted || !masterAnalyser) return;
+  
+  const timeData = new Float32Array(masterAnalyser.fftSize);
+  masterAnalyser.getFloatTimeDomainData(timeData);
+  
+  let sum = 0;
+  for (let i = 0; i < timeData.length; i++) sum += timeData[i] * timeData[i];
+  const rms = Math.sqrt(sum / timeData.length);
+  const lufs = rms > 0 ? 20 * Math.log10(rms) + 0.691 : -Infinity;
+  
+  lufsMeter.momentary = lufsMeter.momentary * 0.9 + lufs * 0.1;
+  lufsMeter.shortTerm = lufsMeter.shortTerm * 0.95 + lufs * 0.05;
+  lufsMeter.history.push(lufs);
+  if (lufsMeter.history.length > 600) lufsMeter.history.shift();
+  lufsMeter.integrated = lufsMeter.history.reduce((a,b) => a+b, 0) / lufsMeter.history.length;
+  
+  const maxSample = Math.max(...timeData.map(Math.abs));
+  const tp = 20 * Math.log10(maxSample * 1.05);
+  lufsMeter.truePeak = Math.max(lufsMeter.truePeak * 0.99, tp);
+  
+  const sorted = [...lufsMeter.history].sort((a,b) => a-b);
+  const p10 = sorted[Math.floor(sorted.length * 0.1)] || -70;
+  const p95 = sorted[Math.floor(sorted.length * 0.95)] || 0;
+  lufsMeter.lra = Math.max(0, p95 - p10);
+  
+  document.getElementById('lufsValue').textContent = lufsMeter.integrated.toFixed(1);
+  document.getElementById('lufsValue').className = 'lufs-value' + (Math.abs(lufsMeter.integrated - lufsMeter.target) > 2 ? ' warning' : '');
+  
+  const fillPct = Math.max(0, Math.min(100, (lufsMeter.integrated + 70) / 70 * 100));
+  document.getElementById('lufsFill').style.width = fillPct + '%';
+  
+  document.getElementById('lufsMomentary').textContent = lufsMeter.momentary.toFixed(1) + ' LUFS';
+  document.getElementById('lufsShort').textContent = lufsMeter.shortTerm.toFixed(1);
+  document.getElementById('lufsLRA').textContent = lufsMeter.lra.toFixed(1);
+  document.getElementById('truePeakVal').textContent = lufsMeter.truePeak.toFixed(1) + ' dBTP';
+  
+  const tpBadge = document.getElementById('truePeakBadge');
+  if (lufsMeter.truePeak > -1.0) { tpBadge.textContent = 'TP: CLIP!'; tpBadge.className = 'truepeak-badge'; }
+  else { tpBadge.textContent = 'TP: OK'; tpBadge.className = 'truepeak-badge ok'; }
+}
+
+// ===== CORRELATION METER =====
+function drawCorrelationMeter() {
+  const canvas = document.getElementById('correlationCanvas');
+  if (!canvas || !masterAnalyser) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  ctx.fillStyle = '#0a0a10'; ctx.fillRect(0, 0, w, h);
+  
+  const timeL = new Float32Array(masterAnalyser.fftSize);
+  const timeR = new Float32Array(masterAnalyser.fftSize);
+  masterAnalyser.getFloatTimeDomainData(timeL);
+  for(let i=0; i<timeR.length; i++) timeR[i] = timeL[i] * (0.9 + Math.random()*0.2);
+  
+  let sumLL = 0, sumRR = 0, sumLR = 0;
+  for(let i = 0; i < 1024; i++) { sumLL += timeL[i]*timeL[i]; sumRR += timeR[i]*timeR[i]; sumLR += timeL[i]*timeR[i]; }
+  const corr = sumLR / Math.sqrt(sumLL * sumRR + 0.0001);
+  
+  const angle = (corr + 1) / 2 * Math.PI - Math.PI/2;
+  const radius = 25;
+  ctx.strokeStyle = corr > 0 ? '#00cc44' : '#ff4444'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(w/2, h/2);
+  ctx.lineTo(w/2 + Math.cos(angle) * radius, h/2 + Math.sin(angle) * radius);
+  ctx.stroke();
+  ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+  ctx.beginPath(); ctx.arc(w/2, h/2, radius, 0, Math.PI*2); ctx.stroke();
+  
+  document.getElementById('corrValue').textContent = corr.toFixed(2);
+  document.getElementById('corrValue').style.color = corr > 0.7 ? '#00cc44' : corr > 0 ? '#ffcc00' : '#ff4444';
+}
+
+// ===== DE-ESSER =====
+function drawDeesserSpectrum() {
+  const canvas = document.getElementById('deesserCanvas');
+  if (!canvas || !masterAnalyser) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.parentElement.clientWidth;
+  const h = canvas.parentElement.clientHeight;
+  if (canvas.width !== w) canvas.width = w;
+  if (canvas.height !== h) canvas.height = h;
+  
+  const bufferLength = masterAnalyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  masterAnalyser.getByteFrequencyData(dataArray);
+  ctx.fillStyle = '#0a0a10'; ctx.fillRect(0, 0, w, h);
+  
+  const barWidth = w / bufferLength * 3;
+  for (let i = 0; i < bufferLength; i++) {
+    const freq = i * audioCtx.sampleRate / (bufferLength * 2);
+    if (freq > 10000) break;
+    const barHeight = (dataArray[i] / 255) * h;
+    const x = (Math.log10(freq) - Math.log10(20)) / (Math.log10(10000) - Math.log10(20)) * w;
+    const inBand = freq > deesserState.freq * 0.7 && freq < deesserState.freq * 1.4;
+    ctx.fillStyle = inBand && deesserState.active ? '#ff4444' : '#00aaff';
+    ctx.fillRect(x, h - barHeight, barWidth - 1, barHeight);
+  }
+  
+  const threshY = h - ((deesserState.threshold + 60) / 60 * h);
+  ctx.strokeStyle = 'rgba(255,68,68,0.5)'; ctx.setLineDash([4, 2]);
+  ctx.beginPath(); ctx.moveTo(0, threshY); ctx.lineTo(w, threshY); ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+function detectSibilance() {
+  if (!masterAnalyser) return false;
+  const freqData = new Uint8Array(masterAnalyser.frequencyBinCount);
+  masterAnalyser.getByteFrequencyData(freqData);
+  const startIdx = Math.floor(4000 / (audioCtx.sampleRate/2) * freqData.length);
+  const endIdx = Math.floor(8000 / (audioCtx.sampleRate/2) * freqData.length);
+  let sum = 0;
+  for (let i = startIdx; i < endIdx; i++) sum += freqData[i];
+  const avg = sum / (endIdx - startIdx);
+  const detected = avg > (128 + deesserState.threshold + 60);
+  deesserState.active = detected;
+  return detected;
+}
+
+// ===== ADVANCED LOOP =====
+function startAdvancedLoop() {
+  function animate() {
+    drawSpectrum();
+    drawPhase();
+    drawEQ();
+    drawCorrelationMeter();
+    drawDeesserSpectrum();
+    
+    updateLUFSMeter();
+    updateDucking();
+    updateDynamicEQ();
+    
+    if (macroState.recording && isAudioStarted) captureKeyframe();
+    if (modules.Deesser) detectSibilance();
+    
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+function drawSpectrum() {
+  const canvas = document.getElementById('spectrumCanvas');
+  if (!canvas || !masterAnalyser) return;
+  const ctx = canvas.getContext('2d');
+  const width = canvas.parentElement.clientWidth;
+  const height = canvas.parentElement.clientHeight;
+  if (canvas.width !== width) canvas.width = width;
+  if (canvas.height !== height) canvas.height = height;
+  
+  const bufferLength = masterAnalyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  masterAnalyser.getByteFrequencyData(dataArray);
+  ctx.fillStyle = '#0a0a10'; ctx.fillRect(0, 0, width, height);
+  
+  const barWidth = (width / bufferLength) * 2.5;
+  let x = 0;
+  for (let i = 0; i < bufferLength; i++) {
+    const barHeight = (dataArray[i] / 255) * height;
+    const hue = 120 - (dataArray[i] / 255) * 120;
+    ctx.fillStyle = `hsl(${hue}, 100%, ${40 + (dataArray[i] / 255) * 20}%)`;
+    ctx.fillRect(x, height - barHeight, barWidth - 1, barHeight);
+    x += barWidth;
+    if (x > width) break;
+  }
+}
+
+function drawPhase() {
+  const canvas = document.getElementById('phaseCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  ctx.fillStyle = '#0a0a10'; ctx.fillRect(0, 0, w, h);
+  
+  if (inputAnalyser && isAudioStarted) {
+    const timeL = new Float32Array(inputAnalyser.fftSize);
+    const timeR = new Float32Array(inputAnalyser.fftSize);
+    inputAnalyser.getFloatTimeDomainData(timeL);
+    for (let i = 0; i < timeR.length; i++) timeR[i] = timeL[i] * (0.8 + Math.sin(i * 0.01) * 0.2);
+    
+    ctx.strokeStyle = '#00aaff'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    const step = Math.floor(timeL.length / 200);
+    for (let i = 0; i < timeL.length; i += step) {
+      const x = ((timeL[i] + 1) / 2) * w;
+      const y = ((timeR[i] + 1) / 2) * h;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(w/2, 0); ctx.lineTo(w/2, h);
+  ctx.moveTo(0, h/2); ctx.lineTo(w, h/2); ctx.stroke();
+}
+
+function drawEQ() {
+  const canvas = document.getElementById('eqCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  if (canvas.width !== canvas.parentElement.clientWidth) {
+    canvas.width = canvas.parentElement.clientWidth;
+    canvas.height = canvas.parentElement.clientHeight;
+  }
+  
+  ctx.fillStyle = '#0a0a10'; ctx.fillRect(0, 0, w, h);
+  const eqValues = [knobState.eq1, knobState.eq2, knobState.eq3, knobState.eq4, knobState.eq5, knobState.eq6];
+  
+  ctx.strokeStyle = 'rgba(255,255,255,0.05)'; ctx.lineWidth = 1;
+  for (let y = 0; y < h; y += h/6) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+  for (let x = 0; x < w; x += w/6) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+  ctx.strokeStyle = 'rgba(255,255,255,0.15)'; ctx.beginPath(); ctx.moveTo(0, h/2); ctx.lineTo(w, h/2); ctx.stroke();
+  
+  ctx.strokeStyle = '#00aaff'; ctx.lineWidth = 2; ctx.shadowColor = '#00aaff'; ctx.shadowBlur = 4;
+  ctx.beginPath();
+  const freqs = [32, 100, 400, 1500, 5000, 12000];
+  for (let x = 0; x < w; x++) {
+    const freq = 20 * Math.pow(1000, x / w);
+    let gain = 0;
+    for (let i = 0; i < freqs.length; i++) {
+      const dbVal = (eqValues[i] - 50) / 50 * 12;
+      const distance = Math.abs(Math.log2(freq / freqs[i]));
+      gain += dbVal * Math.exp(-distance * distance / 8);
+    }
+    const y = h/2 - (gain / 12) * (h/2);
+    if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.stroke(); ctx.shadowBlur = 0;
+  ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
+  const gradient = ctx.createLinearGradient(0, 0, 0, h);
+  gradient.addColorStop(0, 'rgba(0,170,255,0.1)'); gradient.addColorStop(0.5, 'rgba(0,170,255,0.02)'); gradient.addColorStop(1, 'rgba(0,170,255,0.05)');
+  ctx.fillStyle = gradient; ctx.fill();
+}
+
+// ===== TOGGLES =====
 function togglePower(moduleName) {
   const btn = document.getElementById('pwr' + moduleName);
   const status = document.getElementById('status' + moduleName);
   const mod = document.getElementById('mod' + moduleName);
-  
   modules[moduleName] = !modules[moduleName];
-  
   if (modules[moduleName]) {
-    btn.classList.add('on');
-    status.className = 'status-led on';
+    btn.classList.add('on'); status.className = 'status-led on';
     if (mod) mod.classList.add('active-module');
   } else {
-    btn.classList.remove('on');
-    status.className = 'status-led';
+    btn.classList.remove('on'); status.className = 'status-led';
     if (mod) mod.classList.remove('active-module');
   }
-  
   updateInfoPanel();
 }
 
-// ===== MODULE TOGGLES =====
 function toggleMono() { document.getElementById('btnInputMono').classList.toggle('on'); }
 function toggleMute() {
   document.getElementById('btnInputMute').classList.toggle('on');
@@ -4337,6 +3512,14 @@ function toggleLimiter(type) {
 }
 function toggleDither() { document.getElementById('btnOutDither').classList.toggle('on'); }
 function toggleOutputClip() { document.getElementById('btnOutClip').classList.toggle('on'); }
+function toggleMSMode() {
+  imagerState.msMode = !imagerState.msMode;
+  document.getElementById('btnMS').classList.toggle('on', imagerState.msMode);
+}
+function toggleMonoCompat() {
+  imagerState.monoCheck = !imagerState.monoCheck;
+  document.getElementById('btnMonoCheck').classList.toggle('on', imagerState.monoCheck);
+}
 function toggleDeesserMode(mode) {
   deesserState.mode = mode;
   document.getElementById('btnDeesserWide').classList.toggle('on', mode === 'wide');
@@ -4345,6 +3528,22 @@ function toggleDeesserMode(mode) {
 function toggleAutoDeesser() {
   deesserState.auto = !deesserState.auto;
   document.getElementById('btnDeesserAuto').classList.toggle('on', deesserState.auto);
+}
+
+// ===== COMPRESSOR BAND PARAMS =====
+function updateBandParam(band, param, value) {
+  const val = parseFloat(value);
+  const display = document.getElementById('b' + band + capitalize(param));
+  if (display) display.textContent = param === 'ratio' ? val + ':1' : val;
+  
+  if (compBands[band - 1]) {
+    switch(param) {
+      case 'threshold': compBands[band-1].threshold.value = val; break;
+      case 'ratio': compBands[band-1].ratio.value = val; break;
+      case 'attack': compBands[band-1].attack.value = val / 1000; break;
+      case 'release': compBands[band-1].release.value = val / 1000; break;
+    }
+  }
 }
 
 // ===== PRESET SYSTEM =====
@@ -4359,63 +3558,24 @@ function loadPreset(presetId) {
   knobState.agcTarget = preset.agcTarget !== undefined ? preset.agcTarget : 50;
   
   if (preset.eq) {
-    preset.eq.forEach((val, i) => {
-      knobState['eq' + (i+1)] = 50 + (val / 12) * 50;
-    });
+    preset.eq.forEach((val, i) => { knobState['eq' + (i+1)] = 50 + (val / 12) * 50; });
   }
   
-  if (preset.comp) {
-    preset.comp.forEach((band, i) => {
-      const bandNum = i + 1;
-      const slider = document.getElementById('sliderB' + bandNum + 'Thresh');
-      if (slider) {
-        slider.value = band.thresh;
-        document.getElementById('b' + bandNum + 'Thresh').textContent = band.thresh;
-      }
-    });
-  }
-  
-  initAllKnobDisplays();
-  applyAllKnobValues();
+  initAllFaderDisplays();
+  applyAllFaderValues();
   
   document.getElementById('infoPresetName').textContent = preset.name;
 }
 
-function applyAllKnobValues() {
+function applyAllFaderValues() {
   Object.keys(knobState).forEach(id => applyKnobValue(id, knobState[id]));
 }
 
 function savePreset() {
   const name = prompt('Enter preset name:', 'My Preset');
   if (!name) return;
-  
-  const preset = {
-    name: name,
-    inputGain: knobState.inputGain,
-    agcTarget: knobState.agcTarget,
-    agcSpeed: knobState.agcSpeed,
-    eq: [],
-    comp: [],
-    peakThresh: knobState.peakThresh,
-    bassThresh: knobState.bassThresh,
-    loudTarget: knobState.loudTarget,
-    outputGain: knobState.outputGain
-  };
-  
-  for (let i = 1; i <= 6; i++) {
-    preset.eq.push(Math.round((knobState['eq' + i] - 50) / 50 * 12));
-  }
-  
-  for (let i = 1; i <= 5; i++) {
-    preset.comp.push({
-      thresh: parseFloat(document.getElementById('sliderB' + i + 'Thresh')?.value || -24),
-      ratio: parseFloat(document.getElementById('sliderB' + i + 'Ratio')?.value || 4),
-      atk: parseInt(document.getElementById('sliderB' + i + 'Attack')?.value || 10),
-      rel: parseInt(document.getElementById('sliderB' + i + 'Release')?.value || 100),
-      makeup: parseInt(document.getElementById('sliderB' + i + 'Makeup')?.value || 6)
-    });
-  }
-  
+  const preset = { name, inputGain: knobState.inputGain, agcTarget: knobState.agcTarget, eq: [], comp: [], peakThresh: knobState.peakThresh, bassThresh: knobState.bassThresh, loudTarget: knobState.loudTarget, outputGain: knobState.outputGain };
+  for (let i = 1; i <= 6; i++) preset.eq.push(Math.round((knobState['eq' + i] - 50) / 50 * 12));
   const customNum = Object.keys(presets).filter(k => k.startsWith('custom')).length + 1;
   presets['custom' + customNum] = preset;
   alert('Preset "' + name + '" saved!');
@@ -4425,66 +3585,32 @@ function exportPreset() {
   const data = JSON.stringify(presets, null, 2);
   const blob = new Blob([data], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'omniapro-presets.json';
-  a.click();
+  const a = document.createElement('a'); a.href = url; a.download = 'omniapro-presets.json'; a.click();
   URL.revokeObjectURL(url);
 }
 
 function importPreset() {
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = '.json';
+  const input = document.createElement('input'); input.type = 'file'; input.accept = '.json';
   input.onchange = (e) => {
-    const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = (ev) => {
-      try {
-        const imported = JSON.parse(ev.target.result);
-        Object.assign(presets, imported);
-        alert('Presets imported successfully!');
-      } catch(err) {
-        alert('Error importing presets: ' + err.message);
-      }
+      try { Object.assign(presets, JSON.parse(ev.target.result)); alert('Presets imported!'); }
+      catch(err) { alert('Error: ' + err.message); }
     };
-    reader.readAsText(file);
+    reader.readAsText(e.target.files[0]);
   };
   input.click();
 }
 
-// ===== COMPRESSOR BAND PARAMS =====
-function updateBandParam(band, param, value) {
-  const val = parseFloat(value);
-  const display = document.getElementById('b' + band + capitalize(param));
-  if (display) {
-    display.textContent = param === 'ratio' ? val + ':1' : val;
-  }
-  
-  if (compBands[band - 1]) {
-    switch(param) {
-      case 'threshold': compBands[band-1].threshold.value = val; break;
-      case 'ratio': compBands[band-1].ratio.value = val; break;
-      case 'attack': compBands[band-1].attack.value = val / 1000; break;
-      case 'release': compBands[band-1].release.value = val / 1000; break;
-    }
-  }
-}
-
 // ===== INPUT SOURCE =====
 function setInputSource(type) {
-  document.querySelectorAll('.toolbar-btn').forEach(b => {
-    if (b.id && b.id.startsWith('btn')) b.classList.remove('active');
-  });
-  
+  document.querySelectorAll('.toolbar-btn').forEach(b => b.classList.remove('active'));
   const btnId = 'btn' + type.charAt(0).toUpperCase() + type.slice(1);
   const btn = document.getElementById(btnId);
   if (btn) btn.classList.add('active');
   
   if (type === 'file') {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'audio/*';
+    const input = document.createElement('input'); input.type = 'file'; input.accept = 'audio/*';
     input.onchange = (e) => {
       const file = e.target.files[0];
       if (file && audioCtx) {
@@ -4494,12 +3620,9 @@ function setInputSource(type) {
             if (inputSource) try { inputSource.disconnect(); } catch(e) {}
             if (oscillatorNode) try { oscillatorNode.stop(); } catch(e) {}
             if (noiseNode) try { noiseNode.stop(); } catch(e) {}
-            
             const source = audioCtx.createBufferSource();
-            source.buffer = buffer;
-            source.loop = true;
-            inputSource = source;
-            source.start();
+            source.buffer = buffer; source.loop = true;
+            inputSource = source; source.start();
             buildAudioChain();
             document.getElementById('infoInput').textContent = file.name;
           });
@@ -4511,27 +3634,13 @@ function setInputSource(type) {
     return;
   }
   
-  if (isAudioStarted) {
-    setupInputSource(type);
-  }
+  if (isAudioStarted) setupInputSource(type);
 }
 
-// ===== DEVICE SELECTION =====
 async function changeInputDevice(deviceId) {
   if (!audioCtx || !deviceId) return;
-  
-  try {
-    if (audioCtx.setSinkId) {
-      await audioCtx.setSinkId(deviceId);
-    }
-  } catch(e) {
-    console.warn('setSinkId not supported:', e);
-  }
-  
   if (currentInputType === 'mic') {
-    const stream = await navigator.mediaDevices.getUserMedia({ 
-      audio: { deviceId: deviceId ? { exact: deviceId } : undefined } 
-    });
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: { deviceId: deviceId ? { exact: deviceId } : undefined } });
     if (inputSource) try { inputSource.disconnect(); } catch(e) {}
     inputSource = audioCtx.createMediaStreamSource(stream);
     buildAudioChain();
@@ -4540,29 +3649,15 @@ async function changeInputDevice(deviceId) {
 
 async function changeOutputDevice(deviceId) {
   if (!audioCtx || !deviceId) return;
-  
-  try {
-    if (audioCtx.setSinkId) {
-      await audioCtx.setSinkId(deviceId);
-      document.getElementById('infoOutput').textContent = deviceId.substring(0, 20);
-    } else {
-      console.warn('setSinkId not supported in this browser');
-    }
-  } catch(e) {
-    console.warn('setSinkId error:', e);
-  }
+  try { if (audioCtx.setSinkId) await audioCtx.setSinkId(deviceId); } catch(e) { console.warn('setSinkId error:', e); }
 }
 
-// ===== PANEL TOGGLES =====
+// ===== PANELS & UI =====
 function togglePanel(side) {
-  if (side === 'left') {
-    document.getElementById('leftPanel').classList.toggle('collapsed');
-  } else if (side === 'right') {
-    document.getElementById('rightPanel').classList.toggle('collapsed');
-  }
+  if (side === 'left') document.getElementById('leftPanel').classList.toggle('collapsed');
+  else if (side === 'right') document.getElementById('rightPanel').classList.toggle('collapsed');
 }
 
-// ===== RESIZE HANDLES =====
 function startResize(event, side) {
   const panel = document.getElementById(side === 'left' ? 'leftPanel' : 'rightPanel');
   const startX = event.clientX;
@@ -4571,89 +3666,11 @@ function startResize(event, side) {
   function onMove(e) {
     const delta = side === 'left' ? e.clientX - startX : startX - e.clientX;
     const newWidth = Math.max(150, Math.min(400, startWidth + delta));
-    panel.style.width = newWidth + 'px';
-    panel.style.minWidth = newWidth + 'px';
+    panel.style.width = newWidth + 'px'; panel.style.minWidth = newWidth + 'px';
   }
-  
-  function onUp() {
-    document.removeEventListener('mousemove', onMove);
-    document.removeEventListener('mouseup', onUp);
-  }
-  
+  function onUp() { document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp); }
   document.addEventListener('mousemove', onMove);
   document.addEventListener('mouseup', onUp);
-}
-
-// ===== CONTEXT MENU =====
-document.addEventListener('contextmenu', (e) => {
-  e.preventDefault();
-  const menu = document.getElementById('contextMenu');
-  menu.style.left = e.clientX + 'px';
-  menu.style.top = e.clientY + 'px';
-  menu.classList.add('visible');
-});
-
-document.addEventListener('click', () => {
-  document.getElementById('contextMenu').classList.remove('visible');
-});
-
-function resetModule() { alert('Module reset'); }
-function bypassModule() { alert('Module bypassed'); }
-function copySettings() { alert('Settings copied'); }
-function pasteSettings() { alert('Settings pasted'); }
-
-// ===== SETTINGS =====
-function showSettings() {
-  document.getElementById('settingsModal').classList.add('visible');
-}
-function closeSettings() {
-  document.getElementById('settingsModal').classList.remove('visible');
-}
-function applySettings() {
-  closeSettings();
-  alert('Settings applied!');
-}
-
-// ===== UTILITY =====
-function bypassAll() {
-  const btn = document.getElementById('btnBypass');
-  btn.classList.toggle('active');
-  const isBypassed = btn.classList.contains('active');
-  
-  if (outputGainNode) {
-    outputGainNode.gain.value = isBypassed ? 0 : dbToGain(knobState.outputGain - 50);
-  }
-  
-  document.getElementById('infoEngine').textContent = isBypassed ? 'Bypassed' : 'Running';
-}
-
-function resetAll() {
-  if (confirm('Reset all settings to defaults?')) {
-    loadPreset('fm-loud');
-  }
-}
-
-function updateInfoPanel() {
-  document.getElementById('infoAGC').textContent = modules.AGC ? 'ON' : 'OFF';
-}
-
-function updateClock() {
-  setInterval(() => {
-    const now = new Date();
-    document.getElementById('clockDisplay').textContent = 
-      now.toTimeString().split(' ')[0];
-  }, 1000);
-}
-
-function closeApp() {
-  if (confirm('Close OmniaPro?')) {
-    if (audioCtx) audioCtx.close();
-    window.close();
-  }
-}
-
-function minimizeApp() {
-  alert('Minimize (requires Electron wrapper)');
 }
 
 function toggleCategory(el) {
@@ -4662,87 +3679,289 @@ function toggleCategory(el) {
   if (items) items.classList.toggle('visible');
 }
 
+// ===== A/B COMPARE =====
+function toggleABCompare() {
+  const panel = document.getElementById('abCompare');
+  abState.active = !abState.active;
+  panel.style.display = abState.active ? 'flex' : 'none';
+  if (abState.active && !abState.presetA) abState.presetA = JSON.parse(JSON.stringify(knobState));
+}
+function selectAB(side) {
+  abState.current = side;
+  document.querySelectorAll('.ab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.ab-btn.${side.toLowerCase()}`).classList.add('active');
+  const preset = side === 'A' ? abState.presetA : abState.presetB;
+  if (preset) { Object.assign(knobState, preset); initAllFaderDisplays(); applyAllFaderValues(); }
+}
+function toggleAB() { abState.current = abState.current === 'A' ? 'B' : 'A'; selectAB(abState.current); }
+function copyAToB() { abState.presetB = JSON.parse(JSON.stringify(abState.presetA)); alert('A copied to B'); }
+function closeABCompare() { abState.active = false; document.getElementById('abCompare').style.display = 'none'; }
+
+// ===== VOICE DUCKING =====
+function detectVoice() {
+  if (!inputAnalyser) return false;
+  const data = new Float32Array(inputAnalyser.fftSize);
+  inputAnalyser.getFloatTimeDomainData(data);
+  let sum = 0, count = 0;
+  for (let i = 0; i < data.length; i++) {
+    const freq = i * audioCtx.sampleRate / data.length;
+    if (freq >= 300 && freq <= 3000) { sum += data[i]*data[i]; count++; }
+  }
+  const rms = count > 0 ? Math.sqrt(sum/count) : 0;
+  return rms > 0 && 20 * Math.log10(rms) > duckingState.threshold;
+}
+
+function updateDucking() {
+  if (!duckingState.enabled || !duckingGain) return;
+  const voiceDetected = detectVoice();
+  const targetGain = voiceDetected ? dbToGain(duckingState.reduction) : 1;
+  const current = duckingGain.gain.value;
+  const coeff = voiceDetected ? Math.exp(-1/(duckingState.attack * audioCtx.sampleRate/1000)) : Math.exp(-1/(duckingState.release * audioCtx.sampleRate/1000));
+  duckingGain.gain.value = current + (targetGain - current) * (1 - coeff);
+}
+
+function toggleDucking() {
+  duckingState.enabled = !duckingState.enabled;
+  document.getElementById('btnDuck').classList.toggle('active', duckingState.enabled);
+  if (duckingState.enabled && !duckingGain) initDucking();
+}
+
+// ===== MACRO RECORDER =====
+function toggleMacroRecord() {
+  macroState.recording = !macroState.recording;
+  document.getElementById('macroRecordBtn').classList.toggle('active', macroState.recording);
+  if (macroState.recording) { macroState.startTime = Date.now(); macroState.keyframes = []; captureKeyframe(); }
+}
+
+function captureKeyframe() {
+  if (!macroState.recording) return;
+  const timestamp = (Date.now() - macroState.startTime) / 1000;
+  const values = {};
+  macroState.parameters.forEach(param => values[param] = knobState[param]);
+  macroState.keyframes.push({ timestamp, values });
+  renderMacroTimeline();
+}
+
+function renderMacroTimeline() {
+  const timeline = document.getElementById('macroTimeline');
+  timeline.innerHTML = '';
+  const duration = macroState.keyframes.length > 0 ? macroState.keyframes[macroState.keyframes.length-1].timestamp : 0;
+  macroState.keyframes.forEach(kf => {
+    const pos = (kf.timestamp / Math.max(duration, 1)) * 100;
+    const marker = document.createElement('div');
+    marker.className = 'macro-keyframe';
+    marker.style.left = pos + '%';
+    timeline.appendChild(marker);
+  });
+  document.getElementById('macroParams').textContent = `${macroState.parameters.length} parameters`;
+}
+
+function toggleMacroPlay() {
+  macroState.playing = !macroState.playing;
+  document.getElementById('macroPlayBtn').classList.toggle('active', macroState.playing);
+  if (macroState.playing) playMacro();
+}
+
+function playMacro() {
+  if (!macroState.playing || macroState.keyframes.length < 2) return;
+  const startTime = Date.now();
+  const duration = macroState.keyframes[macroState.keyframes.length-1].timestamp * 1000;
+  
+  function animate() {
+    if (!macroState.playing) return;
+    const elapsed = (Date.now() - startTime) / 1000;
+    if (elapsed >= duration) { macroState.playing = false; document.getElementById('macroPlayBtn').classList.remove('active'); return; }
+    
+    for (let i = 0; i < macroState.keyframes.length - 1; i++) {
+      const kf1 = macroState.keyframes[i];
+      const kf2 = macroState.keyframes[i+1];
+      if (elapsed >= kf1.timestamp && elapsed < kf2.timestamp) {
+        const t = (elapsed - kf1.timestamp) / (kf2.timestamp - kf1.timestamp);
+        macroState.parameters.forEach(param => {
+          knobState[param] = kf1.values[param] + (kf2.values[param] - kf1.values[param]) * t;
+          updateFaderDisplay(param);
+          applyKnobValue(param, knobState[param]);
+        });
+        break;
+      }
+    }
+    document.getElementById('macroTime').textContent = `${Math.floor(elapsed/60)}:${String(Math.floor(elapsed%60)).padStart(2,'0')}`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+function clearMacro() { macroState.keyframes = []; renderMacroTimeline(); }
+
+function exportMacro() {
+  const data = JSON.stringify(macroState, null, 2);
+  const blob = new Blob([data], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'macro.json'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function toggleMacroPanel() {
+  document.getElementById('macroPanel').style.display = document.getElementById('macroPanel').style.display === 'none' ? 'block' : 'none';
+}
+
+// ===== NETWORK SYNC =====
+function updateNetworkUI() {
+  const dot = document.getElementById('networkDot');
+  dot.className = 'network-dot' + (networkState.connected ? ' connected' : '');
+  document.getElementById('networkStatus').textContent = networkState.connected ? 'Synced' : 'Offline';
+}
+setInterval(() => { if (Math.random() > 0.95) { networkState.connected = !networkState.connected; updateNetworkUI(); } }, 5000);
+
+// ===== DYNAMIC EQ =====
+function updateDynamicEQ() {
+  if (!masterAnalyser) return;
+  const freqData = new Uint8Array(masterAnalyser.frequencyBinCount);
+  masterAnalyser.getByteFrequencyData(freqData);
+  
+  Object.entries(dynEqState.bands).forEach(([bandId, config]) => {
+    if (!config.active) return;
+    const idx = Math.floor(config.freq / (audioCtx.sampleRate/2) * freqData.length);
+    const level = freqData[idx] ? (freqData[idx] / 255) * 60 - 60 : -60;
+    const isActive = level > config.threshold;
+    const indicator = document.getElementById(`dynEq${bandId}Active`);
+    const info = document.getElementById(`dynEq${bandId}Info`);
+    if (indicator) { indicator.style.height = isActive ? '100%' : '0%'; indicator.style.background = isActive ? 'var(--accent-green)' : '#333'; }
+    if (info) info.className = 'dyn-eq-info' + (isActive ? ' active' : '');
+    if (isActive && eqFilters[parseInt(bandId)-1]) {
+      const boost = (level - config.threshold) * 0.3;
+      eqFilters[parseInt(bandId)-1].gain.value = (knobState['eq'+bandId] - 50) / 50 * 12 + boost;
+    }
+  });
+}
+
+function toggleDynEq(bandId) {
+  dynEqState.bands[bandId].active = !dynEqState.bands[bandId].active;
+}
+
+// ===== FLOATING ANALYZER =====
+function toggleFloatingAnalyzer() {
+  const panel = document.getElementById('floatingAnalyzer');
+  panel.classList.toggle('visible');
+  if (panel.classList.contains('visible')) startAdvancedAnalyzer();
+}
+
+function startAdvancedAnalyzer() {
+  const canvas = document.getElementById('analyzerCanvas');
+  if (!canvas || !masterAnalyser) return;
+  const ctx = canvas.getContext('2d');
+  
+  function draw() {
+    if (!document.getElementById('floatingAnalyzer').classList.contains('visible')) return;
+    const w = canvas.width = canvas.parentElement.clientWidth;
+    const h = canvas.height = canvas.parentElement.clientHeight;
+    const bufferLength = masterAnalyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    masterAnalyser.getByteFrequencyData(dataArray);
+    
+    const gradient = ctx.createLinearGradient(0, 0, 0, h);
+    gradient.addColorStop(0, '#0a0a10'); gradient.addColorStop(1, '#1a1a25');
+    ctx.fillStyle = gradient; ctx.fillRect(0, 0, w, h);
+    
+    const barWidth = w / 128;
+    for (let i = 0; i < 128; i++) {
+      const value = dataArray[i * 4] / 255;
+      const barHeight = value * h * 0.9;
+      const hue = 200 - (i / 128) * 180 + value * 40;
+      ctx.fillStyle = `hsl(${hue}, 80%, ${40 + value * 30}%)`;
+      ctx.fillRect(i * barWidth, h - barHeight, barWidth - 2, barHeight);
+      if (value > 0.7) {
+        ctx.fillStyle = `hsla(${hue}, 100%, 80%, ${value - 0.7})`;
+        ctx.fillRect(i * barWidth, h - barHeight - 10, barWidth - 2, 10);
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// ===== KEYBOARD SHORTCUTS =====
+function toggleShortcuts() { document.getElementById('shortcutsPanel').classList.toggle('visible'); }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); toggleABCompare(); }
+  if (e.key === 'm' || e.key === 'M') { e.preventDefault(); e.shiftKey ? toggleMonoCompat() : toggleMSMode(); }
+  if (e.key >= '1' && e.key <= '5') soloBand(parseInt(e.key));
+  if (e.ctrlKey && e.key === 'n') { e.preventDefault(); /* connectNetwork */ }
+  if (e.ctrlKey && e.key === 's') { e.preventDefault(); savePreset(); }
+  if (e.key === 'F5') { e.preventDefault(); resetAll(); }
+  if (e.key === ' ') { e.preventDefault(); bypassAll(); }
+  if (e.key === 'Escape') { closeSettings(); document.getElementById('shortcutsPanel').classList.remove('visible'); closeABCompare(); }
+});
+
+function soloBand(bandNum) {
+  bandState.solo = bandState.solo === bandNum ? null : bandNum;
+  document.querySelectorAll('.band-card').forEach((card, i) => {
+    const bandId = i + 1;
+    const isActive = bandState.solo === null || bandState.solo === bandId;
+    card.style.opacity = isActive ? '1' : '0.3';
+    card.classList.toggle('active', isActive);
+  });
+}
+
+function muteBand(bandNum) {
+  const idx = bandState.muted.indexOf(bandNum);
+  if (idx === -1) bandState.muted.push(bandNum); else bandState.muted.splice(idx, 1);
+}
+
+// ===== UTILS =====
+function bypassAll() {
+  const btn = document.getElementById('btnBypass');
+  btn.classList.toggle('active');
+  const isBypassed = btn.classList.contains('active');
+  if (outputGainNode) outputGainNode.gain.value = isBypassed ? 0 : dbToGain(knobState.outputGain - 50);
+  document.getElementById('infoEngine').textContent = isBypassed ? 'Bypassed' : 'Running';
+}
+
+function resetAll() { if (confirm('Reset all to defaults?')) loadPreset('fm-loud'); }
+function updateInfoPanel() { document.getElementById('infoAGC').textContent = modules.AGC ? 'ON' : 'OFF'; }
+function updateClock() { setInterval(() => { document.getElementById('clockDisplay').textContent = new Date().toTimeString().split(' ')[0]; }, 1000); }
+function closeApp() { if (confirm('Close OmniaPro?')) { if (audioCtx) audioCtx.close(); window.close(); } }
+function minimizeApp() { alert('Minimize (requires Electron)'); }
+function showSettings() { document.getElementById('settingsModal').classList.add('visible'); }
+function closeSettings() { document.getElementById('settingsModal').classList.remove('visible'); }
+function applySettings() { closeSettings(); alert('Settings applied!'); }
+function resetModule() { alert('Module reset'); }
+function bypassModule() { alert('Module bypassed'); }
+function copySettings() { alert('Settings copied'); }
+function pasteSettings() { alert('Settings pasted'); }
+
+// ===== CONTEXT MENU =====
+document.addEventListener('contextmenu', (e) => { e.preventDefault(); const menu = document.getElementById('contextMenu'); menu.style.left = e.clientX + 'px'; menu.style.top = e.clientY + 'px'; menu.classList.add('visible'); });
+document.addEventListener('click', () => { document.getElementById('contextMenu').classList.remove('visible'); });
+
 // ===== ENUMERATE DEVICES =====
 async function enumerateDevices() {
   try {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const audioInputs = devices.filter(d => d.kind === 'audioinput');
     const audioOutputs = devices.filter(d => d.kind === 'audiooutput');
-    
     const inputSelect = document.getElementById('inputDeviceSelect');
-    audioInputs.forEach(d => {
-      const opt = document.createElement('option');
-      opt.value = d.deviceId;
-      opt.textContent = d.label || 'Input ' + (audioInputs.indexOf(d) + 1);
-      inputSelect.appendChild(opt);
-    });
-    
+    audioInputs.forEach(d => { const opt = document.createElement('option'); opt.value = d.deviceId; opt.textContent = d.label || 'Input ' + (audioInputs.indexOf(d) + 1); inputSelect.appendChild(opt); });
     const outputSelect = document.getElementById('outputDeviceSelect');
-    audioOutputs.forEach(d => {
-      const opt = document.createElement('option');
-      opt.value = d.deviceId;
-      opt.textContent = d.label || 'Output ' + (audioOutputs.indexOf(d) + 1);
-      outputSelect.appendChild(opt);
-    });
-  } catch(e) {
-    console.warn('Device enumeration failed:', e);
-  }
+    audioOutputs.forEach(d => { const opt = document.createElement('option'); opt.value = d.deviceId; opt.textContent = d.label || 'Output ' + (audioOutputs.indexOf(d) + 1); outputSelect.appendChild(opt); });
+  } catch(e) { console.warn('Device enumeration failed:', e); }
 }
-
-// ===== TOUCH SUPPORT =====
-document.addEventListener('touchstart', (e) => {
-  const knob = e.target.closest('.knob-control');
-  if (knob) {
-    const knobId = knob.getAttribute('onmousedown')?.match(/'(\w+)'/)?.[1];
-    if (knobId) {
-      e.preventDefault();
-      activeKnob = knobId;
-      knobStartY = e.touches[0].clientY;
-      knobStartValue = knobState[knobId];
-    }
-  }
-});
-
-document.addEventListener('touchmove', (e) => {
-  if (activeKnob && e.touches.length > 0) {
-    e.preventDefault();
-    const delta = (knobStartY - e.touches[0].clientY) * 0.5;
-    let newValue = knobStartValue + delta;
-    newValue = Math.max(0, Math.min(100, newValue));
-    knobState[activeKnob] = newValue;
-    updateKnobDisplay(activeKnob);
-    applyKnobValue(activeKnob, newValue);
-  }
-});
-
-document.addEventListener('touchend', () => {
-  activeKnob = null;
-});
 
 // ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
-  initAllKnobDisplays();
+  initAllFaderDisplays();
+  initFaderListeners();
   enumerateDevices();
   
-  document.addEventListener('click', async function startAudio() {
-    if (!isAudioStarted) {
-      await initAudio();
-    }
-  }, { once: false });
+  document.addEventListener('click', async function startAudio() { if (!isAudioStarted) await initAudio(); }, { once: false });
   
-  const startElements = document.querySelectorAll('.toolbar-btn, .power-btn, .toggle-btn, .knob-control');
-  startElements.forEach(el => {
-    el.addEventListener('click', async () => {
-      if (!isAudioStarted) {
-        await initAudio();
-      }
-    }, { once: true });
+  document.querySelectorAll('.toolbar-btn, .power-btn, .toggle-btn, .fader-control, .fader-h').forEach(el => {
+    el.addEventListener('click', async () => { if (!isAudioStarted) await initAudio(); }, { once: true });
   });
 });
 
-console.log('✅ OmniaPro Broadcast Processor v11.2 Advanced Loaded');
-console.log('🎚️ LUFS Metering | 🔄 M/S Imaging | 🎤 De-esser AI');
-console.log('⚖️ A/B Compare | 🎬 Macro Recorder | 🌐 Network Sync');
+console.log('✅ OmniaPro v11.2 - Fader Edition Loaded');
 </script>
 </body>
 </html>
